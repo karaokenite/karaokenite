@@ -6,7 +6,9 @@ Karaoke Nite is an web app where you can sing karaoke and hang out with your fri
 
 ## Core team
 
-- @sonnynomnom
+- [@sonnynomnom](https://www.twitter.com/sonnynomnom)
+
+Currently looking for founding members who are down to go ham with me.
 
 ## Contributing
 
