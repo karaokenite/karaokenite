@@ -1,6 +1,6 @@
 # Karaoke Nite 🔮
 
-## What is Karaoke Nite?
+## About
 
 Karaoke Nite is a platform where everyone can sing their favorite tunes and hang out with friends. It can be accessed using a VR headset or on the browser.
 
@@ -9,6 +9,16 @@ Karaoke Nite is a platform where everyone can sing their favorite tunes and hang
 - [@sonnynomnom](https://www.twitter.com/sonnynomnom)
 
 Currently looking for founding members and co-creators who are down to go frikin ham.
+
+## Features
+
+- Bug: Avatar Position
+- Bug: Video Sync
+- Bug: Buttons
+- Scenes via <kbd>space</kbd>
+- Volume button
+- Username
+- Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite, etc)
 
 ## Contributing
 
