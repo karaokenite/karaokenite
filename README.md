@@ -2,7 +2,7 @@
 
 ## What is Karaoke Nite?
 
-Karaoke Nite is an web app where you can sing karaoke and hang out with your friends and randos. I
+Karaoke Nite is a platform where everyone can sing their favorite tunes and hang out with their friends.
 
 ## Core team
 
