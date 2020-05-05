@@ -18,7 +18,12 @@ Currently looking for founding members and co-creators who are down to go frikin
 - Scenes via <kbd>space</kbd>
 - Volume button
 - Username
-- Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite, etc)
+- Friday playlists:
+  - indie-nite
+  - emo-nite
+  - kpop-nite
+  - disney-nite
+  - 80s-nite
 
 ## Contributing
 
