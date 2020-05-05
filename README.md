@@ -24,4 +24,4 @@ Here are some resources to get acquainted with A-Frame:
 
 ## License
 
-Any questions, please email sonnynomnom@gmail.com
+Any questions, please email sonnynomnom@gmail.com.
