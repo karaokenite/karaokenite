@@ -4,7 +4,7 @@
 
 Karaoke Nite is a platform where everyone can sing their favorite tunes and hang out with their friends. It can be accessed via VR headset, PC, or mobile.
 
-## Core team
+## The Squad
 
 - [@sonnynomnom](https://www.twitter.com/sonnynomnom)
 
