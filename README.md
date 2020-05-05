@@ -2,13 +2,13 @@
 
 ## What is Karaoke Nite?
 
-Karaoke Nite is a platform where everyone can sing their favorite tunes and hang out with friends. It can be accessed using a VR headset or on a computer.
+Karaoke Nite is a platform where everyone can sing their favorite tunes and hang out with friends. It can be accessed using a VR headset or on the browser.
 
 ## Team
 
 - [@sonnynomnom](https://www.twitter.com/sonnynomnom)
 
-Currently looking for founding members who are down to go ham with me.
+Currently looking for founding members and co-creators who are down to go frikin ham.
 
 ## Contributing
 
