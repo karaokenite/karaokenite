@@ -1,7 +1,7 @@
 # Tracks
 
-eric:       wheatus - teenage dirtbag
-corey:      coheeed - blood red summer
+- Wheatus - "Teenage Dirtbag" (Eric)
+- Coheeed and Cambria - Blood Red Summer (Corey)
 sam:        the stones - beast of burden
 malcolm:    the shins - new slang
 jim:        old crow - wagon wheel
