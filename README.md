@@ -21,10 +21,10 @@ And @haydeneee37 for tips and advices.
 
 ## Features
 
-[ ] 🐛: Avatar Position
-[ ] 🐛: Video Sync
-[ ] 🐛: Nametag
-[ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
+- [ ] 🐛: Avatar Position
+- [ ] 🐛: Video Sync
+- [ ] 🐛: Nametag
+- [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
 
 ## Contributing
 
