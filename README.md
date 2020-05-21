@@ -2,23 +2,29 @@
 
 ## About
 
-Karaoke Nite is a platform where everyone can sing their favorite tunes and hang out with friends. It can be accessed using a VR headset or on the browser.
+[Karaoke Nite](https://karaokenite.co) is a platform where everyone can sing their favorite tunes and hang out with friends. It can be accessed using a VR headset or on the browser.
+
+Currently supported on:
+
+- Desktop
+- Mobile
+- Oculus Quest (VR)
+- Oculus Rift (VR)
+- HTC Vive (VR)
 
 ## Team
 
 - [@sonnynomnom](https://www.twitter.com/sonnynomnom)
+- @jacq_ilu
 
-Currently looking for founding members and co-creators who are down to go frikin ham.
+And @haydeneee37 for tips and advices.
 
 ## Features
 
-- Bug: Avatar Position
-- Bug: Video Sync
-- Bug: Buttons
-- Scenes via <kbd>space</kbd>
-- Volume button
-- Username
-- Friday playlists:
+- 🐛: Avatar Position
+- 🐛: Video Sync
+- 🐛: Nametag
+- Playlists:
   - indie-nite
   - emo-nite
   - kpop-nite
@@ -31,9 +37,10 @@ We encourage you to contribute to Karaoke Nite! Trello board coming soon.
 
 ## Learning
 
-Here are some resources to get acquainted with A-Frame:
+- [A-Frame](https://aframe.io)
+- [Networked-aframe](https://github.com/networked-aframe/networked-aframe), a web framework for building multi-user virtual reality experiences.
 
-- Codecademy's course (written by Sonny)
+- Codecademy's course
 - Glitch's course
 - Udemy's course
 
