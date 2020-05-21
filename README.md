@@ -34,7 +34,6 @@ We encourage you to contribute to Karaoke Nite! Trello board coming soon.
 
 - [A-Frame](https://aframe.io)
 - [Networked-aframe](https://github.com/networked-aframe/networked-aframe), a web framework for building multi-user virtual reality experiences.
-
 - Codecademy's course
 - Glitch's course
 - Udemy's course
