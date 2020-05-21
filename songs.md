@@ -1,5 +1,11 @@
 # Tracks
 
+| Artist | Song | Playlist |
+| --- | --- | --- |
+| Wheatus | Teenage Dirtbag | v0.1 |
+| Coheed and Cambria | Blood Red Summer | v0.1 |
+
+
 - Wheatus - "Teenage Dirtbag" (Eric)
 - Coheeed and Cambria - Blood Red Summer (Corey)
 
