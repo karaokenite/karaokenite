@@ -1,23 +1,22 @@
-# Karaoke Nite 🔮
+# What is Karaoke Nite?
 
-## About
+🔮 [Karaoke Nite](https://karaokenite.co) is a web app where you can sing with your friends during quarantine. 
 
-[Karaoke Nite](https://karaokenite.co) is a platform where everyone can sing their favorite tunes and hang out with friends. It can be accessed using a VR headset or on the browser.
+Currently works in the browser on a computer or in VR headsets:
 
-Currently supported on:
+- Oculus Quest
+- Oculus Rift S
+- Valve Index
 
-- Desktop
-- Mobile
-- Oculus Quest (VR)
-- Oculus Rift (VR)
-- HTC Vive (VR)
+# Team
 
-## Team
+- [@sonnynomnom](https://twitter.com/sonnynomnom)
+- [@jacq_ilu](https://twitter.com/jackieis_online)
+- [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
+- [@irlfede](https://twitter.com/irlfede)
+- [@micaelars](https://www.behance.net/micaelars)
 
-- [@sonnynomnom](https://www.twitter.com/sonnynomnom)
-- @jacq_ilu
-
-And @haydeneee37 for tips and advices.
+And [@haydenlee37](https://twitter.com/HaydenLee37) for all the help and advices.
 
 ## Features
 
