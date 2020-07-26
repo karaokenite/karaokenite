@@ -16,7 +16,7 @@ Currently works in the browser on a computer or in VR headsets:
 - [@irlfede](https://twitter.com/irlfede)
 - [@micaelars](https://www.behance.net/micaelars)
 
-And [@haydenlee37](https://twitter.com/HaydenLee37) for all the help and advices.
+And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 
 ## Feature Ideas
 
