@@ -28,6 +28,10 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for all the help and advices
 - [ ] Search Box For Songs
 - [ ] Shuffle Song Button
 - [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
+- [ ] Autotune button
+- [ ] Pitch shift button
+- [ ] Tamborine item
+- [ ] Dice item
 
 ## Contributing
 
