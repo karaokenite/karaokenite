@@ -23,9 +23,9 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] 🐛: Avatar Position
 - [ ] 🐛: Video Sync
 - [ ] 🐛: Nametag
+- [ ] Search Box For Songs/Artists
 - [ ] Chat System
-- [ ] Send emojis
-- [ ] Search Box For Songs
+- [ ] Send 3D Emojis
 - [ ] Shuffle Song Button
 - [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
 - [ ] Autotune button
