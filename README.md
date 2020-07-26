@@ -18,11 +18,15 @@ Currently works in the browser on a computer or in VR headsets:
 
 And [@haydenlee37](https://twitter.com/HaydenLee37) for all the help and advices.
 
-## Features
+## Feature Ideas
 
 - [ ] 🐛: Avatar Position
 - [ ] 🐛: Video Sync
 - [ ] 🐛: Nametag
+- [ ] Chat System
+- [ ] Send emojis
+- [ ] Search Box For Songs
+- [ ] Shuffle Song Button
 - [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
 
 ## Contributing
