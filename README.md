@@ -28,6 +28,7 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] Chat System
 - [ ] Send 3D Emojis
 - [ ] Shuffle Song Button
+- [ ] Video Cameras
 - [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
 - [ ] Autotune button
 - [ ] Pitch shift button
