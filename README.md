@@ -18,11 +18,12 @@ Currently works in the browser on a computer or in VR headsets:
 
 And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 
-## Feature Ideas
+## Feature Ideas v1.0
 
 - [ ] 🐛: Avatar Position
 - [ ] 🐛: Video Sync
 - [ ] 🐛: Nametag
+- [ ] Move Codebase to GitHub
 - [ ] Search Box For Songs/Artists
 - [ ] Chat System
 - [ ] Send 3D Emojis
@@ -30,8 +31,9 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
 - [ ] Autotune button
 - [ ] Pitch shift button
-- [ ] Tamborine item
-- [ ] Dice item
+- [ ] Cosmetic Item: Halo
+- [ ] Cosmetic Item: Tambourine
+- [ ] Cosmetic Item: Dice
 
 ## Contributing
 
