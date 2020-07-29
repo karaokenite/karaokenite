@@ -24,6 +24,7 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] 🐛: Video Sync
 - [ ] 🐛: Nametag
 - [ ] Move Codebase to GitHub
+- [ ] Viewable Queue List
 - [ ] Search Box For Songs/Artists
 - [ ] Chat System
 - [ ] Send 3D Emojis
