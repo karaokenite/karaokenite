@@ -36,6 +36,8 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] Cosmetic Item: Halo
 - [ ] Cosmetic Item: Tambourine
 - [ ] Cosmetic Item: Dice
+- [ ] Newsletter
+- [ ] Blog
 
 ## Contributing
 
