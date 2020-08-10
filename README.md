@@ -24,8 +24,9 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] 🐛: Video Sync
 - [ ] 🐛: Nametag
 - [ ] Move Codebase to GitHub
-- [ ] Viewable Queue List
+- [ ] Viewable Song Queue List
 - [ ] Search Box For Songs/Artists
+- [ ] 100 Songs
 - [ ] Chat System
 - [ ] Send 3D Emojis
 - [ ] Shuffle Song Button
