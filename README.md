@@ -43,6 +43,8 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 ## Contributing
 
 We encourage you to contribute to Karaoke Nite! Trello board coming soon.
+- Patreon
+- User Survey
 
 ## Learning
 
