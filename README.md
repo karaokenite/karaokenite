@@ -25,17 +25,26 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] 🐛: Nametag
 - [ ] Move Codebase to GitHub
 - [ ] Viewable Song Queue List
-- [ ] Search Box For Songs/Artists
+- [ ] Search Box For Song Names/Artist Names
 - [ ] 100 Songs
 - [ ] Chat System
 - [ ] Send 3D Emojis
 - [ ] Shuffle Song Button
 - [ ] Video Cameras
+- [ ] Search songs/artists by genre
+- [ ] Search songs/artists by language
+- [ ] Search songs/artists by decade
 - [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
-- [ ] Autotune button
-- [ ] Pitch shift button
+- [ ] Soundboard: Autotune button
+- [ ] Soundboard: Pitch shift button
+- [ ] Audio Settings: Echo/Reverb
+- [ ] Audio Settings: Compressor
+- [ ] Audio Settings: Noise reduction
+- [ ] Mute on/off button
+- [ ] Keyboard shortcuts menu: F for full screen. _ for add song, etc.
 - [ ] Cosmetic Item: Halo
 - [ ] Cosmetic Item: Tambourine
+- [ ] Cosmetic Item: Microphone
 - [ ] Cosmetic Item: Dice
 - [ ] Newsletter
 - [ ] Blog
@@ -56,4 +65,4 @@ We encourage you to contribute to Karaoke Nite! Trello board coming soon.
 
 ## License
 
-Any questions, please email sonnynomnom@gmail.com.
+Coming soon!
