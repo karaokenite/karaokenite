@@ -1,5 +1,7 @@
 # What is Karaoke Nite?
 
+Currently updating GitHub repo: Codebase will be updated by 8/15/2020.
+
 🔮 [Karaoke Nite](https://karaokenite.co) is a web app where you can sing with your friends during quarantine. 
 
 Currently works in the browser on a computer or in VR headsets:
