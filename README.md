@@ -25,7 +25,6 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] 🐛: Avatar Position
 - [ ] 🐛: Video Sync
 - [ ] 🐛: Nametag
-- [ ] Move Codebase to GitHub
 - [ ] Viewable Song Queue List
 - [ ] Search Box For Song Names/Artist Names
 - [ ] 100 Songs
