@@ -20,18 +20,24 @@ Currently works in the browser on a computer or in VR headsets:
 
 And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 
-## v1.0 Feature Ideas
+## v0.2 Features
 
-- [ ] 🐛: Avatar Position
-- [ ] 🐛: Video Sync
-- [ ] 🐛: Nametag
+Move from WebVR to web/mobile.
+
+- [ ] Video Cameras (P0)
+- [ ] Chat System (P0)
+- [ ] 100 Songs (P0)
+- [ ] Mute on/off button
+- [ ] Exit button
+- [ ] Blog
+- [x] Bug Fixes (Landing Page Footer)
+
+# v0.3 Ideas
+
+- [ ] Send 3D Emojis
 - [ ] Viewable Song Queue List
 - [ ] Search Box For Song Names/Artist Names
-- [ ] 100 Songs
-- [ ] Chat System
-- [ ] Send 3D Emojis
 - [ ] Shuffle Song Button
-- [ ] Video Cameras
 - [ ] Search songs/artists by genre
 - [ ] Search songs/artists by language
 - [ ] Search songs/artists by decade
@@ -41,14 +47,12 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] Audio Settings: Echo/Reverb
 - [ ] Audio Settings: Compressor
 - [ ] Audio Settings: Noise reduction
-- [ ] Mute on/off button
 - [ ] Keyboard shortcuts menu: F for full screen. _ for add song, etc.
 - [ ] Cosmetic Item: Halo
 - [ ] Cosmetic Item: Tambourine
 - [ ] Cosmetic Item: Microphone
 - [ ] Cosmetic Item: Dice
 - [ ] Newsletter
-- [ ] Blog
 
 ## Contributing
 
