@@ -1,7 +1,5 @@
 # What is Karaoke Nite?
 
-**Currently updating GitHub repo: www.github.com/karaokenite/karaokenite-react.**
-
 [Karaoke Nite](https://karaokenite.co) is a web app where you can sing with your friends & family on the web or in VR. Brand new quaratine pastime.
 
 Currently works in the browser on a computer or in VR headsets:
@@ -20,17 +18,21 @@ Currently works in the browser on a computer or in VR headsets:
 
 And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 
-## v0.2 Features
+## v0.1.1
 
-Move from WebVR to web/mobile.
+- [x] Added floating animation to the stars in the home page.
+- [x] Added hover effects to anchor links.
+- [x] Added a `/blog` page.
+- [x] Fixeed landing page footer bug.
+
+## v0.2 Features
 
 - [ ] Video Cameras (P0)
 - [ ] Chat System (P0)
 - [ ] 100 Songs (P0)
 - [ ] Mute on/off button
 - [ ] Exit button
-- [ ] Blog
-- [x] Bug Fixes (Landing Page Footer)
+
 
 # v0.3 Ideas
 
