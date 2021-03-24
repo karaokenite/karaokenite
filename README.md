@@ -1,12 +1,6 @@
 # What is Karaoke Nite?
 
-[Karaoke Nite](https://karaokenite.co) is a web app where you can sing with your friends & family on the web or in VR. Brand new quaratine pastime.
-
-Currently works in the browser on a computer or in VR headsets:
-
-- Oculus Quest
-- Oculus Rift S
-- Valve Index
+[Karaoke Nite](https://karaokenite.co) is a web app where you can sing with your friends & family on the web. Brand new quaratine pastime.
 
 # Team
 
@@ -24,6 +18,8 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [x] Added hover effects to anchor links.
 - [x] Added a `/blog` page.
 - [x] Fixeed landing page footer bug.
+
+## v0.1.2
 
 ## v0.2 Features
 
@@ -56,10 +52,16 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] Cosmetic Item: Dice
 - [ ] Newsletter
 
+Currently works in the browser on a computer or in VR headsets:
+
+- Oculus Quest
+- Oculus Rift S
+- Valve Index
+
 ## Contributing
 
 We encourage you to contribute to Karaoke Nite! Trello board coming soon.
-- Patreon
+
 - User Survey
 
 ## Learning
