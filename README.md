@@ -23,16 +23,19 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 
 ## v0.2 Features
 
-- [ ] Video Cameras (P0)
+- [ ] Video Cameras for 3 People (P0)
+- [ ] Video Cameras for 4 People (P1)
 - [ ] Chat System (P0)
-- [ ] 100 Songs (P0)
 - [ ] Mute on/off button
 - [ ] Exit button
+- [ ] Newsletter
+- [ ] Launch
 
 
 # v0.3 Ideas
 
-- [ ] Send 3D Emojis
+- [ ] 100 Songs (P0)
+- [ ] Send Emojis
 - [ ] Viewable Song Queue List
 - [ ] Search Box For Song Names/Artist Names
 - [ ] Shuffle Song Button
