@@ -16,28 +16,19 @@ And previous contributors
 - [@micaelars](https://www.behance.net/micaelars)
 - [@haydenlee37](https://twitter.com/HaydenLee37)
 
-## v0.1.1
-
-- [x] Added floating animation to the stars in the home page.
-- [x] Added hover effects to anchor links.
-- [x] Added a `/blog` page.
-- [x] Fixeed landing page footer bug.
-
-## v0.1.2
-
 ## v0.2 Features
 
-- [ ] Video Cameras for 3 People (P0)
-- [ ] Video Cameras for 4 People (P1)
+- [ ] Video Cameras for 2 People
+- [ ] Video Cameras for 3 People
+- [ ] Video Cameras for 4 People
 - [ ] Chat System (P0)
 - [ ] Mute on/off button
 - [ ] Exit button
-- [ ] Newsletter
-- [ ] Launch
+- [ ] Launch & Newsletter
 
 # v0.3 Ideas
 
-- [ ] 100 Songs (P0)
+- [ ] 100 Songs
 - [ ] Send Emojis
 - [ ] Viewable Song Queue List
 - [ ] Search Box For Song Names/Artist Names
@@ -58,24 +49,11 @@ And previous contributors
 - [ ] Cosmetic Item: Dice
 - [ ] Newsletter
 
-Currently works in the browser on a computer or in VR headsets:
-
-- Oculus Quest
-- Oculus Rift S
-- Valve Index
-
-## Contributing
-
-We encourage you to contribute to Karaoke Nite! Trello board coming soon.
-
-- User Survey
-
 ## Learning Resources
 
 - [A-Frame](https://aframe.io)
 - [Networked-aframe](https://github.com/networked-aframe/networked-aframe), a web framework for building multi-user virtual reality experiences.
 - Codecademy's course
-- Glitch's course
 - [Udemy's Practical WebRTC](https://www.udemy.com/course/practical-webrtc-a-complete-webrtc-bootcamp-for-beginners/)
 
 ## License
