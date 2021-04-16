@@ -6,11 +6,11 @@
 
 - [@sonnynomnom](https://twitter.com/sonnynomnom)
 - [@guyen](https://www.linkedin.com/in/guyendinh)
+- [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
 
 Also previous contributors:
 
 - [@jacq_ilu](https://twitter.com/jackieis_online)
-- [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
 - [@irlfede](https://twitter.com/irlfede)
 - [@haydenlee37](https://twitter.com/HaydenLee37)
 
