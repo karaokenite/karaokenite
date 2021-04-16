@@ -31,7 +31,6 @@ And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
 - [ ] Newsletter
 - [ ] Launch
 
-
 # v0.3 Ideas
 
 - [ ] 100 Songs (P0)
