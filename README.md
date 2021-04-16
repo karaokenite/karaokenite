@@ -1,6 +1,6 @@
 # What is Karaoke Nite?
 
-[Karaoke Nite](https://karaokenite.co) is a web app where you can sing with your friends & family on the web. Brand new quaratine pastime.
+🔮 [Karaoke Nite](https://karaokenite.co) is a social app where you can sing with friends on the web.
 
 # Team
 
