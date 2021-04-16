@@ -7,7 +7,7 @@
 - [@sonnynomnom](https://twitter.com/sonnynomnom)
 - [@guyen](https://www.linkedin.com/in/guyendinh)
 
-Friends who are helping!
+Friends who are helping:
 
 - [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
 
