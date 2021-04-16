@@ -9,11 +9,10 @@
 - [@guyendinh](https://www.linkedin.com/in/guyendinh)
 - [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
 
-And previous contributors
+And previous contributors:
 
 - [@jacq_ilu](https://twitter.com/jackieis_online)
 - [@irlfede](https://twitter.com/irlfede)
-- [@micaelars](https://www.behance.net/micaelars)
 - [@haydenlee37](https://twitter.com/HaydenLee37)
 
 ## v0.2 Features
