@@ -5,8 +5,13 @@
 # Team
 
 - [@sonnynomnom](https://twitter.com/sonnynomnom)
-- [@jacq_ilu](https://twitter.com/jackieis_online)
+- [@
 - [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
+- Guyen Dinh
+
+# Contributors
+
+- [@jacq_ilu](https://twitter.com/jackieis_online)
 - [@irlfede](https://twitter.com/irlfede)
 - [@micaelars](https://www.behance.net/micaelars)
 
