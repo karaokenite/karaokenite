@@ -9,13 +9,12 @@
 - [@guyendinh](https://www.linkedin.com/in/guyendinh)
 - [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
 
-## Contributors
+And previous contributors
 
 - [@jacq_ilu](https://twitter.com/jackieis_online)
 - [@irlfede](https://twitter.com/irlfede)
 - [@micaelars](https://www.behance.net/micaelars)
-
-And [@haydenlee37](https://twitter.com/HaydenLee37) for the extra support.
+- [@haydenlee37](https://twitter.com/HaydenLee37)
 
 ## v0.1.1
 
