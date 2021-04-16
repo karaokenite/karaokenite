@@ -1,60 +1,21 @@
 # What is Karaoke Nite?
 
-🔮 [Karaoke Nite](https://karaokenite.co) is a social app where you can sing with friends on the web.
+🔮 [Karaoke Nite](https://karaokenite.co) is a social app where you can sing with friends on the web. 
 
-## The Team
+# The Team
 
-- [@sonnynomnom](https://twitter.com/sonnynomnom)
-- [@airrobb](https://github.com/airrobb)
-- [@guyendinh](https://www.linkedin.com/in/guyendinh)
-- [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
+- [Sonny Li](https://twitter.com/sonnynomnom)
+- [Guyen Dinh](https://www.linkedin.com/in/guyendinh)
 
-And previous contributors:
+Also previous contributors:
 
 - [@jacq_ilu](https://twitter.com/jackieis_online)
+- [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
 - [@irlfede](https://twitter.com/irlfede)
 - [@haydenlee37](https://twitter.com/HaydenLee37)
 
-## v0.2 Features
+# Beta v0.1.3
 
-- [ ] Video Cameras for 2 People
-- [ ] Video Cameras for 3 People
-- [ ] Video Cameras for 4 People
-- [ ] Chat System (P0)
-- [ ] Mute on/off button
-- [ ] Exit button
-- [ ] Launch & Newsletter
+This is currently a Beta version of the app. We have a ton of features and goodies coming soon so stay tuned.
 
-# v0.3 Ideas
-
-- [ ] 100 Songs
-- [ ] Send Emojis
-- [ ] Viewable Song Queue List
-- [ ] Search Box For Song Names/Artist Names
-- [ ] Shuffle Song Button
-- [ ] Search songs/artists by genre
-- [ ] Search songs/artists by language
-- [ ] Search songs/artists by decade
-- [ ] Playlists (indie-nite, emo-nite, kpop-nite, disney-nite, 80s-nite)
-- [ ] Soundboard: Autotune button
-- [ ] Soundboard: Pitch shift button
-- [ ] Audio Settings: Echo/Reverb
-- [ ] Audio Settings: Compressor
-- [ ] Audio Settings: Noise reduction
-- [ ] Keyboard shortcuts menu: F for full screen. _ for add song, etc.
-- [ ] Cosmetic Item: Halo
-- [ ] Cosmetic Item: Tambourine
-- [ ] Cosmetic Item: Microphone
-- [ ] Cosmetic Item: Dice
-- [ ] Newsletter
-
-## Learning Resources
-
-- [A-Frame](https://aframe.io)
-- [Networked-aframe](https://github.com/networked-aframe/networked-aframe), a web framework for building multi-user virtual reality experiences.
-- Codecademy's course
-- [Udemy's Practical WebRTC](https://www.udemy.com/course/practical-webrtc-a-complete-webrtc-bootcamp-for-beginners/)
-
-## License
-
-Coming soon!
+Karaoke Nite is also open-sourced. If you are a programmer, designer, 3d modeller, or game artist and want to help out, you can find the project on our [GitHub](https://github.com/karaokenite).
