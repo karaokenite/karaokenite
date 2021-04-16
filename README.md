@@ -6,8 +6,8 @@
 
 - [@sonnynomnom](https://twitter.com/sonnynomnom)
 - [@airrobb](https://github.com/airrobb)
+- [@guyendinh](https://www.linkedin.com/in/guyendinh)
 - [@joshuakgoldberg](https://twitter.com/JoshuaKGoldberg)
-- [Guyen Dinh](https://www.linkedin.com/in/guyendinh)
 
 # Contributors
 
