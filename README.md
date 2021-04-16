@@ -2,7 +2,7 @@
 
 🔮 [Karaoke Nite](https://karaokenite.co) is a social app where you can sing with friends on the web. 
 
-## Core Team
+## The Team
 
 - [@sonnynomnom](https://twitter.com/sonnynomnom)
 - [@guyen](https://www.linkedin.com/in/guyendinh)
