@@ -1,0 +1,609 @@
+* {
+  box-sizing: border-box;
+}
+
+#usersList {
+  font-family: "Linotte";
+  font-size: 22px;
+}
+
+ul li {
+    display: block;
+/*     height: 100px; */
+    line-height: 70px;
+}
+
+ul li img {
+    vertical-align: middle;
+}
+
+#list2 {
+/*   display:none; */
+}
+
+#list3 {
+/*   display:none; */
+}
+
+span#host, span#user2, span#user3 {
+  padding-left: 15px;
+}
+
+#instructions {
+  font-family: "Linotte";
+  position: fixed;
+  background: rgba(30, 30, 30, 0.8);
+  padding: 12px;
+  color: #FAFAFA;
+  bottom: 15px;
+/*   right: 120px; */
+  z-index: 2;
+  border-radius: 10px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 960px;
+  max-width: 100%;
+}
+
+p {
+  font-family: "Linotte";
+  color: #050422;
+
+  text-align: center;
+}
+
+h2 {
+  font-family: "Linotte";
+  color: #050422;
+  text-align: center;
+  font-weight: 400;
+  max-width: 75rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* button:hover { 
+  background: ;
+} */
+
+.button {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0px 24px;
+  height: 50px;
+  line-height: 47px;
+  font-weight: 700;
+  border: 3px solid #050422;
+  font-family: "Linotte";
+  background-color: white;
+  color: #050422;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: 0.2s background-color;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #DAD8DE;
+}
+
+.button-bold {
+  background-color: #C8EF00;
+}
+
+.button-bold:hover {
+  background-color: #EFFF9E;
+}
+
+videoControls {
+  cursor: pointer;
+}
+
+kbd {
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  color: #333;
+  display: inline-block;
+  font-family: "Linotte";
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  text-shadow: 0 1px 0 #fff;
+}
+
+#counter {
+  top: 27px;
+  right: 480px;
+  z-index: 2;
+  position: absolute;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: "Linotte";
+}
+
+#smiley {
+
+}
+
+#smiley1 {
+  height: 42px;
+  width: 42px;
+  top: 24px;
+  right: 426px;
+  z-index: 4;
+  position: absolute;
+}
+
+#smiley2 {
+  height: 42px;
+  width: 42px;
+  top: 24px;
+  right: 413px;
+  z-index: 3;
+  position: absolute;
+  visibility: hidden;
+}
+
+#smiley3 {
+  height: 42px;
+  width: 42px;
+  top: 24px;
+  right: 402px;
+  z-index: 2;
+  position: absolute;
+  visibility: hidden;
+
+}
+
+#feedback {
+  cursor: pointer;
+  bottom: 65px;
+  right: 22px;
+  z-index: 2;
+  position: absolute;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-image: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029");
+  background-position: 50%, 50%;
+  background-repeat: no-repeat;
+
+}
+
+#invite {
+  cursor: pointer;
+  top: 20px;
+  right: 200px;
+  z-index: 2;
+  position: absolute;
+  font-weight: 700;
+}
+
+#invite2 {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 83%;
+  margin-top: 25px;
+
+/*   top: 20px;
+  right: 200px;
+  z-index: 2;
+  position: absolute; */
+/*   background: #ffffff; */
+  font-weight: 700;
+}
+
+#song {
+  cursor: pointer;
+  top: 20px;
+  right: 40px;
+  z-index: 2;
+  position: absolute;
+  font-weight: 700;
+}
+
+#scene-logo {
+  top: 32px;
+  left: 50px;
+  z-index: 2;
+  position: absolute;
+  font-family: "Linotte", sans-serif;
+  font-size: 1.6em;
+  font-weight: bold;
+  line-height: 1.4em;
+  /*   text-transform:uppercase; */
+  text-decoration: none !important;
+  justify-content: space-between;
+  margin: auto;
+  font-weight: 700;
+  /* padding: 1rem; */
+
+  /*   
+  width: 100%;
+  margin-top: 20px;
+  padding: 1rem;
+  position:relative;
+  top: 0;
+  z-index:999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: auto;
+  max-width:60rem;
+  max-width: calc(100% - 60px);
+  width: 100%; */
+}
+
+#scene-logo a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* Messing with the logo -->
+
+/* header .page-link a {
+  text-transform:uppercase;
+  text-decoration:none !important;
+  font-weight:600;
+  font-size:1.2rem;
+  color: #050422;
+}
+
+.logo {
+  font-size: inherit;
+  margin: 0;
+  position: relative;
+  font-weight:700;
+  top:4px;
+}
+
+header .page-link.about{
+  margin-right:40px;
+}
+
+.tag-tilt {
+  background: #FE3466;
+  color: white;
+  font-size: 1rem;
+  padding: .01rem 0.4rem;
+  position: absolute;
+  left: calc(100% + 0.25rem);
+  top: -32%;
+  height: 22px;
+  border-radius: 2px;
+  line-height: 25px;
+  transform: rotate(-10deg);
+  font-weight:400;
+} */
+
+/* #done {
+  border-radius: 4px;
+  /* background: rgba(0,0,0,.35); */
+  /* background: #FF0066; */
+  /* background: rgb(255, 0, 102, .60); */
+/*   background: #ff91a4;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  /* position: absolute; */
+/*   font-family: helvetica, arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 15px;
+  margin-bottom: 10px;
+} */ */
+ */
+#inviteModal {
+  font-family: "Lato", "Helvetica Neue", arial, sans-serif;
+  /*   font-weight: 700; */
+  color: #5e6c76;
+  text-align: center;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#myInput {
+  padding: 0px 24px;
+  height: 50px;
+  border: 0px;
+  border-radius: 8px 0px 0px 8px;
+  font-size: 19px;
+  font-family: "Linotte";
+  text-align: left;
+  margin: 0px;
+  margin-right: -3px;
+  display: inline-block;
+  width: 100%;
+  outline: 0;
+}
+
+#copy {
+  padding: 0px 30px;
+  font-size: 15px;
+  margin-right: 0px;
+  display: inline-block;
+  border: 0px;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 3px solid #050422;
+  outline: 0;
+}
+
+/* .twitter-share-button {
+  font-size: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+  display: inline-block;
+} */
+
+.shareButton {
+  
+margin: auto;
+display: flex;
+justify-content: center;
+flex-direction: row;
+max-width: 400px;
+}
+
+.fb-share-button {
+/*   font-size: 15px;
+  margin-top: 15px;
+  margin-right: 5px;
+  display: inline-block;
+  top: 0;
+  vertical-align: top;
+  float: left; */
+  margin-left: 11px;
+} 
+
+/* Songs modal */
+
+#songModal {
+  font-family: "Lato", "Helvetica Neue", arial, sans-serif;
+  font-weight: 400;
+  color: #5e6c76;
+  max-width: 75rem;
+  padding: 2rem 1rem;
+}
+
+#songModal.modal a.close-modal {
+    filter: invert(1);
+    top: 5px;
+    right: 5px;
+}
+
+.jukeboxes {
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-template-columns: 100%;
+  max-height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+}
+
+#added-notice {
+    display: none;
+}
+
+#added-notice[populated] {
+    align-items: center;
+    display: flex;
+    font-size: 1.125rem;
+    height: 100%;
+    justify-content: center;
+    left: 15%;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    width: 70%;
+}
+
+@media (min-width: 49rem) {
+  #added-notice[populated] {
+    left: calc(50% - 17rem);
+    width: 34rem;
+  }  
+}
+
+.added-notice-contents {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-family: "Linotte";
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.added-notice-contents:active,
+.added-notice-contents:focus {
+  border: 2px solid white;
+}
+
+#added-notice-song {
+    color: #C8EF00;
+}
+
+@media (min-width: 28rem) {
+  .jukeboxes {
+    grid-column-gap: 2%;
+    grid-template-columns: repeat(2, 49%);
+  }
+}
+
+@media (min-width: 35rem) {
+  .jukeboxes {
+    grid-column-gap: 1%;
+    grid-template-columns: repeat(4, 24%);
+  }
+}
+
+@media (min-width: 49rem) {
+  .jukeboxes {
+    grid-column-gap: 1%;
+    grid-template-columns: repeat(5, 19%);
+  }
+}
+
+/* Individual jukebox songs */
+
+.jukebox {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 10rem;
+  text-align: left;
+  position: relative;
+  outline: 0;
+}
+
+.jukebox-selected {
+  outline: 0;
+  border-radius: 4px;
+}
+
+.jukebox img {
+  width: 100%;
+  height: auto;
+  border: 4px solid transparent;
+}
+
+.jukebox-selected img {
+  border: 4px solid #C8EF00;
+}
+
+.jukebox-selected:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  background: #C8EF00 url(https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcheck.svg?v=1595801420385) center no-repeat;
+}
+
+.title {
+  font-weight: bold;
+  margin: 0.5rem 0 0.25rem;
+}
+
+/* Jukebox controls */
+
+.controls {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (min-width: 28rem) {
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.control {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: block;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.controls .button {
+  margin-left: 1rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 42rem) {
+  .controls .button {
+    padding: 0 4rem;
+  }
+}
+
+.copyWrapper {
+  display: flex;
+  border: 3px solid #050422;
+  border-radius: 8px;
+}
+
+#giveFeedbackButton {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 83%;
+  margin-top: 25px;
+}
+
+#reportBugButton {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 83%;
+  margin-bottom: 20px;
+}
+
+
+#roomName {
+
+  font-family: "Linotte";
+  color: #050422;
+  font-weight: bold;
+
+}

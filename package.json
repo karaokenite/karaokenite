@@ -4,13 +4,13 @@
   "//3": "updating this file will download and update your packages",
   "name": "karaoke-nite",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Karaoke VR",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
-    "networked-aframe": "^0.7.0"
+    "networked-aframe": "^0.7.1"
   },
   "engines": {
     "node": "8.10.0"
