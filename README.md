@@ -15,7 +15,6 @@ Previous contributors:
 
 - [@jacq_ilu](https://twitter.com/jackieis_online)
 - [@irlfede](https://twitter.com/irlfede)
-- [@haydenlee37](https://twitter.com/HaydenLee37)
 
 ## Running Locally
 
