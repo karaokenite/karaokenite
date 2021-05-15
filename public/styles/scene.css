@@ -125,6 +125,10 @@ kbd {
   font-family: var(--font-brand);
 }
 
+.peopleCounter {
+  position: static;
+}
+
 #smiley1 {
   height: 42px;
   width: 42px;

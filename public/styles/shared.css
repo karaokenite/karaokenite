@@ -358,9 +358,9 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
  `Y88P'  `Y88P'  VP   V8P    YP    Y88888P VP   V8P    YP 
  */
 
-.container--md {
+.container__md {
   max-width: calc(640px + 4rem);
-  padding: 4rem 2rem 0;
+  padding: 8rem 2rem 0;
   width: 100%;
   margin: 0 auto;
 }

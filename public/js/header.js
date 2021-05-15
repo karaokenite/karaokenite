@@ -7,7 +7,6 @@ window.addEventListener("scroll", () => {
   if (!isHeaderSticky) {
     if (window.pageYOffset > 600) {
       isHeaderSticky = true;
-      console.log(document.querySelector(".header"));
       document.querySelector(".header").classList.add("header__revealed");
     }
   } else {

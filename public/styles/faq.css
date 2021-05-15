@@ -6,7 +6,12 @@
   --color-link-underline: var(--color-moray-teal);
 }
 
+.container__md > * {
+  margin-bottom: 2rem;
+}
+
 /* Collapsible  */
+
 .collapse-area {
   margin: 1rem 0;
 }
