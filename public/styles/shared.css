@@ -47,9 +47,19 @@
   --font-brand: Linotte, Arial, Helvetica, sans-serif;
 
   --color-linen: #ffffff;
+  --color-cloud-nine: #f1f1f1;
+  --color-sail: #f7f7f7;
+  --color-dirty-linen: #eeeeee;
+  --color-alabaster: #dad8de;
+  --color-old-laundry: #cccccc;
+  --color-smoke: #555555;
+  --color-industry: #444444;
+  --color-machine: #333333;
+  --color-jet: #000000;
+  --color-frozen-blueberry: #8193b2;
+  --color-slate: #5e6c76;
   --color-deep-blue-something: #0c0a57;
   --color-midnight: #050422;
-  --color-jet: #000000;
   --color-peach: #ffb48e;
   --color-tang: #ff8647;
   --color-pink-well: #df73ff;
@@ -61,6 +71,7 @@
   --color-slurm: #93d4a8;
   --color-freon: #5cdc89;
   --color-moray-teal: #51e8e4;
+  --color-neon-demon: #efff9e;
   --color-bananarama: #f4ca2c;
   --color-old-yellow: #c8ef00;
 
@@ -89,6 +100,13 @@
   --color-text: var(--color-linen);
   --color-link-text: var(--color-linen);
   color: var(--color-text);
+}
+
+.dark-bg {
+  --color-text: var(--color-linen);
+  --color-link-text: var(--color-linen);
+  color: var(--color-text);
+  background-color: var(--color-midnight);
 }
 
 .magenta {
@@ -151,6 +169,7 @@ body {
   padding: 0;
   font-family: var(--font-brand);
   font-weight: 400;
+  overflow-x: hidden;
   color: var(--color-text);
 }
 
@@ -174,8 +193,6 @@ p {
 
 a {
   color: var(---color-link-text);
-  text-decoration: none;
-  position: relative;
   cursor: pointer;
 }
 
@@ -382,11 +399,15 @@ main {
   overflow: hidden;
 }
 
-main a:hover:before {
+.link {
+  position: relative;
+}
+
+.link:hover:before {
   height: calc(100% + 6px);
 }
 
-main a:before {
+.link:before {
   position: absolute;
   background-color: var(--color-link-underline);
   width: 100%;
@@ -401,6 +422,16 @@ main a:before {
 
 .link__plain:before {
   display: none;
+}
+
+.emojilist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.emojilist-item {
+  padding: 0;
 }
 
 li {
@@ -424,7 +455,6 @@ li {
     rgba(5, 4, 34, 1) 0%,
     rgba(8, 5, 113, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-midnight)",endColorstr="#080571",GradientType=1);
 }
 
 /**

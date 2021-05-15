@@ -26,6 +26,6 @@ h1 {
 
 .description {
   text-align: center;
-  color: #8193b2;
+  color: var(--color-frozen-blueberry);
   font-size: 19px;
 }

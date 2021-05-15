@@ -10,12 +10,6 @@
   --color-link-underline: var(--color-peach);
 }
 
-body {
-  background-color: var(--color-midnight);
-  color: var(--color-linen);
-  overflow-x: hidden;
-}
-
 .header-navlink__home {
   visibility: hidden;
 }
@@ -70,8 +64,6 @@ h2 {
     rgba(5, 4, 34, 1) 0%,
     rgba(28, 14, 140, 1) 85%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#050422",endColorstr="#080571",GradientType=1);
-  /*   transform: rotate(-3deg); */
   z-index: -1;
 }
 
@@ -241,8 +233,8 @@ h2 {
   left: 0.8rem;
   height: 0.8rem;
   width: 0.8rem;
-  background-color: #eee;
-  border: 2.4px white solid;
+  background-color: var(--color-dirty-linen);
+  border: 2.4px var(--color-linen) solid;
   border-radius: 100%;
 }
 
@@ -487,7 +479,7 @@ section#newsletter {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 140px;
-  background-color: #555;
+  background-color: var(--color-smoke);
   color: var(--color-linen);
   text-align: center;
   border-radius: 6px;
@@ -510,7 +502,7 @@ section#newsletter {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: var(--color-smoke) transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {

@@ -22,8 +22,8 @@
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-  background-color: #eee;
-  color: #444;
+  background-color: var(--color-dirty-linen);
+  color: var(--color-industry);
   padding: 18px;
   width: 100%;
   border: none;
@@ -42,7 +42,7 @@
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active,
 .collapsible:hover {
-  background-color: #ccc;
+  background-color: var(--color-old-laundry);
 }
 
 /* Style the collapsible content. Note: hidden by default */
@@ -50,10 +50,10 @@
   padding: 0 18px;
   display: none;
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: var(--color-cloud-nine);
 }
 
-button.collapsible:after {
+.collapsible:after {
   content: "\002B";
   color: var(--color-linen);
   font-weight: bold;
@@ -61,6 +61,6 @@ button.collapsible:after {
   margin-left: 5px;
 }
 
-button.collapsible.active:after {
+.collapsible.active:after {
   content: "\2212";
 }

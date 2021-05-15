@@ -77,7 +77,7 @@ button {
 
 .button:hover {
   cursor: pointer;
-  background-color: #dad8de;
+  background-color: var(--color-alabaster);
 }
 
 .button-bold {
@@ -85,7 +85,7 @@ button {
 }
 
 .button-bold:hover {
-  background-color: #efff9e;
+  background-color: var(--color-neon-demon);
 }
 
 videoControls {
@@ -99,11 +99,11 @@ kbd {
   -webkit-border-radius: 3px;
   -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
     0 0 0 2px var(--color-linen) inset;
-  background-color: #f7f7f7;
-  border: 1px solid #ccc;
+  background-color: var(--color-sail);
+  border: 1px solid var(--color-old-laundry);
   border-radius: 3px;
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px var(--color-linen) inset;
-  color: #333;
+  color: var(--color-machine);
   display: inline-block;
   font-family: var(--font-brand);
   font-size: 14px;
@@ -123,10 +123,6 @@ kbd {
   color: var(--color-linen);
   font-weight: 700;
   font-family: var(--font-brand);
-}
-
-.peopleCounter {
-  position: static;
 }
 
 #smiley1 {
@@ -221,7 +217,7 @@ kbd {
 
 #inviteModal {
   font-family: "Lato", "Helvetica Neue", arial, sans-serif;
-  color: #5e6c76;
+  color: var(--color-slate);
   text-align: center;
 }
 
@@ -233,7 +229,7 @@ kbd {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 140px;
-  background-color: #555;
+  background-color: var(--color-smoke);
   color: var(--color-linen);
   text-align: center;
   border-radius: 6px;
@@ -256,7 +252,7 @@ kbd {
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  border-color: var(--color-smoke) transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
@@ -321,7 +317,7 @@ kbd {
 #songModal {
   font-family: "Lato", "Helvetica Neue", arial, sans-serif;
   font-weight: 400;
-  color: #5e6c76;
+  color: var(--color-slate);
   max-width: 75rem;
   padding: 2rem 1rem;
 }
@@ -470,7 +466,7 @@ kbd {
 }
 
 .control {
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-old-laundry);
   border-radius: 2px;
   display: block;
   padding: 1rem 0.5rem;
