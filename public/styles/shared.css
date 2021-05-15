@@ -51,12 +51,16 @@
   --color-midnight: #050422;
   --color-peach: #ffb48e;
   --color-deep-blue-something: #0c0a57;
-
+  --color-tang: #ff8647;
+  --color-valentines: #ff93ad;
+  --color-pink-well: #df73ff;
   --color-pretty-in-pink: #fe3466;
   --color-red-hots: #b61f44;
   --color-toxic-avenger: #d6ffa6;
+  --color-freon: #5cdc89;
+  --color-slurm: #93d4a8;
   --color-magentleman: #c202fb;
-  --color-pink-well: #df73ff;
+  --color-bananarama: #f4ca2c;
   --color-old-yellow: #c8ef00;
   --color-moray-teal: #51e8e4;
 
@@ -95,8 +99,36 @@
   color: var(--color-old-yellow);
 }
 
+.yellow__light {
+  color: var(--color-bananarama);
+}
+
 .pink {
+  color: var(--color-pink-well);
+}
+
+.pink__light {
+  color: var(--color-valentines);
+}
+
+.pink__dark {
   color: var(--color-pretty-in-pink);
+}
+
+.orange {
+  color: var(--color-tang);
+}
+
+.green {
+  color: var(--color-freon);
+}
+
+.green__light {
+  color: var(--color-slurm);
+}
+
+.teal {
+  color: var(--color-moray-teal);
 }
 
 /**
