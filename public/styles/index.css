@@ -4,6 +4,10 @@
  * @format
  */
 
+section {
+  padding: 5rem;
+}
+
 #home {
   background-color: var(--color-midnight);
   overflow-x: hidden;
@@ -413,6 +417,9 @@ section#recap .bg {
 .recap--link {
   display: inline-block;
   margin-top: 1rem;
+}
+.recap--link:before {
+  display: none;
 }
 
 .input-radio {

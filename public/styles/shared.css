@@ -88,19 +88,6 @@ h2 {
   text-align: left;
 }
 
-main {
-  padding-top: 4rem;
-  width: 100%;
-}
-
-article {
-  margin-bottom: 5rem;
-}
-
-section {
-  padding: 5rem;
-}
-
 /* Header */
 
 header {
@@ -453,25 +440,6 @@ section#recap .bg {
   transform: skew(0deg, 1.4deg);
 }
 
-.recap--contents {
-  text-align: center;
-  z-index: 1;
-  position: relative;
-}
-
-.recap--description {
-  font-size: 2rem;
-  margin: auto;
-  max-width: 30rem;
-  font-weight: 500;
-  margin-bottom: 16px;
-}
-
-.recap--link {
-  display: inline-block;
-  margin-top: 1rem;
-}
-
 .input-radio {
   width: 10px;
 }
@@ -601,9 +569,14 @@ footer {
 
 .container--md {
   max-width: calc(640px + 4rem);
-  padding: 0 2rem;
+  padding: 4rem 2rem 0;
   width: 100%;
   margin: 0 auto;
+}
+
+.article-grid {
+  display: grid;
+  row-gap: 4rem;
 }
 
 @keyframes floating2 {

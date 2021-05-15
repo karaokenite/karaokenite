@@ -9,10 +9,6 @@
   --color-link-underline: var(--color-pink-well);
 }
 
-main {
-  padding-top: 2rem;
-}
-
 .fancyLine {
   border-bottom: 5px solid var(--color-deep-blue-something);
   border-radius: 10px;
