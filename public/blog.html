@@ -4,6 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Blog | Karaoke Nite</title>
 
@@ -127,25 +128,27 @@
     </div>
 
     <header role="banner" class="header">
-      <nav class="navigation">
-        <a class="navigation-link__home" href="https://karaokenite.co">
-          <h1 class="brand-logo">
-            KARAOKE NITE
-            <span class="brand-betatag">beta</span>
-          </h1>
-        </a>
+      <nav class="header-nav">
+        <div class="header-navlogo">
+          <a class="header-navlink__home" href="https://karaokenite.co">
+            <h1 class="brand-logo">
+              KARAOKE NITE
+              <span class="brand-betatag">beta</span>
+            </h1>
+          </a>
+        </div>
 
-        <ul class="navigation-list">
-          <li class="navigation-item">
-            <a class="navigation-link" href="about.html">About</a>
+        <ul class="header-navlist">
+          <li class="header-navitem">
+            <a class="header-navlink" href="about.html">About</a>
           </li>
-          <li class="navigation-item">
-            <a href="blog.html" class="navigation-link navigation-link__active"
+          <li class="header-navitem">
+            <a href="blog.html" class="header-navlink header-navlink__active"
               >Blog</a
             >
           </li>
-          <li class="navigation-item">
-            <a class="navigation-link" href="faq.html">FAQ</a>
+          <li class="header-navitem">
+            <a class="header-navlink" href="faq.html">FAQ</a>
           </li>
         </ul>
       </nav>
@@ -385,7 +388,7 @@
           </li>
         </ul>
       </aside>
-      <section>
+      <section class="section--callout">
         <blockquote>
           "Just might want to warn your roommate first." Product Hunt
         </blockquote>

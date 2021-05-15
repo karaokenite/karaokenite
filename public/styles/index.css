@@ -16,19 +16,12 @@ body {
   overflow-x: hidden;
 }
 
-.navigation-link__home {
+.header-navlink__home {
   visibility: hidden;
 }
 
-.header__revealed .navigation-link__home {
+.header__revealed .header-navlink__home {
   visibility: visible;
-}
-
-.section--content {
-  position: relative;
-  margin: auto;
-  padding: 5rem 0;
-  max-width: 49rem;
 }
 
 /* Header */
@@ -83,7 +76,7 @@ h2 {
   z-index: -1;
 }
 
-.hero-container {
+.hero-images {
   width: 100%;
   max-width: 49rem;
   height: 100%;
@@ -93,10 +86,20 @@ h2 {
   position: absolute;
 }
 
+.hero-container {
+  width: 100%;
+  max-width: 49rem;
+  height: 100%;
+  padding-top: 5rem;
+  margin: 0 auto;
+  right: 0px;
+  left: 0px;
+  position: absolute;
+}
+
 @media (max-width: 42rem) {
   .hero-container--overflow {
     height: 100%;
-    overflow: hidden;
     position: relative;
     width: 100%;
   }

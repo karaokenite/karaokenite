@@ -138,6 +138,7 @@ a {
 }
 
 blockquote {
+  text-align: center;
   font-style: italic;
 }
 
@@ -149,6 +150,29 @@ blockquote {
   88.     88booo. 88.     88  88  88 88.     88  V888    88    db   8D 
   Y88888P Y88888P Y88888P YP  YP  YP Y88888P VP   V8P    YP    `8888Y'             
 */
+
+.brand-logo {
+  font-size: inherit;
+  margin: 0;
+  position: relative;
+  font-weight: 700;
+  top: 4px;
+}
+
+.brand-betatag {
+  background: var(--color-pretty-in-pink);
+  color: var(--color-linen);
+  font-size: 1rem;
+  padding: 0.01rem 0.4rem;
+  position: absolute;
+  left: calc(100% + 0.25rem);
+  top: -32%;
+  height: 22px;
+  border-radius: 2px;
+  line-height: 25px;
+  transform: rotate(-10deg);
+  font-weight: 500;
+}
 
 .button {
   font-size: 18px;
@@ -219,7 +243,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   background: white;
 }
 
-.navigation {
+.header-nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -229,44 +253,21 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   padding: 0 1rem;
 }
 
-.brand-logo {
-  font-size: inherit;
-  margin: 0;
-  position: relative;
-  font-weight: 700;
-  top: 4px;
-}
-
-.brand-betatag {
-  background: var(--color-pretty-in-pink);
-  color: var(--color-linen);
-  font-size: 1rem;
-  padding: 0.01rem 0.4rem;
-  position: absolute;
-  left: calc(100% + 0.25rem);
-  top: -32%;
-  height: 22px;
-  border-radius: 2px;
-  line-height: 25px;
-  transform: rotate(-10deg);
-  font-weight: 500;
-}
-
-.navigation-list {
+.header-navlist {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.navigation-item {
+.header-navitem {
   display: inline-block;
 }
 
-.navigation-item + .navigation-item {
+.header-navitem + .header-navitem {
   margin-left: 2rem;
 }
 
-.navigation-link {
+.header-navlink {
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
@@ -278,12 +279,12 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   transition: all 0.2s ease-in-out;
 }
 
-.navigation-link__home {
+.header-navlink__home {
   color: var(--color-link-text);
   text-decoration: none;
 }
 
-.navigation-link__active:before {
+.header-navlink__active:before {
   content: " ";
   background-color: var(--color-link-underline);
   height: 1rem;
@@ -295,7 +296,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   border-radius: 20px;
 }
 
-.navigation-link:hover:not(.navigation-link__active) {
+.header-navlink:hover:not(.header-navlink__active) {
   transform: scale(1.07);
 }
 
@@ -316,9 +317,21 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
   margin: 0 auto;
 }
 
+.section--content,
+.section--callout {
+  position: relative;
+  margin: auto;
+  padding: 5rem 0;
+  max-width: 49rem;
+}
+
 .article-grid {
   display: grid;
   row-gap: 4rem;
+}
+
+main {
+  overflow: hidden;
 }
 
 main a:hover:before {
