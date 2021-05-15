@@ -94,13 +94,15 @@ videoControls {
 
 kbd {
   -moz-border-radius: 3px;
-  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px var(--color-linen) inset;
   -webkit-border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+    0 0 0 2px var(--color-linen) inset;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px var(--color-linen) inset;
   color: #333;
   display: inline-block;
   font-family: var(--font-brand);
@@ -108,7 +110,7 @@ kbd {
   line-height: 1.4;
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 var(--color-linen);
 }
 
 #counter {
@@ -118,7 +120,7 @@ kbd {
   position: absolute;
   font-size: 30px;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--color-linen);
   font-weight: 700;
   font-family: var(--font-brand);
 }
@@ -210,7 +212,7 @@ kbd {
 
 #scene-logo a {
   text-decoration: none;
-  color: #ffffff;
+  color: var(--color-linen);
 }
 
 #inviteModal {
@@ -228,7 +230,7 @@ kbd {
   visibility: hidden;
   width: 140px;
   background-color: #555;
-  color: #fff;
+  color: var(--color-linen);
   text-align: center;
   border-radius: 6px;
   padding: 5px;

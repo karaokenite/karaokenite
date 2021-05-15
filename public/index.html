@@ -118,7 +118,7 @@ if (location.protocol != 'https:') {
           viewbox="0 0 250 250"
           style="
             fill: #151513;
-            color: #fff;
+            color: var(--color-linen);
             position: absolute;
             top: 0;
             border: 0;
@@ -142,9 +142,9 @@ if (location.protocol != 'https:') {
       </a>
     </div>
 
-    <header role="banner">
+    <header role="banner" class="header">
       <nav class="navigation">
-        <a class="navigation-link--home" href="https://karaokenite.co">
+        <a class="navigation-link__home" href="https://karaokenite.co">
           <h1 class="brand-logo">
             KARAOKE NITE
             <span class="brand-betatag">beta</span>
@@ -197,8 +197,8 @@ if (location.protocol != 'https:') {
             />
           </div>
         </div>
-        <div class="join-container section--content hero--content">
-          <div class="layout-flex--third">
+        <div class="section--content join-container hero--content">
+          <div>
             <img
               class="join-image"
               alt="Placeholder1"
@@ -209,7 +209,7 @@ if (location.protocol != 'https:') {
               Get your friends together during quarantine!
             </p>
           </div>
-          <div class="join-form layout-flex--half" id="now">
+          <div class="join-form" id="now">
             <h2>JOIN A ROOM (FREE)</h2>
             <form action="/scene.html" method="GET">
               <div>
@@ -270,13 +270,11 @@ if (location.protocol != 'https:') {
         </div>
       </section>
 
-      <section id="options">
-        <div class="diagonal-bg--mobile diagonal-bg--mobile-top"></div>
-        <div class="diagonal-bg--desktop"></div>
-        <div class="section--content">
+      <section id="options" class="options-container">
+        <div class="section--content options-content">
           <h2>Karaoke with your friends...</h2>
-          <div class="layout-flex">
-            <div class="layout-flex--third options--visual">
+          <div class="options-grid">
+            <div class="options--visual">
               <img
                 alt="Placeholder2"
                 id="browser"
@@ -286,8 +284,8 @@ if (location.protocol != 'https:') {
                 >In the browser</label
               >
             </div>
-            <span class="layout-flex--third options--or">OR</span>
-            <div class="layout-flex--third options--visual">
+            <span class="options--or">OR</span>
+            <div class="options--visual">
               <img
                 alt="Placeholder3"
                 id="headset"
@@ -302,22 +300,19 @@ if (location.protocol != 'https:') {
         <div class="diagonal-bg--mobile diagonal-bg--mobile-bottom"></div>
       </section>
 
-      <section id="how-it-works">
+      <section id="steps" class="section--content">
         <h2>How it works:</h2>
-        <ol class="how-it-works--list">
-          <li class="layout-flex">
-            <div class="how-it-works--visual layout-flex--half">
+        <ol class="steps">
+          <li class="steps-step">
+            <div class="steps--visual">
               <img
                 id="create-a-room"
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FRoom.svg?v=1591917657658"
               />
             </div>
-            <div class="layout-flex--half">
-              <p class="how-it-works--description">
-                <label
-                  class="how-it-works--label text-yellow"
-                  for="create-a-room"
-                >
+            <div>
+              <p class="steps-description">
+                <label class="steps--label yellow" for="create-a-room">
                   Create a room
                 </label>
                 Make your own private karaoke room (but bring your own drinks
@@ -325,38 +320,32 @@ if (location.protocol != 'https:') {
               </p>
             </div>
           </li>
-          <li class="layout-flex">
-            <div class="how-it-works--visual layout-flex--half">
+          <li class="steps-step">
+            <div class="steps--visual">
               <img
                 id="invite-friends"
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FFriends.svg?v=1591917657149"
               />
             </div>
-            <div class="layout-flex--half">
-              <p class="how-it-works--description">
-                <label
-                  class="how-it-works--label text-magenta"
-                  for="invite-friends"
-                >
+            <div>
+              <p class="steps-description">
+                <label class="steps--label magenta" for="invite-friends">
                   Invite friends
                 </label>
                 Share the room 🔑 with your friends so they can join the party!
               </p>
             </div>
           </li>
-          <li class="layout-flex">
-            <div class="how-it-works--visual layout-flex--half">
+          <li class="steps-step">
+            <div class="steps--visual">
               <img
                 id="sing-together"
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FSing.svg?v=1591917657376"
               />
             </div>
-            <div class="layout-flex--half">
-              <p class="how-it-works--description">
-                <label
-                  class="how-it-works--label text-pink"
-                  for="sing-together"
-                >
+            <div>
+              <p class="steps-description">
+                <label class="steps--label pink" for="sing-together">
                   Have a good time
                 </label>
                 Choose from a collection of hit songs and sing with your friends
@@ -379,7 +368,7 @@ if (location.protocol != 'https:') {
       </section>
 
       <!-- Newsletter (Sonny) -->
-      <section id="newsletter">
+      <section id="newsletter" class="section--content">
         <h2>Keep up with the party!</h2>
         <p class="newsletter--description">
           Join our newsletter to get Karaoke Nite updates from our team.

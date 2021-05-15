@@ -10,30 +10,25 @@
   --color-link-underline: var(--color-peach);
 }
 
-section {
-  padding: 5rem;
-}
-
-#home {
+body {
   background-color: var(--color-midnight);
+  color: var(--color-linen);
   overflow-x: hidden;
 }
 
-#home header:not(.revealed) {
-  background: none;
-  position: relative;
-}
-
-#home header:not(.revealed) .page-link a {
-  color: var(--color-linen);
-}
-
-#home header:not(.revealed) .logo {
+.navigation-link__home {
   visibility: hidden;
 }
 
-body {
-  color: var(--color-linen);
+.header__revealed .navigation-link__home {
+  visibility: visible;
+}
+
+.section--content {
+  position: relative;
+  margin: auto;
+  padding: 5rem 0;
+  max-width: 49rem;
 }
 
 /* Header */
@@ -41,7 +36,6 @@ body {
 /* Sections */
 
 h2 {
-  margin: 0 0 1rem;
   text-align: center;
   /*font-family: "Multicolore", sans-serif;*/
 }
@@ -57,9 +51,10 @@ h2 {
 
 .hero {
   padding: 0;
+  padding-top: 5rem;
   position: relative;
   min-height: 540px;
-  color: var(--color-linen);
+  align-items: flex-start;
 }
 
 .hero-bg {
@@ -99,7 +94,7 @@ h2 {
 }
 
 @media (max-width: 42rem) {
-  .hero .hero-container--overflow {
+  .hero-container--overflow {
     height: 100%;
     overflow: hidden;
     position: relative;
@@ -107,87 +102,78 @@ h2 {
   }
 }
 
-.hero .hero-bg-img {
+.hero-bg-img {
   position: absolute;
   bottom: 0px;
   left: 0px;
 }
 
-.hero .hero-bg-img.star1 {
+.hero-bg-img.star1 {
   bottom: 80px;
   left: -100px;
 }
 
-.hero .hero-bg-img.star2 {
+.hero-bg-img.star2 {
   bottom: 421px;
   left: -210px;
 }
 
-.hero .hero-bg-img.star3 {
+.hero-bg-img.star3 {
   bottom: 130px;
   left: 320px;
 }
 
-.hero .hero-bg-img.star4 {
+.hero-bg-img.star4 {
   left: 50px;
   max-width: 100%;
 }
 
 @media (max-width: 42rem) {
-  .hero .hero-bg-img.star4 {
+  .hero-bg-img.star4 {
     top: -175px;
   }
 }
 
 @media (min-width: 42rem) {
-  .hero .hero-bg-img.star4 {
+  .hero-bg-img.star4 {
     top: -350px;
   }
 }
 
-.hero .hero-bg-img.star5 {
+.hero-bg-img.star5 {
   bottom: 100px;
   left: 820px;
 }
 
 @media (max-width: 42rem) {
-  .hero .hero-bg-img.star5 {
+  .hero-bg-img.star5 {
     display: none;
   }
 }
 
-.hero .hero-bg-img.mic {
+.hero-bg-img.mic {
   bottom: 212px;
   left: 195px;
 }
 
-.hero .section--content {
-  position: relative;
-  z-index: 0;
-}
-
-.hero .layout-flex {
-  align-items: flex-start;
-}
-
-.hero .hero-logo {
+.hero-logo {
   width: 130%;
   left: -22px;
   position: relative;
 }
 
-.hero .hero-tagline {
+.hero-tagline {
   font-size: 1.2em;
   color: var(--color-linen);
   font-weight: 400;
 }
 
-.hero .hero--content {
+.hero--content {
   padding: 5rem;
 }
 
 @media (min-width: 68rem) {
-  .hero .hero--content {
+  .hero--content {
     padding: 5rem 0;
   }
 }
@@ -222,18 +208,9 @@ h2 {
 
 /* Section: Form */
 
-.hero h2 {
-  color: var(--color-linen);
-}
-
 #now h2 {
   font-size: 1.6rem;
   font-weight: 500;
-}
-
-.hero a {
-  color: var(--color-linen);
-  font-weight: 400;
 }
 
 /* Custom radio buttons to create/join a room*/
@@ -291,73 +268,52 @@ form input[type="text"] {
 
 /* Section: Options */
 
-section#options {
+.options-container {
+  margin: -5rem 0;
+  padding: 10rem 0;
+  overflow: hidden;
+}
+
+.options-content {
+  padding: 2rem calc(50% - (49rem / 2));
+  margin: 0;
+  max-width: 100%;
   position: relative;
-  background: none;
-  color: var(--color-linen);
-  padding: 0;
-  text-align: center;
+  background-color: var(--color-pretty-in-pink);
 }
 
-section#options .section--content {
-  padding: 5rem 0;
-}
-
-@media (max-width: 42rem) {
-  section#options {
-    margin-top: 125px;
-    margin-bottom: -50px;
-  }
-
-  .diagonal-bg--mobile {
-    height: 150px;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-  }
-
-  .diagonal-bg--mobile-top {
-    margin-top: -150px;
-  }
-
-  .diagonal-bg--mobile-bottom {
-    margin-top: -50px;
-  }
-
-  .diagonal-bg--mobile::after {
-    background: var(--color-pretty-in-pink);
-    content: " ";
-    display: block;
-    height: 50px;
-    margin-top: 25px;
-    position: absolute;
-    transform: rotate(-3deg);
-    width: 150%;
-  }
-
-  section#options .section--content {
-    background-color: var(--color-pretty-in-pink);
-    margin-top: -100px;
-    padding: calc(5rem - 50px) 5rem 5rem;
-  }
-}
-
-@media (min-width: 42rem) {
-  .diagonal-bg--desktop {
-    background-color: var(--color-pretty-in-pink);
-    width: 200%;
-    position: absolute;
-    top: 6px;
-    left: -50%;
-    height: 100%;
-    z-index: 0;
-    transform: rotate(-3deg);
-  }
-}
-
-section#options .section--content * {
+.options-content > * {
+  position: relative;
   z-index: 1;
+}
+
+.options-content::before,
+.options-content::after {
+  background-color: var(--color-pretty-in-pink);
+  content: " ";
+  display: block;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%, 0) rotate(-3deg);
+  z-index: 0;
+  width: 250%;
+  left: 0;
+}
+
+.options-content::after {
+  bottom: 75%;
+}
+
+.options-content::before {
+  top: 100%;
+}
+
+.options-grid {
   position: relative;
+  position: relative;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr max-content 1fr;
 }
 
 .options--visual {
@@ -379,7 +335,7 @@ section#options .section--content * {
   color: var(--color-red-hots);
 }
 
-.options--description {
+.options-description {
   font-weight: 500;
   padding: 16px;
   text-align: center;
@@ -388,36 +344,41 @@ section#options .section--content * {
 
 /* Section: How it works */
 
-section#how-it-works {
+section#steps {
   color: var(--color-linen);
 }
 
-.how-it-works--list {
+.steps {
   list-style-type: none;
   padding-left: 0;
   margin: auto;
   max-width: 40rem;
 }
 
-.how-it-works--visual {
+.steps-step {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.steps--visual {
   align-items: center;
   display: flex;
   flex-direction: column;
 }
 
-.how-it-works--visual img {
+.steps--visual img {
   width: 200px;
   padding: 20px;
 }
 
-.how-it-works--description {
+.steps-description {
   margin: 2rem auto;
   max-width: 15rem;
   text-align: center;
   line-height: 1.6rem;
 }
 
-.how-it-works--label {
+.steps--label {
   display: block;
   font-size: 1.5rem;
   font-weight: 500;
@@ -521,7 +482,7 @@ section#newsletter {
   visibility: hidden;
   width: 140px;
   background-color: #555;
-  color: #fff;
+  color: var(--color-linen);
   text-align: center;
   border-radius: 6px;
   padding: 5px;
