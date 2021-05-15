@@ -14,18 +14,18 @@
   padding: 0;
 }
 
-#members {
+.member-list {
   display: inline-flex;
   justify-content: center;
   flex-wrap: wrap;
 }
 
-.member {
+.member-item {
   text-align: center;
   margin: 10px 10px;
 }
 
-.member img {
+.member-avatar {
   width: 150px;
   border-radius: 50%;
   border: 3px solid var(--color-midnight);

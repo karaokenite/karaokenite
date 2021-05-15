@@ -4,6 +4,12 @@
  * @format
  */
 
+:root {
+  --color-text: var(color-linen);
+  --color-link-text: var(--color-linen);
+  --color-link-underline: var(--color-peach);
+}
+
 section {
   padding: 5rem;
 }
@@ -26,6 +32,10 @@ section {
   visibility: hidden;
 }
 
+body {
+  color: var(--color-linen);
+}
+
 /* Header */
 
 /* Sections */
@@ -36,12 +46,20 @@ h2 {
   /*font-family: "Multicolore", sans-serif;*/
 }
 
-/*Section: Hero */
+/**
+  db   db d88888b d8888b.  .d88b.  
+  88   88 88'     88  `8D .8P  Y8. 
+  88ooo88 88ooooo 88oobY' 88    88 
+  88~~~88 88~~~~~ 88`8b   88    88 
+  88   88 88.     88 `88. `8b  d8' 
+  YP   YP Y88888P 88   YD  `Y88P'     
+*/
 
 .hero {
   padding: 0;
   position: relative;
   min-height: 540px;
+  color: var(--color-linen);
 }
 
 .hero-bg {
@@ -174,6 +192,34 @@ h2 {
   }
 }
 
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 9px);
+  }
+  100% {
+    transform: translate(0, -0px);
+  }
+}
+
+.floating {
+  animation-name: floating;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.floating--short {
+  animation-duration: 4s;
+}
+
+.floating--long {
+  animation-duration: 9s;
+}
+
 /* Section: Form */
 
 .hero h2 {
@@ -204,6 +250,7 @@ h2 {
 
 .input-radio {
   height: 10px;
+  width: 10px;
   visibility: hidden;
 }
 
@@ -420,10 +467,6 @@ section#recap .bg {
 }
 .recap--link:before {
   display: none;
-}
-
-.input-radio {
-  width: 10px;
 }
 
 /* Special Footer style */
