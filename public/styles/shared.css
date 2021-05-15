@@ -47,22 +47,22 @@
   --font-brand: Linotte, Arial, Helvetica, sans-serif;
 
   --color-linen: #ffffff;
-  --color-jet: #000000;
-  --color-midnight: #050422;
-  --color-peach: #ffb48e;
   --color-deep-blue-something: #0c0a57;
+  --color-midnight: #050422;
+  --color-jet: #000000;
+  --color-peach: #ffb48e;
   --color-tang: #ff8647;
-  --color-valentines: #ff93ad;
   --color-pink-well: #df73ff;
+  --color-magentleman: #c202fb;
+  --color-valentines: #ff93ad;
   --color-pretty-in-pink: #fe3466;
   --color-red-hots: #b61f44;
   --color-toxic-avenger: #d6ffa6;
-  --color-freon: #5cdc89;
   --color-slurm: #93d4a8;
-  --color-magentleman: #c202fb;
+  --color-freon: #5cdc89;
+  --color-moray-teal: #51e8e4;
   --color-bananarama: #f4ca2c;
   --color-old-yellow: #c8ef00;
-  --color-moray-teal: #51e8e4;
 
   --color-text: var(--color-midnight);
   --color-link-text: var(--color-midnight);
