@@ -220,6 +220,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 */
 
 .header {
+  transform: translate(0, -100%);
   font-size: 1.35rem;
   padding: 1rem;
   position: absolute;
@@ -300,6 +301,11 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   transform: scale(1.07);
 }
 
+@media screen and (min-width: 768px) {
+  .header {
+    transform: none;
+  }
+}
 /**
 
  .o88b.  .d88b.  d8b   db d888888b d88888b d8b   db d888888b 

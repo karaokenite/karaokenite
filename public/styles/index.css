@@ -44,7 +44,6 @@ h2 {
 
 .hero {
   padding: 0;
-  padding-top: 5rem;
   position: relative;
   min-height: 540px;
   align-items: flex-start;
@@ -169,10 +168,12 @@ h2 {
   font-size: 1.2em;
   color: var(--color-linen);
   font-weight: 400;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .hero--content {
-  padding: 5rem;
+  padding: 5rem 2rem;
 }
 
 @media (min-width: 68rem) {
@@ -545,11 +546,21 @@ section#newsletter {
   display: grid;
   column-gap: 2rem;
   grid-template-columns: 1fr;
+  justify-content: center;
 }
 
 @media (min-width: 60rem) {
+  .hero {
+    padding-top: 5rem;
+  }
+
   .join-container {
     grid-template-columns: minmax(0, 1fr) 320px;
+  }
+
+  .hero-tagline {
+    text-align: left;
+    margin-bottom: 0;
   }
 
   .join-image {
