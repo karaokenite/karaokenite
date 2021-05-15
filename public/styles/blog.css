@@ -4,9 +4,9 @@
  * @format
  */
 
-/* Header */
-
-/* Sections */
+article {
+  margin-bottom: 5rem;
+}
 
 p a {
   color: var(--color-midnight);
@@ -32,8 +32,18 @@ p a:before {
   border-radius: 4px;
 }
 
+.release-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.release-item {
+  padding: 0;
+}
+
 li {
-  padding: 5px;
+  padding: 4px;
 }
 
 li a {
@@ -60,4 +70,31 @@ li a:before {
   transition-timing-function: ease;
   transition-delay: 0s;
   border-radius: 4px;
+}
+
+#members {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.member {
+  text-align: center;
+  margin: 10px 10px;
+}
+
+.member img {
+  width: 150px;
+  border-radius: 50%;
+  border: 3px solid var(--color-midnight);
+}
+
+#members {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.member {
+  text-align: center;
+  margin: 10px 10px;
 }

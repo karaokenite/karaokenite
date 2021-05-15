@@ -24,10 +24,6 @@
 
 /* Header */
 
-.github-corner-logo {
-  z-index: 1000;
-}
-
 /* Sections */
 
 h2 {
@@ -38,10 +34,46 @@ h2 {
 
 /*Section: Hero */
 
-section#hero {
+#hero {
   padding: 0;
   position: relative;
   min-height: 540px;
+}
+
+/* Homepage responsive tweaks */
+
+@media (max-width: 60rem) {
+  #hero #now {
+    padding-left: 120px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 50rem) {
+  #hero #now {
+    padding-left: 60px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 42rem) {
+  #hero #now {
+    padding-left: 0px;
+    text-align: center;
+    padding-top: 20px;
+  }
+  #hero {
+    text-align: center;
+  }
+  #hero #hero-logo {
+    width: 100%;
+    left: -24px;
+    position: relative;
+  }
+  .options--visual img {
+    /*padding:20px;*/
+    width: 50%;
+  }
 }
 
 #hero .bg {
@@ -72,7 +104,7 @@ section#hero {
 
 #hero .bg-images {
   width: 100%;
-  max-width: var(--breakpoint-lg);
+  max-width: 49rem;
   height: 100%;
   margin: 5rem auto 0;
   right: 0px;
@@ -80,7 +112,7 @@ section#hero {
   position: absolute;
 }
 
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 42rem) {
   #hero .bg-images--overflow {
     height: 100%;
     overflow: hidden;
@@ -115,13 +147,13 @@ section#hero {
   max-width: 100%;
 }
 
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 42rem) {
   #hero .hero-bg-img.star4 {
     top: -175px;
   }
 }
 
-@media (min-width: var(--breakpoint-md)) {
+@media (min-width: 42rem) {
   #hero .hero-bg-img.star4 {
     top: -350px;
   }
@@ -132,7 +164,7 @@ section#hero {
   left: 820px;
 }
 
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 42rem) {
   #hero .hero-bg-img.star5 {
     display: none;
   }
@@ -168,7 +200,7 @@ section#hero {
   padding: 5rem;
 }
 
-@media (min-width: var(--breakpoint-xl)) {
+@media (min-width: 68rem) {
   #hero .hero--content {
     padding: 5rem 0;
   }
@@ -193,13 +225,6 @@ section#hero {
 #hero a {
   color: var(--color-linen);
   font-weight: 400;
-}
-
-form {
-  color: var(--color-linen);
-  border-radius: 1rem;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Custom radio buttons to create/join a room*/
@@ -268,7 +293,7 @@ section#options .section--content {
   padding: 5rem 0;
 }
 
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 42rem) {
   section#options {
     margin-top: 125px;
     margin-bottom: -50px;
@@ -307,7 +332,7 @@ section#options .section--content {
   }
 }
 
-@media (min-width: var(--breakpoint-md)) {
+@media (min-width: 42rem) {
   .diagonal-bg--desktop {
     background-color: var(--color-pretty-in-pink);
     width: 200%;
@@ -390,18 +415,6 @@ section#how-it-works {
   text-transform: uppercase;
 }
 
-.text-magenta {
-  color: var(--color-magentleman);
-}
-
-.text-yellow {
-  color: var(--color-old-yellow);
-}
-
-.text-pink {
-  color: var(--color-pretty-in-pink);
-}
-
 /* Section: Recap */
 
 section#recap {
@@ -470,7 +483,7 @@ footer {
   }
 }
 
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 42rem) {
   #hero #now {
     padding-left: 0px;
     /*     text-align:center; */
