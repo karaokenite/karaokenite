@@ -5,7 +5,7 @@
  */
 
 :root {
-  --color-text: var(color-linen);
+  --color-text: var(--color-linen);
   --color-link-text: var(--color-linen);
   --color-link-underline: var(--color-peach);
 }
@@ -392,13 +392,14 @@ section#steps {
 
 /* Section: Recap */
 
-section#recap {
+.recap {
   position: relative;
   background: none;
 }
 
-section#recap .bg {
-  background: var(--color-toxic-avenger) !important;
+.recap::before {
+  content: "";
+  background: var(--color-toxic-avenger);
   width: calc(100% - 60px);
   max-width: 60rem;
   margin: auto;
@@ -412,13 +413,14 @@ section#recap .bg {
   transform: skew(0deg, 1.4deg);
 }
 
-.recap--contents {
+.recap-contents {
+  width: calc(100% - 120px);
   text-align: center;
   z-index: 1;
   position: relative;
 }
 
-.recap--description {
+.recap-description {
   font-size: 2rem;
   margin: auto;
   max-width: 30rem;
@@ -426,11 +428,11 @@ section#recap .bg {
   margin-bottom: 16px;
 }
 
-.recap--link {
+.recap-link {
   display: inline-block;
   margin-top: 1rem;
 }
-.recap--link:before {
+.recap-link:before {
   display: none;
 }
 

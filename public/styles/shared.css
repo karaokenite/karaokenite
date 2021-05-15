@@ -63,6 +63,16 @@
   --color-text: var(--color-midnight);
   --color-link-text: var(--color-midnight);
   --color-link-underline: var(--color-peach);
+
+  --content-width-md: 40rem;
+
+  --vertical-space: 3rem;
+}
+
+@media screen and (min-width: 68rem) {
+  :root {
+    --vertical-space: 5rem;
+  }
 }
 
 .light {
@@ -109,7 +119,7 @@ body {
   padding: 0;
   font-family: var(--font-brand);
   font-weight: 400;
-  color: var(--color-midnight);
+  color: var(--color-text);
 }
 
 img {
@@ -327,7 +337,7 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
 .section--callout {
   position: relative;
   margin: auto;
-  padding: 5rem 0;
+  padding: var(--vertical-space) 0;
   max-width: 49rem;
 }
 
