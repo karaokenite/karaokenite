@@ -357,6 +357,10 @@ main a:before {
   border-radius: 4px;
 }
 
+.link__plain:before {
+  display: none;
+}
+
 li {
   padding: 4px;
 }
