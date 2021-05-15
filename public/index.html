@@ -45,9 +45,8 @@
       rel="icon"
       href="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftechnology.png?v=1588815892670"
     />
-
-    <link href="/styles/shared.css" rel="stylesheet" type="text/css" />
     <link href="/styles/vendor.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/shared.css" rel="stylesheet" type="text/css" />
     <link href="/styles/index.css" rel="stylesheet" type="text/css" />
 
     <!-- <link href="/styles/logins.css" rel="stylesheet" type="text/css" /> -->
@@ -152,9 +151,9 @@ if (location.protocol != 'https:') {
     </header>
 
     <main>
-      <section id="hero">
-        <div class="bg"></div>
-        <div class="bg-images">
+      <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-container">
           <img
             class="hero-bg-img star1 floating"
             src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar1.png?v=1591917657267"
@@ -168,7 +167,7 @@ if (location.protocol != 'https:') {
             src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar4.png?v=1596993367347"
           />
 
-          <div class="bg-images--overflow">
+          <div class="hero-container--overflow">
             <img
               class="hero-bg-img star3 floating2"
               src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar3.png?v=1591917657757"
@@ -183,18 +182,19 @@ if (location.protocol != 'https:') {
             />
           </div>
         </div>
-        <div class="layout-flex section--content hero--content">
-          <div class="layout-flex--half">
+        <div class="join-container section--content hero--content">
+          <div class="layout-flex--third">
             <img
+              class="join-image"
               alt="Placeholder1"
               src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Flogo.svg?v=1595981204360"
               id="hero-logo"
             />
-            <p id="hero-tagline">
+            <p class="hero-tagline">
               Get your friends together during quarantine!
             </p>
           </div>
-          <div class="layout-flex--half" id="now">
+          <div class="join-form layout-flex--half" id="now">
             <h2>JOIN A ROOM (FREE)</h2>
             <form action="/scene.html" method="GET">
               <div>

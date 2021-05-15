@@ -1,70 +1,19 @@
 /**
- * /* General layouts
  *
  * @format
  */
-
-/* Header */
-
-/* Sections */
-
-p a {
-  color: #000;
-  text-decoration: none;
-  position: relative;
-  cursor: pointer;
-}
-
-p a:hover:before {
-  height: calc(100% + 6px);
-}
-
-p a:before {
-  position: absolute;
-  background-color: #bcfffd;
-  width: 100%;
-  height: 4px;
-  bottom: -3px;
-  content: " ";
-  mix-blend-mode: multiply;
-  transition-property: height;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  border-radius: 4px;
-}
-
-li {
-  padding: 5px;
-}
-
-li a {
-  color: #000;
-  text-decoration: none;
-  position: relative;
-  cursor: pointer;
-}
-
-li a:hover:before {
-  height: calc(100% + 6px);
-}
-
-li a:before {
-  position: absolute;
-  background-color: #bcfffd;
-  width: 100%;
-  height: 4px;
-  bottom: -3px;
-  content: " ";
-  mix-blend-mode: multiply;
-  transition-property: height;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-  border-radius: 4px;
+:root {
+  --color-link-underline: var(--color-moray-teal);
 }
 
 /* Collapsible  */
+.collapse-area {
+  margin: 1rem 0;
+}
+
+.collapse-area:first-of-type {
+  margin-top: 2rem;
+}
 
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {

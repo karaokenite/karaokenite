@@ -45,7 +45,11 @@
   --color-red-hots: #b61f44;
   --color-toxic-avenger: #d6ffa6;
   --color-magentleman: #c202fb;
+  --color-pink-well: #df73ff;
   --color-old-yellow: #c8ef00;
+  --color-moray-teal: #51e8e4;
+
+  --color-link-underline: var(--color-peach);
 }
 
 * {
@@ -54,6 +58,7 @@
 
 html,
 body {
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: var(--font-brand);
@@ -70,6 +75,10 @@ blockquote {
   font-style: italic;
 }
 
+img {
+  max-width: 100%;
+}
+
 /* Text */
 
 h2 {
@@ -77,6 +86,15 @@ h2 {
   font-size: 2rem;
   margin: 0 0 1rem;
   text-align: left;
+}
+
+main {
+  padding-top: 4rem;
+  width: 100%;
+}
+
+article {
+  margin-bottom: 5rem;
 }
 
 section {
@@ -95,6 +113,34 @@ header {
   font-weight: bold;
   line-height: 1.4em;
   z-index: 999;
+}
+
+main a {
+  color: var(--color-midnight);
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+main a:hover:before {
+  height: calc(100% + 6px);
+}
+
+main a:before {
+  position: absolute;
+  background-color: var(--color-link-underline);
+  width: 100%;
+  height: 4px;
+  bottom: -3px;
+  content: " ";
+  mix-blend-mode: multiply;
+  transition: height 0.3s ease;
+  transition-delay: 0s;
+  border-radius: 4px;
+}
+
+li {
+  padding: 4px;
 }
 
 header.revealed {
@@ -271,11 +317,6 @@ form input[type="text"] {
   border: 2px solid var(--color-midnight);
 }
 
-.section--content {
-  margin: auto;
-  max-width: 49rem;
-}
-
 section:nth-of-type(even) {
   background: #ccc;
 }
@@ -297,6 +338,15 @@ section#options {
   height: 100%;
   z-index: 0;
   transform: rotate(-3deg);
+}
+
+.section--content {
+  margin: auto;
+  max-width: 49rem;
+}
+
+.section--callout {
+  padding: 2rem 0;
 }
 
 section#options .section--content * {
@@ -446,7 +496,7 @@ footer {
 
 .highlighted:before {
   content: " ";
-  background-color: #df73ff;
+  background-color: var(--color-link-underline);
   height: 70%;
   width: calc(100% + 25px);
   left: -12px;
@@ -549,6 +599,13 @@ footer {
   margin-top: 5px;
 }
 
+.container--md {
+  max-width: calc(640px + 4rem);
+  padding: 0 2rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
 @keyframes floating2 {
   0% {
     transform: translate(0, 0px);
@@ -570,11 +627,10 @@ footer {
   }
 
   .layout-flex--half {
-    flex-basis: 0;
-    flex-grow: 6;
+    flex: 3;
   }
 
   .layout-flex--third {
-    flex-grow: 4;
+    flex: 2;
   }
 }
