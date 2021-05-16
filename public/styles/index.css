@@ -402,8 +402,8 @@ section#steps {
 }
 
 .recap-description {
-  font-size: var(--font-size-xl);
   margin: auto;
+  font-size: var(--font-size-lg);
   max-width: 30rem;
   font-weight: 500;
   margin-bottom: 16px;
@@ -411,6 +411,12 @@ section#steps {
 
 .recap-link {
   margin-top: 1rem;
+}
+
+@media (min-width: 42rem) {
+  .recap-description {
+    font-size: var(--font-size-xl);
+  }
 }
 
 
@@ -431,10 +437,6 @@ section#steps {
   }
 }
 
-section#newsletter {
-  color: var(--color-linen);
-  margin: auto;
-}
 
 .newsletter--description {
   margin: 2rem auto;
