@@ -5,7 +5,6 @@ if (!window.socket) {
 }
 
 AFRAME.registerComponent('dynamic-room', {
-  
   init: function () {
     var el = this.el;
     var params = this.getUrlParams();
@@ -16,25 +15,25 @@ AFRAME.registerComponent('dynamic-room', {
 
     var webrtc = params.hasOwnProperty('webrtc');
     var voice = params.hasOwnProperty('voice');
-    
+
     // Set local user's name
     var player = document.getElementById('player');
     var myNametag = player.querySelector('.nametag');
     myNametag.setAttribute('text', 'value', params.username);
-    
+
     console.log(socket);
 
     socket.emit('sendUsername', {
       room: params.room,
-      username: params.username
+      username: params.username,
     });
-    
+
     // Setup networked-scene
     var networkedComp = {
       debug: true,
       room: params.room,
-      adapter: "webrtc",
-      audio: "true"
+      adapter: 'webrtc',
+      audio: 'true',
     };
     console.info('Init networked-aframe with settings:', networkedComp);
     el.setAttribute('networked-scene', networkedComp);
@@ -42,9 +41,11 @@ AFRAME.registerComponent('dynamic-room', {
 
   getUrlParams: function () {
     var match;
-    var pl = /\+/g;  // Regex for replacing addition symbol with a space
+    var pl = /\+/g; // Regex for replacing addition symbol with a space
     var search = /([^&=]+)=?([^&]*)/g;
-    var decode = function (s) { return decodeURIComponent(s.replace(pl, ' ')); };
+    var decode = function (s) {
+      return decodeURIComponent(s.replace(pl, ' '));
+    };
     var query = window.location.search.substring(1);
     var urlParams = {};
 
@@ -54,5 +55,5 @@ AFRAME.registerComponent('dynamic-room', {
       match = search.exec(query);
     }
     return urlParams;
-  }
+  },
 });

@@ -1,9 +1,3 @@
-/**
- * /* General layouts
- *
- * @format
- */
-
 :root {
   --color-text: var(--color-linen);
   --color-link-text: var(--color-linen);
@@ -18,22 +12,17 @@
   visibility: visible;
 }
 
-/* Header */
-
-/* Sections */
-
 h2 {
   text-align: center;
-  /*font-family: "Multicolore", sans-serif;*/
 }
 
 /**
-  db   db d88888b d8888b.  .d88b.  
-  88   88 88'     88  `8D .8P  Y8. 
-  88ooo88 88ooooo 88oobY' 88    88 
-  88~~~88 88~~~~~ 88`8b   88    88 
-  88   88 88.     88 `88. `8b  d8' 
-  YP   YP Y88888P 88   YD  `Y88P'     
+  db   db d88888b d8888b.  .d88b.
+  88   88 88'     88  `8D .8P  Y8.
+  88ooo88 88ooooo 88oobY' 88    88
+  88~~~88 88~~~~~ 88`8b   88    88
+  88   88 88.     88 `88. `8b  d8'
+  YP   YP Y88888P 88   YD  `Y88P'
 */
 
 .hero {

@@ -1,5 +1,3 @@
-<!-- @format -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -68,115 +66,115 @@
       <!-- Karaoke Playlist (mp4's) -->
 
       var playlist = [
-        "https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045", <!-- Let's Get it On -->
+        'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045', <!-- Let's Get it On -->
       ];
 
       var jukebox = [
-        "https://cdn.glitch.com/bd2f3733-359c-47c8-8e0b-7f7b493efb47%2Fencoded.mp4", <!-- Beast of Burden -->
-        "https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fkillingmesoftly.mp4", <!-- Killing Me Softly -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FCoheed_And_Cambria_Blood_Red_Summer.mp4", <!-- Blood Red Summer -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FWheatus_Teenage_Dirtbag.mp4", <!-- Teenage Dirtbag -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FTaylor_Swift_Red.mp4", <!-- Red -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FGorillaz_Feel_Good_Inc.mp4", <!-- Feel Good Inc -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FOld_Crow_Medicine_Show_Wagon_Wheel.mp4", <!-- Wagon Wheel -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FJ_Cole_Power_Trip.mp4", <!-- Power Trip -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FDua_Lipa_Don_t_Start_Now.mp4", <!-- Don't Start Now -->
-        "https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4", <!-- Let's Get it On -->
-        "https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FThe_Shins_New_Slang.mp4", <!-- New Slang -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsabrina-boys-summertime-love.m4v", <!-- Boys -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fredbone-come-and-get-your-love.m4v", <!-- Come and Get Your Love -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkate-bush-running-up-that-hill.m4v", <!-- Running Up That Hill -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffat-joe-whats-luv.m4v", <!-- What's Luv -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fblack-eyed-peas-where-is-the-love.m4v", <!-- Where Is the Love? -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fa-star-is-born-shallow.m4v", <!-- Shallow -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fdavid-bowie-%20starman.m4v", <!-- Starman -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftamia-so-into-you.m4v", <!-- So Into You -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmoana-how-far-ill-go.m4v", <!-- How Far I'll Go -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Favril-lavigne-complicated.m4v", <!-- Complicated -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcoldplay-the-scientist.m4v", <!-- The Scientist -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkanye-west-slow-jamz.m4v", <!-- Slow Jamz -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkid-rock-only-god-knows-why.m4v", <!-- Only God Knows Why -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fincubus_drive.m4v", <!-- Drive -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmgmt-electric-feel.m4v", <!-- Electric Feel -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fti-whatever-you-like.m4v", <!-- Whatever You Like -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbillie-eilish-when-the-partys-over.m4v", <!-- When the Party's Over -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-strokes-last-nite.m4v", <!-- Last Nite -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fboston-more-than-a-feeling.m4v", <!-- More Than a Feeling -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fpixies-where-is-my-mind.m4v", <!-- Where Is My Mind -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Faersomith-cryin.m4v", <!-- Cryin' -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fnicki-minaj-super-bass.m4v", <!-- Super Bass -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-mamas-and-the-papas-california-dreamin.m4v", <!-- California Dreamin' -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsheryl-crow-first-cut-is-the-deepest.m4v", <!-- First Cut Is the Deepest -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBlackpink-Ddu-Du-Ddu-Du.m4v", <!-- Ddu-Du Ddu-Du (뚜두뚜두) -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcamila-cabello-havana.m4v", <!-- Havana -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBlue_Swede_Hooked_On_A_Feeling.m4v", <!-- Hooked on a Feeling -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fadele_%20hello.m4v", <!-- Hello -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDrake_Best_I_Ever_Had.m4v", <!-- Best I Ever Had -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbeyonce-crazy-in-love.m4v", <!-- Crazy in Love -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fjonas-brothers-burnin-up.m4v", <!-- Burnin' Up -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Flizzo-truth-hurts.m4v", <!-- Truth Hurts -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbts-boy-with-luv.m4v", <!-- Boy with Luv -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcardi-b-bodak-yellow.m4v", <!-- Bodak Yellow -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FThe_Beatles_Yesterday.m4v", <!-- Yesterday -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fshawn_mendes_senorita.m4v", <!-- Señorita -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FWhitney_Houston_I_Will_Always_Love_You.m4v", <!-- I Will Always Love You -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FRed_Hot_Chili_Peppers_Under_The_Bridge.m4v", <!-- Under the Bridge -->
-        "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDolly_Parton_Jolene.m4v", <!-- Jolene -->
+        'https://cdn.glitch.com/bd2f3733-359c-47c8-8e0b-7f7b493efb47%2Fencoded.mp4', <!-- Beast of Burden -->
+        'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fkillingmesoftly.mp4', <!-- Killing Me Softly -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FCoheed_And_Cambria_Blood_Red_Summer.mp4', <!-- Blood Red Summer -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FWheatus_Teenage_Dirtbag.mp4', <!-- Teenage Dirtbag -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FTaylor_Swift_Red.mp4', <!-- Red -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FGorillaz_Feel_Good_Inc.mp4', <!-- Feel Good Inc -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FOld_Crow_Medicine_Show_Wagon_Wheel.mp4', <!-- Wagon Wheel -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FJ_Cole_Power_Trip.mp4', <!-- Power Trip -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FDua_Lipa_Don_t_Start_Now.mp4', <!-- Don't Start Now -->
+        'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4', <!-- Let's Get it On -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FThe_Shins_New_Slang.mp4', <!-- New Slang -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsabrina-boys-summertime-love.m4v', <!-- Boys -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fredbone-come-and-get-your-love.m4v', <!-- Come and Get Your Love -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkate-bush-running-up-that-hill.m4v', <!-- Running Up That Hill -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffat-joe-whats-luv.m4v', <!-- What's Luv -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fblack-eyed-peas-where-is-the-love.m4v', <!-- Where Is the Love? -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fa-star-is-born-shallow.m4v', <!-- Shallow -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fdavid-bowie-%20starman.m4v', <!-- Starman -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftamia-so-into-you.m4v', <!-- So Into You -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmoana-how-far-ill-go.m4v', <!-- How Far I'll Go -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Favril-lavigne-complicated.m4v', <!-- Complicated -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcoldplay-the-scientist.m4v', <!-- The Scientist -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkanye-west-slow-jamz.m4v', <!-- Slow Jamz -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkid-rock-only-god-knows-why.m4v', <!-- Only God Knows Why -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fincubus_drive.m4v', <!-- Drive -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmgmt-electric-feel.m4v', <!-- Electric Feel -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fti-whatever-you-like.m4v', <!-- Whatever You Like -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbillie-eilish-when-the-partys-over.m4v', <!-- When the Party's Over -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-strokes-last-nite.m4v', <!-- Last Nite -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fboston-more-than-a-feeling.m4v', <!-- More Than a Feeling -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fpixies-where-is-my-mind.m4v', <!-- Where Is My Mind -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Faersomith-cryin.m4v', <!-- Cryin' -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fnicki-minaj-super-bass.m4v', <!-- Super Bass -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-mamas-and-the-papas-california-dreamin.m4v', <!-- California Dreamin' -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsheryl-crow-first-cut-is-the-deepest.m4v', <!-- First Cut Is the Deepest -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBlackpink-Ddu-Du-Ddu-Du.m4v', <!-- Ddu-Du Ddu-Du (뚜두뚜두) -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcamila-cabello-havana.m4v', <!-- Havana -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBlue_Swede_Hooked_On_A_Feeling.m4v', <!-- Hooked on a Feeling -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fadele_%20hello.m4v', <!-- Hello -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDrake_Best_I_Ever_Had.m4v', <!-- Best I Ever Had -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbeyonce-crazy-in-love.m4v', <!-- Crazy in Love -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fjonas-brothers-burnin-up.m4v', <!-- Burnin' Up -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Flizzo-truth-hurts.m4v', <!-- Truth Hurts -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbts-boy-with-luv.m4v', <!-- Boy with Luv -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcardi-b-bodak-yellow.m4v', <!-- Bodak Yellow -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FThe_Beatles_Yesterday.m4v', <!-- Yesterday -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fshawn_mendes_senorita.m4v', <!-- Señorita -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FWhitney_Houston_I_Will_Always_Love_You.m4v', <!-- I Will Always Love You -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FRed_Hot_Chili_Peppers_Under_The_Bridge.m4v', <!-- Under the Bridge -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDolly_Parton_Jolene.m4v', <!-- Jolene -->
       ];
 
       // These match up to the jukebox array above
       // We should probably switch to an array of objects... after the big refactor!
       var songNames = [
-        "Beast of Burden",
-        "Killing Me Softly",
-        "Blood Red Summer",
-        "Teenage Dirtbag",
-        "Red",
-        "Feel Good Inc",
-        "Wagon Wheel",
-        "Power Trip",
+        'Beast of Burden',
+        'Killing Me Softly',
+        'Blood Red Summer',
+        'Teenage Dirtbag',
+        'Red',
+        'Feel Good Inc',
+        'Wagon Wheel',
+        'Power Trip',
         "Don't Start Now",
         "Let's Get it On",
-        "New Slang",
-        "Boys",
-        "Come and Get Your Love",
-        "Running Up That Hill",
+        'New Slang',
+        'Boys',
+        'Come and Get Your Love',
+        'Running Up That Hill',
         "What's Luv",
-        "Where Is the Love?",
-        "Shallow",
-        "Starman",
-        "So Into You",
+        'Where Is the Love?',
+        'Shallow',
+        'Starman',
+        'So Into You',
         "How Far I'll Go",
-        "Complicated",
-        "The Scientist",
-        "Slow Jamz",
-        "Only God Knows Why",
-        "Drive",
-        "Electric Feel",
-        "Whatever You Like",
+        'Complicated',
+        'The Scientist',
+        'Slow Jamz',
+        'Only God Knows Why',
+        'Drive',
+        'Electric Feel',
+        'Whatever You Like',
         "When the Party's Over",
-        "Last Nite",
-        "More Than a Feeling",
-        "Where Is My Mind",
+        'Last Nite',
+        'More Than a Feeling',
+        'Where Is My Mind',
         "Cryin'",
-        "Super Bass",
+        'Super Bass',
         "California Dreamin'",
-        "The First Cut Is the Deepest",
-        "Ddu-Du Ddu-Du (뚜두뚜두)",
-        "Havana",
-        "Hooked on a Feeling",
-        "Hello",
-        "Best I Ever Had",
-        "Crazy in Love",
+        'The First Cut Is the Deepest',
+        'Ddu-Du Ddu-Du (뚜두뚜두)',
+        'Havana',
+        'Hooked on a Feeling',
+        'Hello',
+        'Best I Ever Had',
+        'Crazy in Love',
         "Burnin' Up",
-        "Truth Hurts",
-        "Boy with Luv (작은 것들을 위한 시)",
-        "Bodak Yellow",
-        "Yesterday",
-        "Señorita",
-        "I Will Always Love You",
-        "Under the Bridge",
-        "Jolene",
+        'Truth Hurts',
+        'Boy with Luv (작은 것들을 위한 시)',
+        'Bodak Yellow',
+        'Yesterday',
+        'Señorita',
+        'I Will Always Love You',
+        'Under the Bridge',
+        'Jolene',
       ];
 
       function findParentButton(element) {
@@ -184,7 +182,7 @@
           return undefined;
         }
 
-        if (element.tagName === "BUTTON") {
+        if (element.tagName === 'BUTTON') {
           return element;
         }
 
@@ -197,53 +195,53 @@
 
       function grabURL(event, num) {
         if (selectedElement) {
-          selectedElement.className = "jukebox";
+          selectedElement.className = 'jukebox';
         }
 
         selectedIndex = num;
         selectedElement = findParentButton(event.target);
-        selectedElement.className = "jukebox jukebox-selected";
+        selectedElement.className = 'jukebox jukebox-selected';
 
-        document.getElementById("choose-song").removeAttribute("disabled");
+        document.getElementById('choose-song').removeAttribute('disabled');
       }
 
       function addSong() {
         playlist.push(jukebox[selectedIndex]);
 
-        document.getElementById("choose-song").setAttribute("disabled", true);
-        document.getElementById("added-notice").setAttribute("populated", true);
-        document.getElementById("added-notice-song").textContent =
+        document.getElementById('choose-song').setAttribute('disabled', true);
+        document.getElementById('added-notice').setAttribute('populated', true);
+        document.getElementById('added-notice-song').textContent =
           songNames[selectedIndex];
 
-        selectedElement.className = "jukebox";
+        selectedElement.className = 'jukebox';
         selectedElement = selectedIndex = undefined;
 
         setTimeout(dismissAddedNotice, 2000);
       }
 
       function dismissAddedNotice() {
-        document.getElementById("added-notice").removeAttribute("populated");
+        document.getElementById('added-notice').removeAttribute('populated');
       }
 
       <!-- ⏯ Play & Pause buttons ⏯ -->
 
-      AFRAME.registerComponent("play-pause", {
+      AFRAME.registerComponent('play-pause', {
         init: function () {
-          var myVideo = document.querySelector("#html-video");
+          var myVideo = document.querySelector('#html-video');
 
-          var videoControls = document.querySelector("#videoControls");
-          this.el.addEventListener("click", function () {
-            var videoSync = document.querySelector("[video-sync]");
+          var videoControls = document.querySelector('#videoControls');
+          this.el.addEventListener('click', function () {
+            var videoSync = document.querySelector('[video-sync]');
             if (myVideo.paused) {
               // Play
               // myVideo.play();
-              videoSync.setAttribute("video-sync", "paused", false);
-              videoControls.setAttribute("src", "#pause");
+              videoSync.setAttribute('video-sync', 'paused', false);
+              videoControls.setAttribute('src', '#pause');
             } else {
               // Pause
               // myVideo.pause();
-              videoSync.setAttribute("video-sync", "paused", true);
-              videoControls.setAttribute("src", "#play");
+              videoSync.setAttribute('video-sync', 'paused', true);
+              videoControls.setAttribute('src', '#play');
             }
           });
         },
@@ -253,72 +251,72 @@
 
       var i = 0;
 
-      AFRAME.registerComponent("next", {
+      AFRAME.registerComponent('next', {
         init: function () {
-          var myVideo = document.querySelector("#video");
+          var myVideo = document.querySelector('#video');
 
-          var videoControls = document.querySelector("#videoControls2");
+          var videoControls = document.querySelector('#videoControls2');
 
-          this.el.addEventListener("click", function () {
+          this.el.addEventListener('click', function () {
             i++;
 
             <!-- Start from beginning if needed -->
             if (i == playlist.length) i = 0;
 
-            var videoSync = document.querySelector("[video-sync]");
-            videoSync.setAttribute("video-sync", "src", playlist[i]);
-            videoSync.setAttribute("video-sync", "currentTime", 0);
-            console.log("host setting video to ", playlist[i]);
+            var videoSync = document.querySelector('[video-sync]');
+            videoSync.setAttribute('video-sync', 'src', playlist[i]);
+            videoSync.setAttribute('video-sync', 'currentTime', 0);
+            console.log('host setting video to ', playlist[i]);
           });
         },
       });
 
-      AFRAME.registerComponent("previous", {
+      AFRAME.registerComponent('previous', {
         init: function () {
-          var myVideo = document.querySelector("#video");
+          var myVideo = document.querySelector('#video');
 
-          var videoControls = document.querySelector("#previous-button");
+          var videoControls = document.querySelector('#previous-button');
 
-          this.el.addEventListener("click", function () {
+          this.el.addEventListener('click', function () {
             i--;
 
             <!-- Start from beginning if needed -->
             if (i == -1) i = 0;
 
-            var videoSync = document.querySelector("[video-sync]");
-            videoSync.setAttribute("video-sync", "src", playlist[i]);
-            videoSync.setAttribute("video-sync", "currentTime", 0);
-            console.log("host setting video to ", playlist[i]);
+            var videoSync = document.querySelector('[video-sync]');
+            videoSync.setAttribute('video-sync', 'src', playlist[i]);
+            videoSync.setAttribute('video-sync', 'currentTime', 0);
+            console.log('host setting video to ', playlist[i]);
           });
         },
       });
 
-      AFRAME.registerComponent("volume-low", {
+      AFRAME.registerComponent('volume-low', {
         init: function () {
-          var myVideo = document.querySelector("#video");
+          var myVideo = document.querySelector('#video');
 
-          var videoControls = document.querySelector("#volume-low-button");
+          var videoControls = document.querySelector('#volume-low-button');
 
-          this.el.addEventListener("click", function () {
-            var videoChange = document.querySelector("#html-video");
+          this.el.addEventListener('click', function () {
+            var videoChange = document.querySelector('#html-video');
             videoChange.volume = 0.5;
 
-            console.log("Volume set to low");
+            console.log('Volume set to low');
           });
         },
       });
 
-      AFRAME.registerComponent("volume-high", {
+      AFRAME.registerComponent('volume-high', {
         init: function () {
-          var myVideo = document.querySelector("#video");
+          var myVideo = document.querySelector('#video');
 
-          var videoControls = document.querySelector("#volume-high-button");
+          var videoControls = document.querySelector('#volume-high-button');
 
-          this.el.addEventListener("click", function () {
-            var videoChange = document.querySelector("#html-video");
+          this.el.addEventListener('click', function () {
+            var videoChange = document.querySelector('#html-video');
             videoChange.volume = 1.0;
 
-            console.log("Volume set to high");
+            console.log('Volume set to high');
           });
         },
       });
@@ -333,12 +331,12 @@
             (h.hj.q = h.hj.q || []).push(arguments);
           };
         h._hjSettings = { hjid: 1946635, hjsv: 6 };
-        a = o.getElementsByTagName("head")[0];
-        r = o.createElement("script");
+        a = o.getElementsByTagName('head')[0];
+        r = o.createElement('script');
         r.async = 1;
         r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
         a.appendChild(r);
-      })(window, document, "https://static.hotjar.com/c/hotjar-", ".js?sv=");
+      })(window, document, 'https://static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
   </head>
 
@@ -361,9 +359,9 @@
         js = d.createElement(s);
         js.id = id;
         js.src =
-          "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+          'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0';
         fjs.parentNode.insertBefore(js, fjs);
-      })(document, "script", "facebook-jssdk");
+      })(document, 'script', 'facebook-jssdk');
     </script>
 
     <a-scene dynamic-room>
@@ -426,7 +424,7 @@
 
         <!-- Templates (Added in A-Frame's <a-assets> tag) -->
 
-        <!-- Because this video needs crossorigin etc., we need to use  
+        <!-- Because this video needs crossorigin etc., we need to use
              a-video src with selector, not a-plane material src string. -->
 
         <video
@@ -637,47 +635,47 @@
 
       // Define custom schema for syncing avatar color, set by random-color
       NAF.schemas.add({
-        template: "#avatar-template",
+        template: '#avatar-template',
         components: [
-          "position",
-          "rotation",
+          'position',
+          'rotation',
           {
-            selector: ".head",
-            component: "material",
-            property: "color",
+            selector: '.head',
+            component: 'material',
+            property: 'color',
           },
           {
-            selector: ".nametag",
-            component: "text",
-            property: "value",
+            selector: '.nametag',
+            component: 'text',
+            property: 'value',
           },
         ],
       });
 
       NAF.schemas.add({
-        template: "#video-template",
+        template: '#video-template',
         components: [
-          "position",
-          "rotation",
+          'position',
+          'rotation',
           {
-            selector: ".front",
-            component: "video-sync",
-            property: "paused",
+            selector: '.front',
+            component: 'video-sync',
+            property: 'paused',
           },
           {
-            selector: ".front",
-            component: "video-sync",
-            property: "src",
+            selector: '.front',
+            component: 'video-sync',
+            property: 'src',
           },
           {
-            selector: ".front",
-            component: "video-sync",
-            property: "currentTime",
+            selector: '.front',
+            component: 'video-sync',
+            property: 'currentTime',
           },
         ],
       });
 
-      console.log("Registered templates");
+      console.log('Registered templates');
     </script>
 
     <script>
@@ -687,32 +685,32 @@
         // We'll listen for a certain period, and if no client connections, take ownership.
         // FIXME: How to determine the timeout?  Race condition.
 
-        console.warn("onConnect() ", new Date());
+        console.warn('onConnect() ', new Date());
 
-        document.body.addEventListener("clientDisconnected", function (evt) {
-          console.warn("clientDisconnected ", evt.detail.clientId);
+        document.body.addEventListener('clientDisconnected', function (evt) {
+          console.warn('clientDisconnected ', evt.detail.clientId);
         });
       }
     </script>
 
     <script>
-      var presets = ["contact", "forest", "yavapai", "arches", "osiris"];
+      var presets = ['contact', 'forest', 'yavapai', 'arches', 'osiris'];
 
       // <a-entity environment="preset: forest"></a-entity>
 
-      var environment = document.querySelector("[environment]");
+      var environment = document.querySelector('[environment]');
 
       function setEnvironment(newPreset) {
-        environment.setAttribute("environment", { preset: newPreset });
+        environment.setAttribute('environment', { preset: newPreset });
       }
 
       function getNextPreset() {
-        var currentPreset = environment.getAttribute("environment").preset;
+        var currentPreset = environment.getAttribute('environment').preset;
         var index = presets.indexOf(currentPreset);
         return presets[(index + 1) % presets.length];
       }
 
-      window.addEventListener("keydown", function (evt) {
+      window.addEventListener('keydown', function (evt) {
         if (evt.keyCode === 32 /* spacebar */) {
           var newPreset = getNextPreset();
           setEnvironment(newPreset);
@@ -1456,12 +1454,12 @@
 
     <script>
       var numUsers = 0;
-      var host = "Placeholder";
+      var host = 'Placeholder';
 
-      h = document.getElementById("host");
+      h = document.getElementById('host');
       h.innerHTML = host;
 
-      console.log("testestes");
+      console.log('testestes');
       // const socket = io.set('transports', ['polling']);
 
       // var socket = io('wss://localhost:8080', {transports: ['websocket']});
@@ -1470,7 +1468,7 @@
       //   socket.io.opts.transports = ['polling', 'websocket'];
       // })
 
-      console.log("socket: " + socket);
+      console.log('socket: ' + socket);
 
       //       socket.on('occupants', function(data) {
 
@@ -1480,7 +1478,7 @@
 
       //       });
 
-      socket.on("sendAllUsernames", function (data) {
+      socket.on('sendAllUsernames', function (data) {
         // console.log("TESTTTTTTT");
         //console.log(data);
         // console.log(data.length);
@@ -1491,11 +1489,11 @@
         const { usernames } = data;
 
         var images = [
-          "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-pink.svg?v=1595297080213",
-          "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-purple.svg?v=1595889983311",
-          "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-lime.svg?v=1595889983227",
-          "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-orange.svg?v=1596833741466",
-          "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-cyan.svg?v=1596833741434",
+          'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-pink.svg?v=1595297080213',
+          'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-purple.svg?v=1595889983311',
+          'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-lime.svg?v=1595889983227',
+          'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-orange.svg?v=1596833741466',
+          'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-cyan.svg?v=1596833741434',
         ];
 
         var $users = [];
@@ -1509,58 +1507,58 @@
               image +
               '"><span id="host">' +
               username +
-              "</span><strong>" +
-              (id === 0 ? " (Host)" : "") +
-              "</strong></li>"
+              '</span><strong>' +
+              (id === 0 ? ' (Host)' : '') +
+              '</strong></li>'
           );
           $users.push($user);
         });
 
-        $("#list").empty();
+        $('#list').empty();
 
         if ($users.length) {
-          $users.map(($user) => $user.appendTo($("#list")));
+          $users.map(($user) => $user.appendTo($('#list')));
         }
         numUsers = usernames.length;
         /*
         if (data.length >= 2) {
-        
+
           console.log("second user name");
           console.log(data[1]);
-          
-          var list2 = document.getElementById("list2");       
+
+          var list2 = document.getElementById("list2");
           list2.style.display='block';
-          
+
           var span = document.getElementById("user2");
           span.innerHTML = data[1];
-          
+
 //           var img = document.createElement("img");
 //           img.src = "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-purple.svg?v=1595889983311";
 //           var src = document.getElementById("list");
 //           src.appendChild(img);
-          
+
 //           var span = document.createElement("span");
 //           span.id = "user2";
 //           span.innerHTML = data[1];
 //           src.appendChild(span);
         }
-        
+
         if (data.length >= 3) {
-        
+
           console.log("third user name");
           console.log(data[2]);
-          
-          var list3 = document.getElementById("list3");       
+
+          var list3 = document.getElementById("list3");
           list3.style.display='block';
-          
+
           var span = document.getElementById("user3");
           span.innerHTML = data[2];
-          
+
 //           var img = document.createElement("img");
 //           img.src = "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-purple.svg?v=1595889983311";
 //           var src = document.getElementById("list");
 //           src.appendChild(img);
-          
+
 //           var span = document.createElement("span");
 //           span.id = "user2";
 //           span.innerHTML = data[1];
@@ -1569,10 +1567,10 @@
         */
       });
 
-      socket.on("sendAllUsernamesDisconnect", function (data) {
+      socket.on('sendAllUsernamesDisconnect', function (data) {
         var images = [
-          "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-pink.svg?v=1595297080213",
-          "https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-purple.svg?v=1595889983311",
+          'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-pink.svg?v=1595297080213',
+          'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsmiley-purple.svg?v=1595889983311',
         ];
         var $users = [];
         console.log(data);
@@ -1586,43 +1584,43 @@
               image +
               '"><span id="host">' +
               username +
-              "</span><strong>" +
-              (id === 0 ? "(Host)" : "") +
-              "</strong></li>"
+              '</span><strong>' +
+              (id === 0 ? '(Host)' : '') +
+              '</strong></li>'
           );
           $users.push($user);
         });
-        $("#list").empty();
+        $('#list').empty();
         if ($users.length) {
-          $users.map(($user) => $user.appendTo($("#list")));
+          $users.map(($user) => $user.appendTo($('#list')));
         }
         numUsers = usernames.length;
 
         /*
         if (data.length >= 2) {
-          
+
           console.log("second user name");
           console.log(data[1]);
-          
-          var list2 = document.getElementById("list2");       
+
+          var list2 = document.getElementById("list2");
           list2.style.display='block';
-          
+
           var span = document.getElementById("user2");
           span.innerHTML = data[1];
-          
+
         }
-        
+
         if (data.length >= 3) {
-        
+
           console.log("third user name");
           console.log(data[2]);
-          
-          var list3 = document.getElementById("list3");       
+
+          var list3 = document.getElementById("list3");
           list3.style.display='block';
-          
+
           var span = document.getElementById("user3");
           span.innerHTML = data[2];
-          
+
         }
         */
       });
@@ -1661,7 +1659,7 @@
       //         }
 
       //     });
-      console.log("TESTESTESTTEST");
+      console.log('TESTESTESTTEST');
     </script>
 
     <!-- People in the room number (Sonny WIP) -->
@@ -1690,44 +1688,44 @@
     </a>
 
     <script>
-      ctr = document.getElementById("counter");
+      ctr = document.getElementById('counter');
       ctr.innerHTML = 1;
 
       // Add one
-      socket.on("newClientConnect", function (data) {
-        console.log("increment one");
+      socket.on('newClientConnect', function (data) {
+        console.log('increment one');
         ctr.innerHTML = data;
         numUsers = data;
 
         if (numUsers == 2) {
-          var smiley2 = document.getElementById("smiley2");
-          smiley2.style.visibility = "visible";
+          var smiley2 = document.getElementById('smiley2');
+          smiley2.style.visibility = 'visible';
         }
 
         if (numUsers > 2) {
-          var smiley3 = document.getElementById("smiley2");
-          smiley3.style.visibility = "visible";
+          var smiley3 = document.getElementById('smiley2');
+          smiley3.style.visibility = 'visible';
 
-          smiley3 = document.getElementById("smiley3");
-          smiley3.style.visibility = "visible";
+          smiley3 = document.getElementById('smiley3');
+          smiley3.style.visibility = 'visible';
         }
       });
 
       // Minus one
-      socket.on("newClientDisconnect", function (data) {
-        console.log("decrement one");
+      socket.on('newClientDisconnect', function (data) {
+        console.log('decrement one');
         ctr.innerHTML = data;
         numUsers = data;
       });
     </script>
 
     <script>
-      let ctr2 = document.getElementById("roomName");
-      ctr2.innerHTML = "as";
+      let ctr2 = document.getElementById('roomName');
+      ctr2.innerHTML = 'as';
 
       // Add one
-      socket.on("sendRoomName", (data) => {
-        console.log("data is", data.name);
+      socket.on('sendRoomName', (data) => {
+        console.log('data is', data.name);
 
         // curRoom = joinRoom(data);
         ctr2.innerHTML = data.name;
@@ -1808,7 +1806,7 @@
         if (d.getElementById(id)) return t;
         js = d.createElement(s);
         js.id = id;
-        js.src = "https://platform.twitter.com/widgets.js";
+        js.src = 'https://platform.twitter.com/widgets.js';
         fjs.parentNode.insertBefore(js, fjs);
 
         t._e = [];
@@ -1817,24 +1815,24 @@
         };
 
         return t;
-      })(document, "script", "twitter-wjs");
+      })(document, 'script', 'twitter-wjs');
     </script>
 
     <script>
       function myFunction() {
-        var copyText = document.getElementById("myInput");
+        var copyText = document.getElementById('myInput');
         copyText.select();
         copyText.setSelectionRange(0, 99999);
-        document.execCommand("copy");
+        document.execCommand('copy');
 
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copied!";
+        var tooltip = document.getElementById('myTooltip');
+        tooltip.innerHTML = 'Copied!';
         // tooltip.innerHTML = "Copied " + copyText.value;
       }
 
       function outFunc() {
-        var tooltip = document.getElementById("myTooltip");
-        tooltip.innerHTML = "Copy to clipboard";
+        var tooltip = document.getElementById('myTooltip');
+        tooltip.innerHTML = 'Copy to clipboard';
       }
     </script>
   </body>
