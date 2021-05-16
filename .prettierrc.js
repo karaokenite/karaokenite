@@ -20,10 +20,10 @@ module.exports = {
       },
     },
     {
-      files: '*.{ts,tsx}',
+      files: '*.{js}',
       options: {
-        parser: 'typescript',
+        parser: 'javascript',
       },
     },
   ],
-}
+};
