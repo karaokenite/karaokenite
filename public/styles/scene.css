@@ -2,7 +2,7 @@
 
 #usersList {
   font-family: var(--font-brand);
-  font-size: 22px;
+  font-size: var(--font-size-lg);
 }
 
 ul li {
@@ -60,7 +60,7 @@ button {
 } */
 
 .button {
-  font-size: 18px;
+  font-size: var(--font-size-md);
   text-transform: uppercase;
   padding: 0px 24px;
   height: 50px;
@@ -106,7 +106,7 @@ kbd {
   color: var(--color-machine);
   display: inline-block;
   font-family: var(--font-brand);
-  font-size: 14px;
+  font-size: var(--font-size-xs);
   line-height: 1.4;
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
@@ -118,7 +118,7 @@ kbd {
   right: 480px;
   z-index: 2;
   position: absolute;
-  font-size: 30px;
+  font-size: var(--font-size-xl);
   text-transform: uppercase;
   color: var(--color-linen);
   font-weight: 700;
@@ -241,7 +241,7 @@ kbd {
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
-  font-size: 14px;
+  font-size: var(--font-size-xs);
 }
 
 .tooltip .tooltiptext::after {
@@ -265,7 +265,7 @@ kbd {
   height: 50px;
   border: 0px;
   border-radius: 8px 0px 0px 8px;
-  font-size: 19px;
+  font-size: var(--font-size-md);
   font-family: var(--font-brand);
   text-align: left;
   margin: 0px;
@@ -277,7 +277,7 @@ kbd {
 
 #copy {
   padding: 0px 30px;
-  font-size: 15px;
+  font-size: var(--font-size-sm);
   margin-right: 0px;
   display: inline-block;
   border: 0px;
@@ -285,13 +285,6 @@ kbd {
   border-left: 3px solid var(--color-midnight);
   outline: 0;
 }
-
-/* .twitter-share-button {
-  font-size: 15px;
-  margin-top: 15px;
-  margin-right: 5px;
-  display: inline-block;
-} */
 
 .shareButton {
   margin: auto;
@@ -302,13 +295,7 @@ kbd {
 }
 
 .fb-share-button {
-  /*   font-size: 15px;
-  margin-top: 15px;
-  margin-right: 5px;
-  display: inline-block;
-  top: 0;
-  vertical-align: top;
-  float: left; */
+
   margin-left: 11px;
 }
 
@@ -346,7 +333,7 @@ kbd {
 #added-notice[populated] {
   align-items: center;
   display: flex;
-  font-size: 1.125rem;
+  font-size: var(--font-size-md);
   height: 100%;
   justify-content: center;
   left: 15%;

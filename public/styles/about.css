@@ -20,5 +20,5 @@ h1 {
 .description {
   text-align: center;
   color: var(--color-frozen-blueberry);
-  font-size: 19px;
+  font-size: var(--font-size-md);
 }

@@ -188,7 +188,7 @@ img {
 
 h2 {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: var(--font-size-xl);
   margin: 0 0 1rem;
   text-align: left;
 }
@@ -201,6 +201,7 @@ p {
 a {
   color: var(---color-link-text);
   cursor: pointer;
+  text-decoration: none;
 }
 
 blockquote {
@@ -228,7 +229,7 @@ blockquote {
 .brand-betatag {
   background: var(--color-pretty-in-pink);
   color: var(--color-linen);
-  font-size: 1rem;
+  font-size: var(--font-size-md);
   padding: 0.01rem 0.4rem;
   position: absolute;
   left: calc(100% + 0.25rem);
@@ -241,7 +242,7 @@ blockquote {
 }
 
 .button {
-  font-size: 18px;
+  font-size: var(--font-size-md);
   text-transform: uppercase;
   padding: 0px 24px;
   height: 50px;
@@ -287,7 +288,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 
 .header {
   transform: translate(0, -100%);
-  font-size: 1.35rem;
+  font-size: var(--font-size-lg);
   padding: 1rem;
   position: absolute;
   top: 0;
@@ -338,7 +339,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: var(--font-size-md);
   display: inline-block;
   color: var(--color-link-text);
   position: relative;
@@ -506,7 +507,7 @@ li {
 
 .footer-icons {
   margin-left: auto;
-  font-size: 1.3rem;
+  font-size: var(--font-size-lg);
   display: flex;
 }
 
@@ -526,6 +527,6 @@ li {
 }
 
 #footer-name {
-  font-size: 1.35rem;
+  font-size: var(--font-size-lg);
   font-weight: bold;
 }
