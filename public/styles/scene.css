@@ -55,7 +55,6 @@ button {
   cursor: pointer;
 }
 
-
 videoControls {
   cursor: pointer;
 }
@@ -75,7 +74,7 @@ kbd {
   display: inline-block;
   font-family: var(--font-brand);
   font-size: var(--font-size-xs);
-  line-height: var(--line-height);
+  line-height: var(--line-height-text);
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
   text-shadow: 0 1px 0 var(--color-linen);
@@ -171,7 +170,7 @@ kbd {
   font-family: var(--font-brand);
   font-size: 1.6em;
   font-weight: var(--weight-heavy);
-  line-height: var(--line-height);
+  line-height: var(--line-height-text);
   text-decoration: none !important;
   justify-content: space-between;
   margin: auto;
@@ -263,7 +262,6 @@ kbd {
 }
 
 .fb-share-button {
-
   margin-left: 11px;
 }
 

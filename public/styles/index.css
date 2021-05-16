@@ -301,6 +301,11 @@ form input[type="text"] {
   grid-template-columns: 1fr max-content 1fr;
 }
 
+.options--description {
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-regular);
+}
+
 .options--visual {
   display: flex;
   flex-direction: column;
@@ -360,7 +365,7 @@ section#steps {
   margin: 2rem auto;
   max-width: 15rem;
   text-align: center;
-  line-height: var(--line-height);
+  line-height: var(--line-height-text);
 }
 
 .steps--label {
@@ -405,7 +410,7 @@ section#steps {
   margin: auto;
   font-size: var(--font-size-lg);
   max-width: 30rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 16px;
 }
 
@@ -419,9 +424,7 @@ section#steps {
   }
 }
 
-
 /* Special Footer style */
-
 
 @media (max-width: 42rem) {
   .hero {
@@ -437,12 +440,11 @@ section#steps {
   }
 }
 
-
 .newsletter--description {
   margin: 2rem auto;
   max-width: 18rem;
   text-align: center;
-  line-height: var(--line-height);
+  line-height: var(--line-height-text);
 }
 
 .copyWrapper {
