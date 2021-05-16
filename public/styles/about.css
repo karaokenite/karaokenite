@@ -6,8 +6,7 @@
   border-bottom: 5px solid var(--color-deep-blue-something);
   border-radius: 10px;
   width: 30%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto var(--page-padding);
 }
 
 h1 {
