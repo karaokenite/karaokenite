@@ -12,9 +12,9 @@
 
 h1 {
   color: var(--color-deep-blue-something);
-  text-align: middle;
   font-size: 2.8em;
   text-align: center;
+  font-weight: var(--weight-heavy);
 }
 
 .description {

@@ -8,14 +8,6 @@
 
 /* Collapsible  */
 
-.collapse-area {
-  margin: 1rem 0;
-}
-
-.collapse-area:first-of-type {
-  margin-top: 2rem;
-}
-
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
   background-color: var(--color-dirty-linen);

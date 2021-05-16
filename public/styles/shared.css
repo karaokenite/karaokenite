@@ -37,6 +37,7 @@
   --font-size-md: 1.125rem;
   --font-size-lg: 1.375rem;
   --font-size-xl: 2rem;
+  --font-size-xxl: 2.8rem;
   --line-height-text: 1.5;
   --line-height-title: 1.1;
   --weight-heavy: 700;
@@ -79,6 +80,7 @@
   --content-width-md: 40rem;
 
   --vertical-space: 3rem;
+  --header-height: 4.75rem;
 }
 
 @media screen and (min-width: 68rem) {
@@ -86,6 +88,82 @@
     --vertical-space: 5rem;
   }
 }
+
+/**
+d8888b. d88888b .d8888. d88888b d888888b
+88  `8D 88'     88'  YP 88'     `~~88~~'
+88oobY' 88ooooo `8bo.   88ooooo    88
+88`8b   88~~~~~   `Y8b. 88~~~~~    88
+88 `88. 88.     db   8D 88.        88
+88   YD Y88888P `8888Y' Y88888P    YP
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: var(--line-height-text);
+  font-family: var(--font-brand);
+  font-weight: var(--weight-body);
+  color: var(--color-text);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Text */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  line-height: var(--line-height-title);
+  font-weight: var(--weight-title);
+}
+
+h1 {
+  font-weight: var(--weight-heavy);
+}
+
+h2 {
+  font-weight: 600;
+  font-size: var(--font-size-xl);
+  margin: 0 0 1rem;
+  text-align: left;
+}
+
+p {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+a {
+  color: var(---color-link-text);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+blockquote {
+  text-align: center;
+  font-style: italic;
+}
+
+/**
+db    db d888888b d888888b db      d888888b d888888b db    db
+88    88 `~~88~~'   `88'   88        `88'   `~~88~~' `8b  d8'
+88    88    88       88    88         88       88     `8bd8'
+88    88    88       88    88         88       88       88
+88b  d88    88      .88.   88booo.   .88.      88       88
+~Y8888P'    YP    Y888888P Y88888P Y888888P    YP       YP
+*/
 
 .light {
   --color-text: var(--color-midnight);
@@ -171,65 +249,55 @@
 }
 
 /**
-d8888b. d88888b .d8888. d88888b d888888b
-88  `8D 88'     88'  YP 88'     `~~88~~'
-88oobY' 88ooooo `8bo.   88ooooo    88
-88`8b   88~~~~~   `Y8b. 88~~~~~    88
-88 `88. 88.     db   8D 88.        88
-88   YD Y88888P `8888Y' Y88888P    YP
+db       .d8b.  db    db  .d88b.  db    db d888888b
+88      d8' `8b `8b  d8' .8P  Y8. 88    88 `~~88~~'
+88      88ooo88  `8bd8'  88    88 88    88    88
+88      88~~~88    88    88    88 88    88    88
+88booo. 88   88    88    `8b  d8' 88b  d88    88
+Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 */
 
-* {
-  box-sizing: border-box;
+.layout {
+  overflow: hidden;
 }
 
-html,
-body {
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  line-height: var(--line-height-text);
-  font-family: var(--font-brand);
-  font-weight: var(--weight-body);
-  overflow-x: hidden;
-  color: var(--color-text);
-}
-
-img {
+.layout__fluid {
   max-width: 100%;
 }
 
-/* Text */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  line-height: var(--line-height-title);
+.layout__small {
+  padding: calc(var(--header-height) + 4rem) 2rem 4rem;
+  max-width: calc(760px - 4rem);
+  margin: 0 auto;
 }
 
-h2 {
-  font-weight: 600;
+.layout-grid {
+  display: grid;
+  row-gap: 3rem;
+}
+
+.layout-grid__sm {
+  row-gap: 1rem;
+}
+
+.page-title {
   font-size: var(--font-size-xl);
+}
+
+.page-subtitle {
+  font-weight: var(--weight-title);
+  font-size: var(--font-size-lg);
   margin: 0 0 1rem;
   text-align: left;
 }
 
-p {
-  text-align: left;
-  margin-bottom: 10px;
-}
-
-a {
-  color: var(---color-link-text);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-blockquote {
-  text-align: center;
-  font-style: italic;
+@media screen and (min-width: 48rem) {
+  .page-title {
+    font-size: var(--font-size-xxl);
+  }
+  .page-subtitle {
+    font-size: var(--font-size-xl);
+  }
 }
 
 /**
@@ -271,7 +339,7 @@ blockquote {
   font-size: var(--font-size-md);
   text-transform: uppercase;
   padding: 0.25rem 1.5rem;
-  height: 3rem;
+  min-height: 3rem;
   font-weight: 600;
   border: 3px solid var(--color-midnight);
   font-family: var(--font-brand);
@@ -420,21 +488,11 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
   margin: 0 auto;
 }
 
-.section--content,
-.section--callout {
+.section--content {
   position: relative;
   margin: auto;
-  padding: var(--vertical-space) 0;
-  max-width: 49rem;
-}
-
-.article-grid {
-  display: grid;
-  row-gap: 4rem;
-}
-
-main {
-  overflow: hidden;
+  padding: var(--vertical-space) 2rem;
+  max-width: calc(49rem + 4rem);
 }
 
 .link {
