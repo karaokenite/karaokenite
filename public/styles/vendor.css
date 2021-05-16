@@ -1,5 +1,15 @@
 .github-corner-logo {
   z-index: 1000;
+  fill: var(--color-text);
+  color: var(--color-background);
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+}
+
+.octo-arm {
+  transform-origin: 130px 106px;
 }
 
 .github-corner:hover .octo-arm {

@@ -78,6 +78,7 @@
   --color-text: var(--color-midnight);
   --color-link-text: var(--color-midnight);
   --color-link-underline: var(--color-peach);
+  --color-background: var(--color-linen);
 
   --content-width-md: 40rem;
 
@@ -121,6 +122,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: var(--color-background);
   line-height: var(--line-height-text);
   font-family: var(--font-brand);
   font-weight: var(--weight-body);
