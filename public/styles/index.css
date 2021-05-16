@@ -1,10 +1,3 @@
-:root {
-  --color-text: var(--color-linen);
-  --color-link-text: var(--color-linen);
-  --color-link-underline: var(--color-peach);
-  --color-background: var(--color-midnight);
-}
-
 .header-navlink__home {
   visibility: hidden;
 }

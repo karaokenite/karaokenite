@@ -182,20 +182,15 @@ db    db d888888b d888888b db      d888888b d888888b db    db
 .light {
   --color-text: var(--color-midnight);
   --color-link-text: var(--color-midnight);
+  --color-background: var(--color-linen);
   color: var(--color-text);
 }
 
 .dark {
   --color-text: var(--color-linen);
   --color-link-text: var(--color-linen);
+  --color-background: var(--color-midnight);
   color: var(--color-text);
-}
-
-.dark-bg {
-  --color-text: var(--color-linen);
-  --color-link-text: var(--color-linen);
-  color: var(--color-text);
-  background-color: var(--color-midnight);
 }
 
 .magenta {
