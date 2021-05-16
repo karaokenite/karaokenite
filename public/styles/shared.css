@@ -43,6 +43,15 @@
   --breakpoint-xl: 68rem;
 
   --font-brand: Linotte, Arial, Helvetica, sans-serif;
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.125rem;
+  --font-size-lg: 1.375rem;
+  --font-size-xl: 2rem;
+  --line-height: 1.5;
+  --weight-heavy: 700;
+  --weight-regular: 500;
+
 
   --color-linen: #ffffff;
   --color-cloud-nine: #f1f1f1;
