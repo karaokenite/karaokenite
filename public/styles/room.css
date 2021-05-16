@@ -1,0 +1,546 @@
+body {
+  /*  background-color: #f6f5fa; */
+  /*  background-color: #050422; */
+  background: url('https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Fshark.jpeg?v=1621051349334') no-repeat center fixed;     
+  background-size: cover;
+}
+
+@font-face {
+  font-family: "Linotte";
+  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Regular.otf?v=1591822742735");
+  font-weight:400;
+}
+
+@font-face {
+  font-family: "Linotte";
+  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Bold.otf?v=1591822725254");
+  font-weight:600;
+}
+@font-face {
+  font-family: "Linotte";
+  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Heavy.otf?v=1591822730897");
+  font-weight:700;
+}
+@font-face {
+  font-family: "Linotte";
+  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Light.otf?v=1591822739554");
+  font-weight:300;
+}
+@font-face {
+  font-family: "Linotte";
+  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Semi%20Bold.otf?v=1591822746292");
+  font-weight:500;
+}
+
+/* ================ Face cams ================== */
+
+#video-chat-room {
+  display: flex;
+  justify-content: center;
+}
+
+.video {
+  width: 220px;
+  border-radius: 20px; 
+  overflow: hidden;
+  margin-top: 24px;
+  margin-bottom: 22px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.video-camera {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  border-radius: 24px;
+  background-color: black;
+  width: 200px;
+  height: 120px;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.video-username {
+  position: relative;
+  bottom: 37px;
+  left: 28px;
+  color: white;
+  z-index: 1;
+}
+
+#user-video {
+  /* border-radius: 24px;
+  background-color: black;
+  position: relative;
+  width: 200px;
+  height: 120px;
+  box-shadow: 0 8px 6px -6px black; */
+}
+
+#peer-video {
+  border-radius: 24px;
+  background-color: black;
+  position: relative;
+  width: 200px;
+  height: 120px;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+/* ================ Buttons ================== */
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+}
+
+#btn-group2 {
+  justify-content: flex-end;
+}
+
+.btn-group button {
+  background-color: #050422;
+  border: 0;
+  margin: 5px 5px;
+  cursor: pointer;
+}
+
+/* Clear floats (clearfix hack) */
+
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#hideCameraButton {
+  opacity: 0.6;
+}
+
+#muteButton {
+  opacity: 0.6;
+}
+
+#backButton {
+  opacity: 0.6;
+} 
+
+#nextButton {
+  opacity: 0.6;
+}
+
+#volumeDownButton {
+  opacity: 0.6;
+}
+
+#volumeUpButton {
+  opacity: 0.6;
+}
+
+.grow { 
+  transition: all .2s ease-in-out; 
+}
+.grow:hover { 
+  transform: scale(1.08); 
+}
+
+#hideCameraButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+#muteButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+#backButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+#nextButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+#volumeDownButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+#volumeUpButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+#playlistButton {
+  opacity: 0.6;
+}
+
+#heartButton {
+  opacity: 0.6;
+}
+
+#playlistButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+#heartButton:hover {
+  opacity: 90%;
+  transition: opacity 0.2s ease-in;
+}
+
+/* ================ Footer ================== */
+
+footer {
+  background-color: black; /* #050422 */
+  width: 100%;
+  padding: 0.55rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index:2;
+}
+
+#footer--content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: stretch;
+  flex-direction: row;
+  align-items: center;
+}
+
+.footer-bg {
+  width: calc(100% - 60px);
+  max-width: 100rem;
+  margin: auto; 
+}
+
+.footer-left {
+  padding: 0;
+  display: inline-block;
+  flex: 1;
+}
+
+.footer-middle {
+  padding: 0;
+  display: inline-block;
+  flex: 1;
+}
+
+.footer-right {
+  padding: 0;
+  display: inline-block;
+  flex: 1;
+}
+
+.footer-icons {
+  margin-left: auto;
+  font-size: 1.3rem;
+  display: flex;
+}
+
+.social {
+  margin: 10px;
+  display: inline-block;
+  height: 36px;
+  width: 36px;
+  opacity: 0.6;
+  vertical-align: bottom;
+  margin-top: 8px;
+}
+
+.social:hover {
+  opacity: 100%;
+  transition: opacity 0.2s ease-in;
+}
+
+#footer-name {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+#leaveRoomButton {
+  font-size: 18px;
+  text-transform: uppercase;
+  padding: 0px 24px;
+  height: 50px;
+  line-height: 47px;
+  font-weight: 600;
+  border: 3px solid white;
+  font-family: "Linotte";
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: .2s background-color;
+  text-align: center;
+  z-index: 99;
+  cursor: pointer;
+}
+
+/* ================= Karaoke TV Video ================= */
+
+#karaoke-video {
+  display: block;
+  width: 690px;
+  margin: auto;
+}
+
+.karaoke-video-mask {
+  height: 100%;
+  position: relative;
+	max-width:720px;
+	max-width:64rem;
+	max-height:494px;
+	max-height:30.875rem;
+	margin:20px auto;
+	margin:1.25rem auto;
+	padding:1.051%;
+  border-radius: 10px;
+  margin: auto;
+  top: 55px;
+}
+
+video {
+  margin: 30px 0px 10px 10px;
+/*   margin: 10px; */
+	width:100%;
+  border-radius: 10px;
+}
+
+.controls, .controls > * {
+	padding:0;
+	margin:0;
+}
+.controls {
+	overflow:hidden;
+	background:transparent;
+	width:100%;
+	height:8.0971659919028340080971659919028%; /* of figure's height */
+  /* 	position:relative; */
+}
+
+.controls[data-state=hidden] {
+	display:none;
+}
+
+.controls[data-state=visible] {
+	display:block;
+}
+
+button[data-state="mute"] {
+  /* font-size: 1.3rem; */
+}
+
+
+
+
+
+
+
+
+/* ================================ Songs modal ======================== */
+
+#songModal {
+  font-family: "Lato", "Helvetica Neue", arial, sans-serif;
+  font-weight: 400;
+  color: #5e6c76;
+  max-width: 75rem;
+  padding: 2rem 1rem;
+}
+
+#songModal.modal a.close-modal {
+    filter: invert(1);
+    top: 5px;
+    right: 5px;
+}
+
+.jukeboxes {
+  display: grid;
+  grid-row-gap: 2rem;
+  grid-template-columns: 100%;
+  max-height: 50vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+  width: 100%;
+}
+
+#added-notice {
+    display: none;
+}
+
+#added-notice[populated] {
+    align-items: center;
+    display: flex;
+    font-size: 1.125rem;
+    height: 100%;
+    justify-content: center;
+    left: 15%;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    width: 70%;
+}
+
+@media (min-width: 49rem) {
+  #added-notice[populated] {
+    left: calc(50% - 17rem);
+    width: 34rem;
+  }  
+}
+
+.added-notice-contents {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-family: "Linotte";
+    padding: 2rem 3rem;
+    text-align: center;
+}
+
+.added-notice-contents:active,
+.added-notice-contents:focus {
+  border: 2px solid white;
+}
+
+#added-notice-song {
+    color: #C8EF00;
+}
+
+@media (min-width: 28rem) {
+  .jukeboxes {
+    grid-column-gap: 2%;
+    grid-template-columns: repeat(2, 49%);
+  }
+}
+
+@media (min-width: 35rem) {
+  .jukeboxes {
+    grid-column-gap: 1%;
+    grid-template-columns: repeat(4, 24%);
+  }
+}
+
+@media (min-width: 49rem) {
+  .jukeboxes {
+    grid-column-gap: 1%;
+    grid-template-columns: repeat(5, 19%);
+  }
+}
+
+/* Individual jukebox songs */
+
+.jukebox {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  min-height: 10rem;
+  text-align: left;
+  position: relative;
+  outline: 0;
+}
+
+.jukebox-selected {
+  outline: 0;
+  border-radius: 4px;
+}
+
+.jukebox img {
+  width: 100%;
+  height: auto;
+  border: 4px solid transparent;
+}
+
+.jukebox-selected img {
+  border: 4px solid #C8EF00;
+}
+
+.jukebox-selected:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  right: -10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  background: #C8EF00 url(https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcheck.svg?v=1595801420385) center no-repeat;
+}
+
+.title {
+  font-weight: bold;
+  margin: 0.5rem 0 0.25rem;
+}
+
+/* Jukebox controls */
+
+.controls {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (min-width: 28rem) {
+  .controls {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.control {
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: block;
+  padding: 1rem 0.5rem;
+  text-align: center;
+  width: 100%;
+}
+
+.controls .button {
+  margin-left: 1rem;
+  padding: 0 1rem;
+}
+
+@media (min-width: 42rem) {
+  .controls .button {
+    padding: 0 4rem;
+  }
+}
+
+.copyWrapper {
+  display: flex;
+  border: 3px solid #050422;
+  border-radius: 8px;
+}
+
+#giveFeedbackButton {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 83%;
+  margin-top: 25px;
+}
+
+#reportBugButton {
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  width: 83%;
+  margin-bottom: 20px;
+}
+
+#roomName {
+
+  font-family: "Linotte";
+  color: #050422;
+  font-weight: bold;
+
+}

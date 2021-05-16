@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Karaoke Nite | Room</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="/styles/shared.css" rel="stylesheet" />
+    <link href="/styles/room.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Karaoke Video -->
+
+    <div class="karaoke-video-mask">
+      <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
+      <video id="karaoke-video" controls preload="metadata">
+        <source
+          src="https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045"
+          type="video/mp4"
+        />
+
+        <!-- Offer download -->
+        <a
+          href="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
+          >Download MP4</a
+        >
+      </video>
+    </div>
+
+    <script src="/video-player.js"></script>
+
+    <!-- User Video Cameras -->
+
+    <div class="section-content" id="video-chat-room">
+      <!-- <div class="video-mask"> -->
+      <div class="video">
+        <video class="video-camera" id="user-video" muted="muted"></video>
+        <div class="video-username">Username1</div>
+      </div>
+
+      <div class="video">
+        <video class="video-camera" id="peer-video"></video>
+        <div class="video-username">Username2</div>
+      </div>
+    </div>
+
+    <!-- ======================================= Footer ======================================== -->
+
+    <footer>
+      <div class="footer-bg">
+        <div id="footer--content">
+          <div class="footer-left">
+            <a href="javascript:history.back()"
+              ><button id="leaveRoomButton">Exit</button></a
+            >
+          </div>
+
+          <div class="footer-middle">
+            <div class="btn-group" id="btn-group">
+              <button id="hideCameraButton">
+                <img
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_camera_white.svg?v=1614747337937"
+                />
+              </button>
+
+              <button id="muteButton" type="button" data-state="mute">
+                <img
+                  id="muteButtonIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_mic_white.svg?v=1614747341515"
+                />
+              </button>
+
+              <button id="backButton" type="button" data-state="play">
+                <img
+                  id="backButtonIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_previous_white.svg?v=1614749830096"
+                />
+              </button>
+
+              <button
+                id="playpauseButton"
+                class="grow"
+                type="button"
+                data-state="play"
+              >
+                <img
+                  id="playpauseButtonIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FGroup%2021.svg?v=1618632508004"
+                />
+              </button>
+
+              <button id="nextButton" type="button" data-state="play">
+                <img
+                  id="nextButtonIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_next_white.svg?v=1614749830096"
+                />
+              </button>
+
+              <button id="volumeDownButton" type="button" data-state="voldown">
+                <img
+                  id="volumeDownIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FVolume%20-%20Low.svg?v=1621062867508"
+                />
+              </button>
+
+              <button id="volumeUpButton" type="button" data-state="volup">
+                <img
+                  id="volumeUpIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_volume_white.svg?v=1614749830096"
+                />
+              </button>
+              <!--               
+			        <button id="voldec" type="button" data-state="voldown">
+                <img id="volumeDownIcon" src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_volume_white.svg?v=1614749830096" />
+              </button> -->
+            </div>
+
+            <div id="video-controls" class="controls" data-state="hidden"></div>
+          </div>
+
+          <div class="footer-right">
+            <div class="btn-group" id="btn-group2">
+              <button
+                id="playlistButton"
+                type="button"
+                href="#songModal"
+                rel="modal:open"
+                data-state="playlist"
+              >
+                <img
+                  id="playlistIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FPlaylist.svg?v=1621070364610"
+                />
+              </button>
+
+              <button id="heartButton" type="button" data-state="heart">
+                <img
+                  id="heartIcon"
+                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FHeart.svg?v=1621070361140"
+                />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div id="songModal" class="modal">
+      <div class="jukeboxes" onscroll="dismissAddedNotice()">
+        <button onclick="grabURL(event, 0)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Frolling-stones-some-girls.jpg?v=1591040877607"
+            alt="Beast of Burden"
+            width="600"
+            height="400"
+          />
+
+          <div class="title">Beast of Burden</div>
+          <div class="artist">The Rolling Stones</div>
+        </button>
+
+        <button onclick="grabURL(event, 1)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffugees-the-score.png?v=1591040952706"
+            alt="Killing Me Softly"
+            width="600"
+            height="400"
+          />
+          <div class="title">Killing Me Softly</div>
+          <div class="artist">Fugees</div>
+        </button>
+
+        <button onclick="grabURL(event, 2)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcoheed-and-cambria-in-keeping-secrets.jpg?v=1591040969216"
+            alt="Blood Red Summer"
+            width="600"
+            height="400"
+          />
+          <div class="title">Blood Red Summer</div>
+          <div class="artist">Coheed and Cambria</div>
+        </button>
+
+        <button onclick="grabURL(event, 3)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fwheatus-wheatus.jpg?v=1591114972728.jpg"
+            alt="Teenage Dirtbag"
+            width="600"
+            height="400"
+          />
+
+          <div class="title">Teenage Dirtbag</div>
+          <div class="artist">Wheatus</div>
+        </button>
+
+        <button onclick="grabURL(event, 4)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftaylor-swift-red.png?v=1591115004639"
+            alt="Red"
+            width="600"
+            height="400"
+          />
+
+          <div class="title">Red</div>
+          <div class="artist">Taylor Swift</div>
+        </button>
+
+        <button onclick="grabURL(event, 5)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fgorillaz-demon-days.jpg?v=1591115146848"
+            alt="Feel Good Inc."
+            width="600"
+            height="400"
+          />
+          <div class="title">Feel Good Inc.</div>
+          <div class="artist">Gorillaz</div>
+        </button>
+
+        <button onclick="grabURL(event, 6)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fold-crow-medicine-show-ocms.jpg?v=1591115180138"
+            alt="Wagon Wheel"
+            width="600"
+            height="400"
+          />
+          <div class="title">Wagon Wheel</div>
+          <div class="artist">Old Crow Medicine Show</div>
+        </button>
+
+        <button onclick="grabURL(event, 7)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fj-cole-born-sinner.jpg?v=1591115254771"
+            alt="Power Trip"
+            width="600"
+            height="400"
+          />
+          <div class="title">Power Trip feat. Miguel</div>
+          <div class="artist">J. Cole</div>
+        </button>
+
+        <button onclick="grabURL(event, 8)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fdua-lipa-future-nostalgia.png?v=1591115288043"
+            alt="Don't Start Now"
+            width="600"
+            height="400"
+          />
+          <div class="title">Don't Start Now</div>
+          <div class="artist">Duo Lipa</div>
+        </button>
+
+        <button onclick="grabURL(event, 9)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmarvin-gaye-lets-get-it-on.jpg?v=1591115313029"
+            alt="Let's Get It On"
+            width="600"
+            height="400"
+          />
+          <div class="title">Let's Get It On</div>
+          <div class="artist">Marvin Gaye</div>
+        </button>
+
+        <button onclick="grabURL(event, 10)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fshins-oh-inverted-world.jpg?v=1591115405298"
+            alt="New Slang"
+            width="600"
+            height="400"
+          />
+          <div class="title">New Slang</div>
+          <div class="artist">The Shins</div>
+        </button>
+
+        <!-- Sabrina - Boys (Summertime Love) -->
+        <button onclick="grabURL(event, 11)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsabrina-sabrina.jpg?v=1591157973806"
+            alt="Boys (Summertime Love)"
+            width="600"
+            height="400"
+          />
+          <div class="title">Boys (Summertime Love)</div>
+          <div class="artist">Sabrina</div>
+        </button>
+
+        <!-- Redbone - Come and Get Your Love -->
+        <button onclick="grabURL(event, 12)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fredbone-wovoka.jpg?v=1591158069587"
+            alt="Come and Get Your Love"
+            width="600"
+            height="400"
+          />
+          <div class="title">Come and Get Your Love</div>
+          <div class="artist">Redbone</div>
+        </button>
+
+        <!-- Kate Bush - Running Up That Hill -->
+        <button onclick="grabURL(event, 13)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkate-bush-hounds-of-love.png?v=1591158143497"
+            alt="Running Up That Hill"
+            width="600"
+            height="400"
+          />
+          <div class="title">Running Up That Hill</div>
+          <div class="artist">Kate Bush</div>
+        </button>
+
+        <!-- Fat Joe - What's Luv -->
+        <button onclick="grabURL(event, 14)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffat-joe-jealous-ones-still-envy.jpg?v=1591158242429"
+            alt="What's Luv"
+            width="600"
+            height="400"
+          />
+          <div class="title">What's Luv (ft. Ashanti & Ja Rule)</div>
+          <div class="artist">Fat Joe</div>
+        </button>
+
+        <!-- Where Is the Love? -->
+        <button onclick="grabURL(event, 15)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-black-eyed-peas-elephunk.jpg?v=1592289078276"
+            alt="Where Is the Love?"
+            width="600"
+            height="400"
+          />
+          <div class="title">Where Is the Love?</div>
+          <div class="artist">Black Eyed Peas</div>
+        </button>
+
+        <!-- Shallow -->
+        <button onclick="grabURL(event, 16)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fa-star-is-born-soundtrack.png?v=1592289621175"
+            alt="Shallow"
+            width="600"
+            height="400"
+          />
+          <div class="title">Shallow</div>
+          <div class="artist">Lady Gaga, Bradley Cooper</div>
+        </button>
+
+        <!-- Starman -->
+        <button onclick="grabURL(event, 17)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FZiggyStardust.jpg?v=1592290475425"
+            alt="Starman"
+            width="600"
+            height="400"
+          />
+          <div class="title">Starman</div>
+          <div class="artist">David Bowie</div>
+        </button>
+
+        <!-- Tamia -->
+        <button onclick="grabURL(event, 18)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftamia-tamia.jpg?v=1592293320960"
+            alt="Starman"
+            width="600"
+            height="400"
+          />
+          <div class="title">So Into You</div>
+          <div class="artist">Tamia</div>
+        </button>
+
+        <!-- So Far I'll Go -->
+        <button onclick="grabURL(event, 19)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmoana.jpg?v=1592293556055"
+            alt="So Far I'll Go"
+            width="600"
+            height="400"
+          />
+          <div class="title">How Far I'll Go</div>
+          <div class="artist">Moana</div>
+        </button>
+
+        <!-- Complicated -->
+        <button onclick="grabURL(event, 20)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Favril-lavigne-let-go.jpg?v=1592350310450"
+            alt="Complicated"
+            width="600"
+            height="400"
+          />
+          <div class="title">Complicated</div>
+          <div class="artist">Avril Lavigne</div>
+        </button>
+
+        <!-- The Scientist -->
+        <button onclick="grabURL(event, 21)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcoldplay_a_rush_of_blood_to_the_head.jpg?v=1592345525258"
+            alt="The Scientist"
+            width="600"
+            height="400"
+          />
+          <div class="title">Coldplay</div>
+          <div class="artist">The Scientist</div>
+        </button>
+
+        <!-- Slow Jamz -->
+        <button onclick="grabURL(event, 22)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkanye-west-college-dropout.jpg?v=1592345728189"
+            alt="Slow Jamz"
+            width="600"
+            height="400"
+          />
+          <div class="title">Kanye West</div>
+          <div class="artist">Slow Jamz</div>
+        </button>
+
+        <!-- Only God Knows Why -->
+        <button onclick="grabURL(event, 23)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkid_rock_devil_without_a_cause.jpg"
+            alt="Only God Knows Why"
+            width="600"
+            height="400"
+          />
+          <div class="title">Only God Knows Why</div>
+          <div class="artist">Kid Rock</div>
+        </button>
+
+        <!-- Drive -->
+        <button onclick="grabURL(event, 24)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fincubus_make_yourself.jpg?v=1592351374184"
+            alt="Drive"
+            width="600"
+            height="400"
+          />
+          <div class="title">Drive</div>
+          <div class="artist">Incubus</div>
+        </button>
+
+        <!-- Electric Feel -->
+        <button onclick="grabURL(event, 25)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmgmt-oracular-spectacular.jpg?v=1597048139589"
+            alt="Electric Feel"
+            width="600"
+            height="400"
+          />
+          <div class="title">Electric Feel</div>
+          <div class="artist">MGMT</div>
+        </button>
+
+        <!-- Whatever You Like -->
+        <button onclick="grabURL(event, 26)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fti-paper-trail.jpg?v=1597048556668"
+            alt="Whatever You Like"
+            width="600"
+            height="400"
+          />
+          <div class="title">Whatever You Like</div>
+          <div class="artist">T.I.</div>
+        </button>
+
+        <!-- When the Party's Over -->
+        <button onclick="grabURL(event, 27)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbillie-eilish-when-we-all-fall-asleep-where-do-we-go.png?v=1597048822150"
+            alt="When the Party's Over"
+            width="600"
+            height="400"
+          />
+          <div class="title">When the Party's Over</div>
+          <div class="artist">Billie Eilish</div>
+        </button>
+
+        <!-- Last Nite -->
+        <button onclick="grabURL(event, 28)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-strokes-is-this-it.jpeg?v=1597049464828"
+            alt="Last Nite"
+            width="600"
+            height="400"
+          />
+          <div class="title">Last Nite</div>
+          <div class="artist">The Strokes</div>
+        </button>
+
+        <!-- More than a Feeling -->
+        <button onclick="grabURL(event, 29)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fboston-boston.jpg?v=1597049792069"
+            alt="More Than a Feeling Boston"
+            width="600"
+            height="400"
+          />
+          <div class="title">More Than a Feeling</div>
+          <div class="artist">Boston</div>
+        </button>
+
+        <!-- Where Is My Mind -->
+        <button onclick="grabURL(event, 30)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fpixies-surfer-rosa.jpg?v=1597105737389"
+            alt="Where Is My Mind"
+            width="600"
+            height="400"
+          />
+          <div class="title">Where Is My Mind</div>
+          <div class="artist">Pixies</div>
+        </button>
+
+        <!-- Cryin' -->
+        <button onclick="grabURL(event, 31)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Faerosmith-pump.jpg?v=1597106237598"
+            alt="Cryin'"
+            width="600"
+            height="400"
+          />
+          <div class="title">Cryin'</div>
+          <div class="artist">Aerosmith</div>
+        </button>
+
+        <!-- Super Bass -->
+        <button onclick="grabURL(event, 32)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fnicki-minaj-pink-friday.jpg?v=1597106428087"
+            alt="Super Bass"
+            width="600"
+            height="400"
+          />
+          <div class="title">Superbass</div>
+          <div class="artist">Nicki Minaj</div>
+        </button>
+
+        <!-- California Dreamin -->
+        <button onclick="grabURL(event, 33)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-mamas-and-the-papas-if-you-can-believe-your-eyes-and-ears.jpg?v=1597107066098"
+            alt="California Dreamin'"
+            width="600"
+            height="400"
+          />
+          <div class="title">California Dreamin'</div>
+          <div class="artist">The Mamas and the Papas</div>
+        </button>
+
+        <!-- The First Cut Is the Deepest -->
+        <button onclick="grabURL(event, 34)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsheryl-crow-the_very_best_of_sheryl_crow.png?v=1597107235494"
+            alt="The First Cut Is the Deepest"
+            width="600"
+            height="400"
+          />
+          <div class="title">The First Cut Is the Deepest</div>
+          <div class="artist">Sheryl Crow</div>
+        </button>
+
+        <!-- Ddu-Du Ddu-Du (뚜두뚜두) -->
+        <button onclick="grabURL(event, 35)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fblack-pink-square-up.png?v=1597114366350"
+            alt="Ddu-Du Ddu-Du (뚜두뚜두)"
+            width="600"
+            height="400"
+          />
+          <div class="title">Ddu-Du Ddu-Du (뚜두뚜두)</div>
+          <div class="artist">Blackpink</div>
+        </button>
+
+        <!-- Havana -->
+        <button onclick="grabURL(event, 36)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcamila-cabello-camila.png?v=1597115047844"
+            alt="Havana"
+            width="600"
+            height="400"
+          />
+          <div class="title">Havana ft. Young Thug</div>
+          <div class="artist">Camila Cabello</div>
+        </button>
+
+        <!-- Hooked on a Feeling -->
+        <button onclick="grabURL(event, 37)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBlue_Swede_Hooked_on_a_Feeling.jpeg?v=1597115341619"
+            alt="Havana"
+            width="600"
+            height="400"
+          />
+          <div class="title">Hooked on a Feeling</div>
+          <div class="artist">Blue Swede</div>
+        </button>
+
+        <!-- Hello -->
+        <button onclick="grabURL(event, 38)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fadele-25.png?v=1597116632498"
+            alt="Hello"
+            width="600"
+            height="400"
+          />
+          <div class="title">Hello</div>
+          <div class="artist">Adele</div>
+        </button>
+
+        <!-- Best I Ever Had -->
+        <button onclick="grabURL(event, 39)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDrake_Thank_Me_Later.jpg?v=1597116955766"
+            alt="Hello"
+            width="600"
+            height="400"
+          />
+          <div class="title">Best I Ever Had</div>
+          <div class="artist">Drake</div>
+        </button>
+
+        <!-- Crazy in Love -->
+        <button onclick="grabURL(event, 40)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBeyonce_Dangerously_In_Love.png?v=1597208523041"
+            alt="Beyonce Dangerously in Love"
+            width="600"
+            height="400"
+          />
+          <div class="title">Crazy in Love ft. Jay Z</div>
+          <div class="artist">Beyoncé</div>
+        </button>
+
+        <!-- Burnin' Up -->
+        <button onclick="grabURL(event, 41)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FJonas_Brothers_A_Little_Bit_Longer.jpg?v=1597208768173"
+            alt="Jonas Brothers"
+            width="600"
+            height="400"
+          />
+          <div class="title">Burnin' Up</div>
+          <div class="artist">Jonas Brothers</div>
+        </button>
+
+        <!-- Truth Hurts -->
+        <button onclick="grabURL(event, 42)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLizzo_Cuz_I_Love_You.png?v=1597208778608"
+            alt="Lizzo Cus I love You"
+            width="600"
+            height="400"
+          />
+          <div class="title">Truth Hurts</div>
+          <div class="artist">Lizzo</div>
+        </button>
+
+        <!-- Boy with Luv -->
+        <button onclick="grabURL(event, 43)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBTS_Map_of_the_Soul_7.png?v=1597208780997"
+            alt="BTS Map of the Soul 7"
+            width="600"
+            height="400"
+          />
+          <div class="title">Boy With Luv (작은 것들을 위한 시) ft. Halsey</div>
+          <div class="artist">BTS</div>
+        </button>
+
+        <!-- Bodak Yellow -->
+        <button onclick="grabURL(event, 44)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FCardi_B_Invasion_of_Privacy.png?v=1597208784442"
+            alt="BTS Map of the Soul 7"
+            width="600"
+            height="400"
+          />
+          <div class="title">Bodak Yellow</div>
+          <div class="artist">Cardi B</div>
+        </button>
+
+        <!-- Yesterday -->
+        <button onclick="grabURL(event, 45)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FThe_Beatles_Help.jpg?v=1597386383196"
+            alt="The Beatles - Help!"
+            width="600"
+            height="400"
+          />
+          <div class="title">Yesterday</div>
+          <div class="artist">The Beatles</div>
+        </button>
+
+        <!-- Senorita -->
+        <button onclick="grabURL(event, 46)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FShawn_Mendes_Shawn_Mendes.png?v=1597389147244"
+            alt="Shawn Mendes - Shawn Mendes"
+            width="600"
+            height="400"
+          />
+          <div class="title">Señorita</div>
+          <div class="artist">Shawn Mendes, Camila Cabella</div>
+        </button>
+
+        <!-- I Will Always Love You -->
+        <button onclick="grabURL(event, 47)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FThe_Bodyguard_Original_Soundtrack_Album.jpg?v=1597389683244"
+            alt="Whitney Houston - I Will ALways Love You"
+            width="600"
+            height="400"
+          />
+          <div class="title">I Will Always Love You</div>
+          <div class="artist">Whitney Houston</div>
+        </button>
+
+        <!-- Under the Bridge -->
+        <button onclick="grabURL(event, 48)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FRed_Hot_Chili_Peppers_BSSM.jpg?v=1597433975118"
+            alt="Red Hot Chili Peppers"
+            width="600"
+            height="400"
+          />
+          <div class="title">Under the Bridge</div>
+          <div class="artist">Red Hot Chili Peppers</div>
+        </button>
+
+        <!-- Jolene -->
+        <button onclick="grabURL(event, 49)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDolly_Parton_Jolene.jpg?v=1597434213221"
+            alt="Dolly Parton"
+            width="600"
+            height="400"
+          />
+          <div class="title">Jolene</div>
+          <div class="artist">Dolly Parton</div>
+        </button>
+
+        <button onclick="grabURL(event, 50)" class="jukebox" type="button">
+          <img
+            src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftall_trees.jpeg?v=1621055790085"
+            alt="Manorofanimals"
+            width="600"
+            height="400"
+          />
+          <div class="title">Tall Trees</div>
+          <div class="artist">Manorofanimals</div>
+        </button>
+      </div>
+
+      <div id="added-notice">
+        <button class="added-notice-contents" onclick="dismissAddedNotice()">
+          You just added <span id="added-notice-song"></span> to the song queue!
+        </button>
+      </div>
+
+      <div class="controls">
+        <!-- <a class="control" href="#" rel="modal:close">Add Song</a> -->
+
+        <a class="button" href="#" rel="modal:close">Done</a>
+        <button
+          class="button button-bold"
+          disabled
+          id="choose-song"
+          onclick="addSong()"
+        >
+          Choose Song
+        </button>
+      </div>
+    </div>
+
+    <script>
+      <!-- =========================================== Karaoke Playlist (mp4's) ===================================== -->
+
+      var playlist = [
+        'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045', <!-- Let's Get it On -->
+      ];
+
+      var jukebox = [
+        'https://cdn.glitch.com/bd2f3733-359c-47c8-8e0b-7f7b493efb47%2Fencoded.mp4', <!-- Beast of Burden -->
+        'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fkillingmesoftly.mp4', <!-- Killing Me Softly -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FCoheed_And_Cambria_Blood_Red_Summer.mp4', <!-- Blood Red Summer -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FWheatus_Teenage_Dirtbag.mp4', <!-- Teenage Dirtbag -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FTaylor_Swift_Red.mp4', <!-- Red -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FGorillaz_Feel_Good_Inc.mp4', <!-- Feel Good Inc -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FOld_Crow_Medicine_Show_Wagon_Wheel.mp4', <!-- Wagon Wheel -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FJ_Cole_Power_Trip.mp4', <!-- Power Trip -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FDua_Lipa_Don_t_Start_Now.mp4', <!-- Don't Start Now -->
+        'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4', <!-- Let's Get it On -->
+        'https://cdn.glitch.com/b5b49e97-d435-4e07-920c-7156ab5602a2%2FThe_Shins_New_Slang.mp4', <!-- New Slang -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsabrina-boys-summertime-love.m4v', <!-- Boys -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fredbone-come-and-get-your-love.m4v', <!-- Come and Get Your Love -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkate-bush-running-up-that-hill.m4v', <!-- Running Up That Hill -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffat-joe-whats-luv.m4v', <!-- What's Luv -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fblack-eyed-peas-where-is-the-love.m4v', <!-- Where Is the Love? -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fa-star-is-born-shallow.m4v', <!-- Shallow -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fdavid-bowie-%20starman.m4v', <!-- Starman -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftamia-so-into-you.m4v', <!-- So Into You -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmoana-how-far-ill-go.m4v', <!-- How Far I'll Go -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Favril-lavigne-complicated.m4v', <!-- Complicated -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcoldplay-the-scientist.m4v', <!-- The Scientist -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkanye-west-slow-jamz.m4v', <!-- Slow Jamz -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fkid-rock-only-god-knows-why.m4v', <!-- Only God Knows Why -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fincubus_drive.m4v', <!-- Drive -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmgmt-electric-feel.m4v', <!-- Electric Feel -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fti-whatever-you-like.m4v', <!-- Whatever You Like -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbillie-eilish-when-the-partys-over.m4v', <!-- When the Party's Over -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-strokes-last-nite.m4v', <!-- Last Nite -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fboston-more-than-a-feeling.m4v', <!-- More Than a Feeling -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fpixies-where-is-my-mind.m4v', <!-- Where Is My Mind -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Faersomith-cryin.m4v', <!-- Cryin' -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fnicki-minaj-super-bass.m4v', <!-- Super Bass -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fthe-mamas-and-the-papas-california-dreamin.m4v', <!-- California Dreamin' -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fsheryl-crow-first-cut-is-the-deepest.m4v', <!-- First Cut Is the Deepest -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBlackpink-Ddu-Du-Ddu-Du.m4v', <!-- Ddu-Du Ddu-Du (뚜두뚜두) -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcamila-cabello-havana.m4v', <!-- Havana -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FBlue_Swede_Hooked_On_A_Feeling.m4v', <!-- Hooked on a Feeling -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fadele_%20hello.m4v', <!-- Hello -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDrake_Best_I_Ever_Had.m4v', <!-- Best I Ever Had -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbeyonce-crazy-in-love.m4v', <!-- Crazy in Love -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fjonas-brothers-burnin-up.m4v', <!-- Burnin' Up -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Flizzo-truth-hurts.m4v', <!-- Truth Hurts -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fbts-boy-with-luv.m4v', <!-- Boy with Luv -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcardi-b-bodak-yellow.m4v', <!-- Bodak Yellow -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FThe_Beatles_Yesterday.m4v', <!-- Yesterday -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fshawn_mendes_senorita.m4v', <!-- Señorita -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FWhitney_Houston_I_Will_Always_Love_You.m4v', <!-- I Will Always Love You -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FRed_Hot_Chili_Peppers_Under_The_Bridge.m4v', <!-- Under the Bridge -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FDolly_Parton_Jolene.m4v', <!-- Jolene -->
+        'https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ftall_trees720.mov?v=1621056485955',
+      ];
+
+      // These match up to the jukebox array above
+      // We should probably switch to an array of objects... after the big refactor!
+      var songNames = [
+        'Beast of Burden',
+        'Killing Me Softly',
+        'Blood Red Summer',
+        'Teenage Dirtbag',
+        'Red',
+        'Feel Good Inc',
+        'Wagon Wheel',
+        'Power Trip',
+        "Don't Start Now",
+        "Let's Get it On",
+        'New Slang',
+        'Boys',
+        'Come and Get Your Love',
+        'Running Up That Hill',
+        "What's Luv",
+        'Where Is the Love?',
+        'Shallow',
+        'Starman',
+        'So Into You',
+        "How Far I'll Go",
+        'Complicated',
+        'The Scientist',
+        'Slow Jamz',
+        'Only God Knows Why',
+        'Drive',
+        'Electric Feel',
+        'Whatever You Like',
+        "When the Party's Over",
+        'Last Nite',
+        'More Than a Feeling',
+        'Where Is My Mind',
+        "Cryin'",
+        'Super Bass',
+        "California Dreamin'",
+        'The First Cut Is the Deepest',
+        'Ddu-Du Ddu-Du (뚜두뚜두)',
+        'Havana',
+        'Hooked on a Feeling',
+        'Hello',
+        'Best I Ever Had',
+        'Crazy in Love',
+        "Burnin' Up",
+        'Truth Hurts',
+        'Boy with Luv (작은 것들을 위한 시)',
+        'Bodak Yellow',
+        'Yesterday',
+        'Señorita',
+        'I Will Always Love You',
+        'Under the Bridge',
+        'Jolene',
+        'Tall Trees',
+      ];
+
+      function findParentButton(element) {
+        if (!element) {
+          return undefined;
+        }
+
+        if (element.tagName === 'BUTTON') {
+          return element;
+        }
+
+        return findParentButton(element.parentElement);
+      }
+
+      var selectedElement;
+      var selectedIndex;
+      var addedSong;
+
+      function grabURL(event, num) {
+        if (selectedElement) {
+          selectedElement.className = 'jukebox';
+        }
+
+        selectedIndex = num;
+        selectedElement = findParentButton(event.target);
+        selectedElement.className = 'jukebox jukebox-selected';
+
+        document.getElementById('choose-song').removeAttribute('disabled');
+      }
+
+      function addSong() {
+        playlist.push(jukebox[selectedIndex]);
+
+        document.getElementById('choose-song').setAttribute('disabled', true);
+        document.getElementById('added-notice').setAttribute('populated', true);
+        document.getElementById('added-notice-song').textContent =
+          songNames[selectedIndex];
+
+        selectedElement.className = 'jukebox';
+        selectedElement = selectedIndex = undefined;
+
+        setTimeout(dismissAddedNotice, 2000);
+      }
+
+      function dismissAddedNotice() {
+        document.getElementById('added-notice').removeAttribute('populated');
+      }
+    </script>
+  </body>
+
+  <script src="/playback.js"></script>
+  <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+  <script src="/chat.js"></script>
+  <script src="/video-player.js"></script>
+</html>
