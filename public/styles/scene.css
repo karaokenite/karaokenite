@@ -242,7 +242,8 @@ kbd {
 }
 
 #copy {
-  padding: 0px 30px;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
   font-size: var(--font-size-sm);
   margin-right: 0px;
   display: inline-block;

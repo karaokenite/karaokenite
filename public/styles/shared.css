@@ -352,7 +352,7 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
   justify-content: center;
   font-size: var(--font-size-md);
   text-transform: uppercase;
-  padding: 0.25rem 1.5rem;
+  padding: 0.25rem 1.5rem 0.1rem;
   min-height: 3rem;
   font-weight: 600;
   border: 3px solid var(--color-midnight);
