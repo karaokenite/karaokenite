@@ -228,7 +228,7 @@ h2 {
 }
 
 .custom-radios-hosting-joining:hover input ~ .custom-checkmark {
-  background-color: grey;
+  background-color: var(--color-smoke);
 }
 
 .custom-radios-hosting-joining input:checked ~ .custom-checkmark {
@@ -308,7 +308,7 @@ form input[type="text"] {
 }
 
 .options--visual img {
-  padding: 20px;
+  padding: 1.5rem;
   width: 75%;
 }
 
@@ -427,8 +427,7 @@ section#steps {
     position: relative;
   }
   .options--visual img {
-    /*padding:20px;*/
-    width: 50%;
+    width: 75%;
   }
 }
 
