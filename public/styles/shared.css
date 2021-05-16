@@ -260,6 +260,10 @@ db    db d888888b d888888b db      d888888b d888888b db    db
   text-align: center;
 }
 
+.text__left {
+  text-align: left;
+}
+
 .flex {
   display: flex;
 }
@@ -331,6 +335,7 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 }
 
 .brand-betatag {
+  line-height: var(--line-height-text);
   background: var(--color-pretty-in-pink);
   color: var(--color-linen);
   font-size: var(--font-size-sm);
@@ -394,7 +399,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 .header {
   transform: translate(0, -100%);
   font-size: var(--font-size-lg);
-  padding: 1rem;
+  padding: calc(var(--page-padding) / 2) var(--page-padding);
   position: absolute;
   top: 0;
   left: 0;
@@ -584,17 +589,17 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
 .footer {
   background-color: var(--color-jet);
   color: var(--color-linen);
-  padding: 2rem;
+  padding: var(--page-padding);
+  display: flex;
+  justify-content: center;
 }
 
 .footer-container {
-  width: calc(100% - 60px);
+  width: 100%;
   max-width: 70rem;
-  margin: auto;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: stretch;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -605,13 +610,10 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
 }
 
 .footer-left {
-  padding: 0;
-  display: inline-block;
-  flex: 1;
+  text-align: center;
 }
 
 .footer-icons {
-  margin-left: auto;
   font-size: var(--font-size-lg);
   display: flex;
 }
@@ -634,4 +636,18 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
 #footer-name {
   font-size: var(--font-size-lg);
   font-weight: var(--weight-heavy);
+}
+
+@media screen and (min-width: 60rem) {
+  .footer-container {
+    flex-direction: row;
+    margin: auto;
+  }
+
+  .footer-icons {
+    margin-left: auto;
+  }
+  .footer-left {
+    text-align: left;
+  }
 }

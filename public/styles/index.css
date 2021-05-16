@@ -149,7 +149,7 @@
 }
 
 .hero--content {
-  padding: var(--vertical-space) 2rem;
+  padding: var(--vertical-space) var(--page-padding);
 }
 
 @media (min-width: 68rem) {
@@ -242,7 +242,7 @@ form input[type="text"] {
 /* Section: Options */
 
 .options-container {
-  margin: -5rem 0;
+  margin: calc(-1 * var(--vertical-space)) 0;
   padding: 10rem 0;
   overflow: hidden;
 }
@@ -278,7 +278,13 @@ form input[type="text"] {
 }
 
 .options-content::before {
-  top: 100%;
+  top: 75%;
+}
+
+@media screen and (min-width: 32rem) {
+  .options-content::before {
+    top: 100%;
+  }
 }
 
 .options-grid {
