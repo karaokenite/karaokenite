@@ -1,19 +1,9 @@
-:root {
-  --color-text: var(--color-linen);
-  --color-link-text: var(--color-linen);
-  --color-link-underline: var(--color-peach);
-}
-
 .header-navlink__home {
   visibility: hidden;
 }
 
 .header__revealed .header-navlink__home {
   visibility: visible;
-}
-
-h2 {
-  text-align: center;
 }
 
 /**
@@ -148,18 +138,18 @@ h2 {
 .hero-tagline {
   font-size: 1.2em;
   color: var(--color-linen);
-  font-weight: 400;
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .hero--content {
-  padding: 5rem 2rem;
+  padding: var(--vertical-space) var(--page-padding);
 }
 
 @media (min-width: 68rem) {
   .hero--content {
-    padding: 5rem 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -189,13 +179,6 @@ h2 {
 
 .floating--long {
   animation-duration: 9s;
-}
-
-/* Section: Form */
-
-#now h2 {
-  font-size: 1.6rem;
-  font-weight: 500;
 }
 
 /* Custom radio buttons to create/join a room*/
@@ -228,7 +211,7 @@ h2 {
 }
 
 .custom-radios-hosting-joining:hover input ~ .custom-checkmark {
-  background-color: grey;
+  background-color: var(--color-smoke);
 }
 
 .custom-radios-hosting-joining input:checked ~ .custom-checkmark {
@@ -242,8 +225,7 @@ form input {
   width: 100%;
   border-radius: 8px;
   height: 48px;
-  font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-size-md);
   font-family: var(--font-brand);
 }
 
@@ -254,7 +236,7 @@ form input[type="text"] {
 /* Section: Options */
 
 .options-container {
-  margin: -5rem 0;
+  margin: calc(-1 * var(--vertical-space)) 0;
   padding: 10rem 0;
   overflow: hidden;
 }
@@ -290,7 +272,13 @@ form input[type="text"] {
 }
 
 .options-content::before {
-  top: 100%;
+  top: 75%;
+}
+
+@media screen and (min-width: 32rem) {
+  .options-content::before {
+    top: 100%;
+  }
 }
 
 .options-grid {
@@ -301,6 +289,11 @@ form input[type="text"] {
   grid-template-columns: 1fr max-content 1fr;
 }
 
+.options--description {
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-title);
+}
+
 .options--visual {
   display: flex;
   flex-direction: column;
@@ -308,23 +301,23 @@ form input[type="text"] {
 }
 
 .options--visual img {
-  padding: 20px;
+  padding: 1.5rem;
   width: 75%;
 }
 
 .options--or {
   text-align: center;
-  font-weight: 700;
-  font-size: 32px;
-  padding: 16px;
+  font-weight: var(--weight-heavy);
+  font-size: var(--page-subtitle-size);
+  padding: 0.5rem;
   color: var(--color-red-hots);
 }
 
 .options-description {
-  font-weight: 500;
-  padding: 16px;
+  font-weight: var(--weight-title);
+  padding: 1rem;
   text-align: center;
-  font-size: 18px;
+  font-size: var(--font-size-md);
 }
 
 /* Section: How it works */
@@ -342,7 +335,7 @@ section#steps {
 
 .steps-step {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 
 .steps--visual {
@@ -357,18 +350,28 @@ section#steps {
 }
 
 .steps-description {
-  margin: 2rem auto;
+  margin: 0 auto;
   max-width: 15rem;
-  text-align: center;
-  line-height: 1.6rem;
+  text-align: left;
+  line-height: var(--line-height-text);
 }
 
 .steps--label {
   display: block;
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: var(--section-title-size);
+  font-weight: var(--weight-title);
   margin-bottom: 1rem;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 60rem) {
+  .steps-step {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps-description {
+    text-align: center;
+  }
 }
 
 /* Section: Recap */
@@ -402,27 +405,24 @@ section#steps {
 }
 
 .recap-description {
-  font-size: 2rem;
   margin: auto;
+  font-size: var(--font-size-lg);
   max-width: 30rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 16px;
 }
 
 .recap-link {
-  display: inline-block;
   margin-top: 1rem;
 }
-.recap-link:before {
-  display: none;
+
+@media (min-width: 42rem) {
+  .recap-description {
+    font-size: var(--font-size-xl);
+  }
 }
 
 /* Special Footer style */
-
-footer {
-  color: var(--color-linen);
-  padding: 2rem;
-}
 
 @media (max-width: 42rem) {
   .hero {
@@ -434,21 +434,16 @@ footer {
     position: relative;
   }
   .options--visual img {
-    /*padding:20px;*/
+    padding: 0.25rem;
     width: 50%;
   }
-}
-
-section#newsletter {
-  color: var(--color-linen);
-  margin: auto;
 }
 
 .newsletter--description {
   margin: 2rem auto;
   max-width: 18rem;
   text-align: center;
-  line-height: 1.6rem;
+  line-height: var(--line-height-text);
 }
 
 .copyWrapper {
@@ -480,7 +475,7 @@ section#newsletter {
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
-  font-size: 14px;
+  font-size: var(--font-size-xs);
 }
 
 .tooltip .tooltiptext::after {
@@ -501,10 +496,10 @@ section#newsletter {
 
 #myInput {
   padding: 0px 24px;
-  height: 50px;
+  height: 48px;
   border: 0px;
   border-radius: 8px 0px 0px 8px;
-  font-size: 19px;
+  font-size: var(--font-size-md);
   font-family: var(--font-brand);
   text-align: left;
   margin: 0px;
@@ -516,7 +511,7 @@ section#newsletter {
 
 #copy {
   padding: 0px 30px;
-  font-size: 15px;
+  font-size: var(--font-size-sm);
   margin-right: 0px;
   display: inline-block;
   border: 0px;

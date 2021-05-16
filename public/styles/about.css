@@ -6,19 +6,18 @@
   border-bottom: 5px solid var(--color-deep-blue-something);
   border-radius: 10px;
   width: 30%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto var(--page-padding);
 }
 
 h1 {
   color: var(--color-deep-blue-something);
-  text-align: middle;
   font-size: 2.8em;
   text-align: center;
+  font-weight: var(--weight-heavy);
 }
 
 .description {
   text-align: center;
   color: var(--color-frozen-blueberry);
-  font-size: 19px;
+  font-size: var(--font-size-md);
 }

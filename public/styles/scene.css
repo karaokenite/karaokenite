@@ -2,7 +2,7 @@
 
 #usersList {
   font-family: var(--font-brand);
-  font-size: 22px;
+  font-size: var(--font-size-lg);
 }
 
 ul li {
@@ -47,45 +47,11 @@ h2 {
   font-family: var(--font-brand);
   color: var(--color-midnight);
   text-align: center;
-  font-weight: 400;
   max-width: 75rem;
 }
 
 button {
   cursor: pointer;
-}
-
-/* button:hover {
-  background: ;
-} */
-
-.button {
-  font-size: 18px;
-  text-transform: uppercase;
-  padding: 0px 24px;
-  height: 50px;
-  line-height: 47px;
-  font-weight: 700;
-  border: 3px solid var(--color-midnight);
-  font-family: var(--font-brand);
-  background-color: var(--color-linen);
-  color: var(--color-midnight);
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.2s background-color;
-}
-
-.button:hover {
-  cursor: pointer;
-  background-color: var(--color-alabaster);
-}
-
-.button-bold {
-  background-color: var(--color-old-yellow);
-}
-
-.button-bold:hover {
-  background-color: var(--color-neon-demon);
 }
 
 videoControls {
@@ -106,8 +72,8 @@ kbd {
   color: var(--color-machine);
   display: inline-block;
   font-family: var(--font-brand);
-  font-size: 14px;
-  line-height: 1.4;
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-text);
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
   text-shadow: 0 1px 0 var(--color-linen);
@@ -118,10 +84,10 @@ kbd {
   right: 480px;
   z-index: 2;
   position: absolute;
-  font-size: 30px;
+  font-size: var(--font-size-xl);
   text-transform: uppercase;
   color: var(--color-linen);
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
   font-family: var(--font-brand);
 }
 
@@ -161,7 +127,7 @@ kbd {
   z-index: 2;
   position: absolute;
   border-radius: 50%;
-  height: 50px;
+  height: 48px;
   width: 50px;
   background-image: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029");
   background-position: 50%, 50%;
@@ -174,7 +140,7 @@ kbd {
   right: 200px;
   z-index: 2;
   position: absolute;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #invite2 {
@@ -183,7 +149,7 @@ kbd {
   margin: auto;
   width: 83%;
   margin-top: 25px;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #song {
@@ -192,7 +158,7 @@ kbd {
   right: 40px;
   z-index: 2;
   position: absolute;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #scene-logo {
@@ -202,12 +168,12 @@ kbd {
   position: absolute;
   font-family: var(--font-brand);
   font-size: 1.6em;
-  font-weight: bold;
-  line-height: 1.4em;
+  font-weight: var(--weight-heavy);
+  line-height: var(--line-height-text);
   text-decoration: none !important;
   justify-content: space-between;
   margin: auto;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #scene-logo a {
@@ -241,7 +207,7 @@ kbd {
   margin-left: -75px;
   opacity: 0;
   transition: opacity 0.3s;
-  font-size: 14px;
+  font-size: var(--font-size-xs);
 }
 
 .tooltip .tooltiptext::after {
@@ -262,10 +228,10 @@ kbd {
 
 #myInput {
   padding: 0px 24px;
-  height: 50px;
+  height: 48px;
   border: 0px;
   border-radius: 8px 0px 0px 8px;
-  font-size: 19px;
+  font-size: var(--font-size-md);
   font-family: var(--font-brand);
   text-align: left;
   margin: 0px;
@@ -277,7 +243,7 @@ kbd {
 
 #copy {
   padding: 0px 30px;
-  font-size: 15px;
+  font-size: var(--font-size-sm);
   margin-right: 0px;
   display: inline-block;
   border: 0px;
@@ -285,13 +251,6 @@ kbd {
   border-left: 3px solid var(--color-midnight);
   outline: 0;
 }
-
-/* .twitter-share-button {
-  font-size: 15px;
-  margin-top: 15px;
-  margin-right: 5px;
-  display: inline-block;
-} */
 
 .shareButton {
   margin: auto;
@@ -302,13 +261,6 @@ kbd {
 }
 
 .fb-share-button {
-  /*   font-size: 15px;
-  margin-top: 15px;
-  margin-right: 5px;
-  display: inline-block;
-  top: 0;
-  vertical-align: top;
-  float: left; */
   margin-left: 11px;
 }
 
@@ -316,7 +268,6 @@ kbd {
 
 #songModal {
   font-family: "Lato", "Helvetica Neue", arial, sans-serif;
-  font-weight: 400;
   color: var(--color-slate);
   max-width: 75rem;
   padding: 2rem 1rem;
@@ -346,7 +297,7 @@ kbd {
 #added-notice[populated] {
   align-items: center;
   display: flex;
-  font-size: 1.125rem;
+  font-size: var(--font-size-md);
   height: 100%;
   justify-content: center;
   left: 15%;
@@ -447,7 +398,7 @@ kbd {
 }
 
 .title {
-  font-weight: bold;
+  font-weight: var(--weight-heavy);
   margin: 0.5rem 0 0.25rem;
 }
 
@@ -510,5 +461,5 @@ kbd {
 #roomName {
   font-family: var(--font-brand);
   color: var(--color-midnight);
-  font-weight: bold;
+  font-weight: var(--weight-heavy);
 }
