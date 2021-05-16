@@ -35,7 +35,7 @@
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
-  padding: 0 18px;
+  padding: 1rem;
   display: none;
   overflow: hidden;
   background-color: var(--color-cloud-nine);

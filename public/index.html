@@ -166,8 +166,8 @@ if (location.protocol != 'https:') {
     </header>
 
     <main class="layout layout__fluid">
+      <div class="hero-bg"></div>
       <section class="hero" id="hero">
-        <div class="hero-bg"></div>
         <div class="hero-images">
           <img
             class="hero-bg-img star1 floating floating--short"
@@ -210,7 +210,7 @@ if (location.protocol != 'https:') {
             </p>
           </div>
           <div class="join-form" id="now">
-            <h2 class="text__center">JOIN A ROOM (FREE)</h2>
+            <h2 class="page-subtitle text__center">JOIN A ROOM (FREE)</h2>
             <form action="/scene.html" method="GET">
               <div>
                 <input
@@ -271,8 +271,10 @@ if (location.protocol != 'https:') {
       </section>
 
       <section id="options" class="options-container">
-        <div class="section--content options-content">
-          <h2 class="text__center">Karaoke with your friends...</h2>
+        <div class="section--content options-content section__wide">
+          <h2 class="page-subtitle text__center">
+            Karaoke with your friends...
+          </h2>
           <div class="options-grid">
             <div class="options--visual">
               <img
@@ -301,8 +303,8 @@ if (location.protocol != 'https:') {
       </section>
 
       <section id="steps" class="section--content">
-        <h2 class="text__center">How it works:</h2>
-        <ol class="steps">
+        <h2 class="page-subtitle text__center">How it works:</h2>
+        <ol class="steps layout-grid layout-grid__sm">
           <li class="steps-step">
             <div class="steps--visual">
               <img
@@ -310,7 +312,7 @@ if (location.protocol != 'https:') {
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FRoom.svg?v=1591917657658"
               />
             </div>
-            <div>
+            <div class="flex flex__centered">
               <p class="steps-description">
                 <label class="steps--label yellow" for="create-a-room">
                   Create a room
@@ -327,7 +329,7 @@ if (location.protocol != 'https:') {
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FFriends.svg?v=1591917657149"
               />
             </div>
-            <div>
+            <div class="flex flex__centered">
               <p class="steps-description">
                 <label class="steps--label magenta" for="invite-friends">
                   Invite friends
@@ -343,7 +345,7 @@ if (location.protocol != 'https:') {
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FSing.svg?v=1591917657376"
               />
             </div>
-            <div>
+            <div class="flex flex__centered">
               <p class="steps-description">
                 <label class="steps--label pink__dark" for="sing-together">
                   Have a good time
@@ -368,7 +370,7 @@ if (location.protocol != 'https:') {
 
       <!-- Newsletter (Sonny) -->
       <section id="newsletter" class="newsletter section--content">
-        <h2 class="text__center">Keep up with the party!</h2>
+        <h2 class="page-subtitle text__center">Keep up with the party!</h2>
         <p class="newsletter--description">
           Join our newsletter to get Karaoke Nite updates from our team.
         </p>

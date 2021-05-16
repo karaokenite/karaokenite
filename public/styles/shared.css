@@ -32,17 +32,17 @@
   --breakpoint-xl: 68rem;
 
   --font-brand: Linotte, Arial, Helvetica, sans-serif;
-  --font-size-xs: 0.875rem;
-  --font-size-sm: 1rem;
-  --font-size-md: 1.125rem;
-  --font-size-lg: 1.375rem;
-  --font-size-xl: 2rem;
-  --font-size-xxl: 2.8rem;
   --line-height-text: 1.5;
   --line-height-title: 1.1;
   --weight-heavy: 700;
   --weight-title: 600;
   --weight-body: 400;
+  --font-size-xs: 0.875rem;
+  --font-size-sm: 1rem;
+  --font-size-md: 1.25rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+  --font-size-xxl: 2.8rem;
 
   --color-linen: #ffffff;
   --color-cloud-nine: #f1f1f1;
@@ -72,20 +72,34 @@
   --color-neon-demon: #efff9e;
   --color-bananarama: #f4ca2c;
   --color-old-yellow: #c8ef00;
+}
 
+:root {
   --color-text: var(--color-midnight);
   --color-link-text: var(--color-midnight);
   --color-link-underline: var(--color-peach);
 
   --content-width-md: 40rem;
 
-  --vertical-space: 3rem;
+  --vertical-space: 2rem;
+  --vertical-space-small: 1.5rem;
+  --page-padding: 1rem;
+
+  --page-title-size: var(--font-size-xl);
+  --page-subtitle-size: var(--font-size-lg);
+  --section-title-size: var(--font-size-md);
   --header-height: 4.75rem;
 }
 
 @media screen and (min-width: 68rem) {
   :root {
-    --vertical-space: 5rem;
+    --vertical-space: 4rem;
+    --vertical-space-small: 2.5rem;
+    --page-padding: 2rem;
+
+    --page-title-size: var(--font-size-xxl);
+    --page-subtitle-size: var(--font-size-xl);
+    --section-title-size: var(--font-size-lg);
   }
 }
 
@@ -133,16 +147,14 @@ h1 {
   font-weight: var(--weight-heavy);
 }
 
-h2 {
-  font-weight: 600;
-  font-size: var(--font-size-xl);
+ul,
+ol,
+p {
   margin: 0 0 1rem;
-  text-align: left;
 }
 
 p {
   text-align: left;
-  margin-bottom: 10px;
 }
 
 a {
@@ -248,6 +260,15 @@ db    db d888888b d888888b db      d888888b d888888b db    db
   text-align: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.flex__centered {
+  align-items: center;
+  justify-content: center;
+}
+
 /**
 db       .d8b.  db    db  .d88b.  db    db d888888b
 88      d8' `8b `8b  d8' .8P  Y8. 88    88 `~~88~~'
@@ -262,18 +283,20 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 }
 
 .layout__fluid {
+  padding-top: var(--header-height);
   max-width: 100%;
 }
 
 .layout__small {
-  padding: calc(var(--header-height) + 4rem) 2rem 4rem;
+  padding: calc(var(--header-height) + var(--vertical-space))
+    var(--page-padding) var(--vertical-space);
   max-width: calc(760px - 4rem);
   margin: 0 auto;
 }
 
 .layout-grid {
   display: grid;
-  row-gap: 3rem;
+  row-gap: var(--vertical-space-small);
 }
 
 .layout-grid__sm {
@@ -281,23 +304,13 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 }
 
 .page-title {
-  font-size: var(--font-size-xl);
+  font-size: var(--page-title-size);
 }
 
 .page-subtitle {
   font-weight: var(--weight-title);
-  font-size: var(--font-size-lg);
+  font-size: var(--page-subtitle-size);
   margin: 0 0 1rem;
-  text-align: left;
-}
-
-@media screen and (min-width: 48rem) {
-  .page-title {
-    font-size: var(--font-size-xxl);
-  }
-  .page-subtitle {
-    font-size: var(--font-size-xl);
-  }
 }
 
 /**
@@ -320,14 +333,13 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 .brand-betatag {
   background: var(--color-pretty-in-pink);
   color: var(--color-linen);
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
   padding: 0.01rem 0.4rem;
   position: absolute;
   left: calc(100% + 0.25rem);
   top: -32%;
   height: 22px;
   border-radius: 2px;
-  line-height: var(--line-height-text);
   transform: rotate(-10deg);
   font-weight: var(--weight-title);
 }
@@ -437,7 +449,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   display: inline-block;
   color: var(--color-link-text);
   position: relative;
@@ -491,7 +503,7 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
 .section--content {
   position: relative;
   margin: auto;
-  padding: var(--vertical-space) 2rem;
+  padding: var(--vertical-space) var(--page-padding);
   max-width: calc(49rem + 4rem);
 }
 
@@ -520,18 +532,23 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
   display: none;
 }
 
-.emojilist {
+.list {
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.list li {
+  padding: 0.25rem;
+}
+
+.list__dense {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.emojilist-item {
+.list__dense li {
   padding: 0;
-}
-
-li {
-  padding: 4px;
 }
 
 .blue-gradient {

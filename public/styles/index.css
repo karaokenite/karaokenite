@@ -149,12 +149,13 @@
 }
 
 .hero--content {
-  padding: 5rem 2rem;
+  padding: var(--vertical-space) 2rem;
 }
 
 @media (min-width: 68rem) {
   .hero--content {
-    padding: 5rem 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -184,13 +185,6 @@
 
 .floating--long {
   animation-duration: 9s;
-}
-
-/* Section: Form */
-
-#now h2 {
-  font-size: 1.6rem;
-  font-weight: var(--weight-title);
 }
 
 /* Custom radio buttons to create/join a room*/
@@ -314,14 +308,14 @@ form input[type="text"] {
 .options--or {
   text-align: center;
   font-weight: var(--weight-heavy);
-  font-size: var(--font-size-xl);
-  padding: 16px;
+  font-size: var(--page-subtitle-size);
+  padding: 0.5rem;
   color: var(--color-red-hots);
 }
 
 .options-description {
   font-weight: var(--weight-title);
-  padding: 16px;
+  padding: 1rem;
   text-align: center;
   font-size: var(--font-size-md);
 }
@@ -341,7 +335,7 @@ section#steps {
 
 .steps-step {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 2fr;
 }
 
 .steps--visual {
@@ -356,18 +350,28 @@ section#steps {
 }
 
 .steps-description {
-  margin: 2rem auto;
+  margin: 0 auto;
   max-width: 15rem;
-  text-align: center;
+  text-align: left;
   line-height: var(--line-height-text);
 }
 
 .steps--label {
   display: block;
-  font-size: 1.5rem;
+  font-size: var(--section-title-size);
   font-weight: var(--weight-title);
   margin-bottom: 1rem;
   text-transform: uppercase;
+}
+
+@media screen and (min-width: 60rem) {
+  .steps-step {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .steps-description {
+    text-align: center;
+  }
 }
 
 /* Section: Recap */
@@ -430,7 +434,8 @@ section#steps {
     position: relative;
   }
   .options--visual img {
-    width: 75%;
+    padding: 0.25rem;
+    width: 50%;
   }
 }
 
