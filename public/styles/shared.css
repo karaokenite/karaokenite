@@ -1,10 +1,5 @@
 @font-face {
   font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Semi%20Bold.otf?v=1591822746292");
-  font-weight: 500;
-}
-@font-face {
-  font-family: "Linotte";
   src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Regular.otf?v=1591822742735");
   font-weight: 400;
 }
@@ -45,7 +40,8 @@
   --line-height-text: 1.5;
   --line-height-title: 1.1;
   --weight-heavy: 700;
-  --weight-regular: 500;
+  --weight-title: 600;
+  --weight-body: 400;
 
   --color-linen: #ffffff;
   --color-cloud-nine: #f1f1f1;
@@ -194,7 +190,7 @@ body {
   padding: 0;
   line-height: var(--line-height-text);
   font-family: var(--font-brand);
-  font-weight: 400;
+  font-weight: var(--weight-body);
   overflow-x: hidden;
   color: var(--color-text);
 }
@@ -265,7 +261,7 @@ blockquote {
   border-radius: 2px;
   line-height: var(--line-height-text);
   transform: rotate(-10deg);
-  font-weight: 500;
+  font-weight: var(--weight-title);
 }
 
 .button {

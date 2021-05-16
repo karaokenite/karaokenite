@@ -47,7 +47,6 @@ h2 {
   font-family: var(--font-brand);
   color: var(--color-midnight);
   text-align: center;
-  font-weight: 400;
   max-width: 75rem;
 }
 
@@ -269,7 +268,6 @@ kbd {
 
 #songModal {
   font-family: "Lato", "Helvetica Neue", arial, sans-serif;
-  font-weight: 400;
   color: var(--color-slate);
   max-width: 75rem;
   padding: 2rem 1rem;

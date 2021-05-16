@@ -148,7 +148,6 @@ h2 {
 .hero-tagline {
   font-size: 1.2em;
   color: var(--color-linen);
-  font-weight: 400;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -195,7 +194,7 @@ h2 {
 
 #now h2 {
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: var(--weight-title);
 }
 
 /* Custom radio buttons to create/join a room*/
@@ -242,7 +241,6 @@ form input {
   width: 100%;
   border-radius: 8px;
   height: 48px;
-  font-weight: 400;
   font-size: var(--font-size-md);
   font-family: var(--font-brand);
 }
@@ -303,7 +301,7 @@ form input[type="text"] {
 
 .options--description {
   font-size: var(--font-size-sm);
-  font-weight: var(--weight-regular);
+  font-weight: var(--weight-title);
 }
 
 .options--visual {
@@ -326,7 +324,7 @@ form input[type="text"] {
 }
 
 .options-description {
-  font-weight: 500;
+  font-weight: var(--weight-title);
   padding: 16px;
   text-align: center;
   font-size: var(--font-size-md);
@@ -371,7 +369,7 @@ section#steps {
 .steps--label {
   display: block;
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: var(--weight-title);
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
