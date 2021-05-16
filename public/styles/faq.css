@@ -52,7 +52,7 @@
 .collapsible:after {
   content: "\002B";
   color: var(--color-linen);
-  font-weight: bold;
+  font-weight: var(--weight-heavy);
   float: right;
   margin-left: 5px;
 }

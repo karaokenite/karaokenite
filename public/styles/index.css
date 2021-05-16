@@ -314,7 +314,7 @@ form input[type="text"] {
 
 .options--or {
   text-align: center;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
   font-size: var(--font-size-xl);
   padding: 16px;
   color: var(--color-red-hots);
@@ -360,7 +360,7 @@ section#steps {
   margin: 2rem auto;
   max-width: 15rem;
   text-align: center;
-  line-height: 1.6rem;
+  line-height: var(--line-height);
 }
 
 .steps--label {
@@ -410,19 +410,12 @@ section#steps {
 }
 
 .recap-link {
-  display: inline-block;
   margin-top: 1rem;
 }
-.recap-link:before {
-  display: none;
-}
+
 
 /* Special Footer style */
 
-footer {
-  color: var(--color-linen);
-  padding: 2rem;
-}
 
 @media (max-width: 42rem) {
   .hero {
@@ -448,7 +441,7 @@ section#newsletter {
   margin: 2rem auto;
   max-width: 18rem;
   text-align: center;
-  line-height: 1.6rem;
+  line-height: var(--line-height);
 }
 
 .copyWrapper {
@@ -501,7 +494,7 @@ section#newsletter {
 
 #myInput {
   padding: 0px 24px;
-  height: 50px;
+  height: 48px;
   border: 0px;
   border-radius: 8px 0px 0px 8px;
   font-size: var(--font-size-md);

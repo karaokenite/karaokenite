@@ -1,9 +1,13 @@
 @font-face {
   font-family: "Linotte";
+  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Semi%20Bold.otf?v=1591822746292");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Linotte";
   src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Regular.otf?v=1591822742735");
   font-weight: 400;
 }
-
 @font-face {
   font-family: "Linotte";
   src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Bold.otf?v=1591822725254");
@@ -14,16 +18,7 @@
   src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Heavy.otf?v=1591822730897");
   font-weight: 700;
 }
-@font-face {
-  font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Light.otf?v=1591822739554");
-  font-weight: 300;
-}
-@font-face {
-  font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Semi%20Bold.otf?v=1591822746292");
-  font-weight: 500;
-}
+
 
 /**
 
@@ -222,7 +217,7 @@ blockquote {
   font-size: inherit;
   margin: 0;
   position: relative;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
   top: 4px;
 }
 
@@ -236,24 +231,26 @@ blockquote {
   top: -32%;
   height: 22px;
   border-radius: 2px;
-  line-height: 25px;
+  line-height: var(--line-height);
   transform: rotate(-10deg);
   font-weight: 500;
 }
 
 .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: var(--font-size-md);
   text-transform: uppercase;
-  padding: 0px 24px;
-  height: 50px;
-  line-height: 47px;
+  padding: 0.25rem 1.5rem;
+  height: 3rem;
   font-weight: 600;
   border: 3px solid var(--color-midnight);
   font-family: var(--font-brand);
   background-color: var(--color-linen);
   color: var(--color-midnight);
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   transition: 0.2s background-color;
   text-align: center;
 }
@@ -296,8 +293,8 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   right: 0;
   font-family: var(--font-brand);
   font-size: 1.5em;
-  font-weight: bold;
-  line-height: 1.4em;
+  font-weight: var(--weight-heavy);
+  line-height: var(--line-height);
   z-index: 999;
 }
 
@@ -308,7 +305,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   visibility: visible;
   position: sticky;
   box-shadow: 0px -3px 20px 1px rgba(0, 0, 0, 0.3);
-  background: white;
+  background: var(--color-linen);
 }
 
 .header-nav {
@@ -339,11 +336,11 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   text-transform: uppercase;
   text-decoration: none;
   font-weight: 600;
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   display: inline-block;
   color: var(--color-link-text);
   position: relative;
-  line-height: 1.5;
+  line-height: var(--line-height);
   transition: all 0.2s ease-in-out;
 }
 
@@ -355,13 +352,13 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 .header-navlink__active:before {
   content: " ";
   background-color: var(--color-link-underline);
-  height: 1rem;
-  width: calc(100% + 25px);
-  left: -12px;
-  bottom: 0;
+  height: 0.75em;
+  left: -.75rem;
+  right: -.75rem;
+  bottom: 0.25rem;
   position: absolute;
   z-index: -1;
-  border-radius: 20px;
+  border-radius: calc(0.75em / 2);
 }
 
 .header-navlink:hover:not(.header-navlink__active) {
@@ -411,10 +408,6 @@ main {
   position: relative;
 }
 
-.link:hover:before {
-  height: calc(100% + 6px);
-}
-
 .link:before {
   position: absolute;
   background-color: var(--color-link-underline);
@@ -427,6 +420,11 @@ main {
   transition-delay: 0s;
   border-radius: 4px;
 }
+
+.link:hover:before {
+  height: calc(100% + 6px);
+}
+
 
 .link__plain:before {
   display: none;
@@ -528,5 +526,5 @@ li {
 
 #footer-name {
   font-size: var(--font-size-lg);
-  font-weight: bold;
+  font-weight: var(--weight-heavy);
 }

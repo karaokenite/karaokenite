@@ -55,38 +55,6 @@ button {
   cursor: pointer;
 }
 
-/* button:hover {
-  background: ;
-} */
-
-.button {
-  font-size: var(--font-size-md);
-  text-transform: uppercase;
-  padding: 0px 24px;
-  height: 50px;
-  line-height: 47px;
-  font-weight: 700;
-  border: 3px solid var(--color-midnight);
-  font-family: var(--font-brand);
-  background-color: var(--color-linen);
-  color: var(--color-midnight);
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.2s background-color;
-}
-
-.button:hover {
-  cursor: pointer;
-  background-color: var(--color-alabaster);
-}
-
-.button-bold {
-  background-color: var(--color-old-yellow);
-}
-
-.button-bold:hover {
-  background-color: var(--color-neon-demon);
-}
 
 videoControls {
   cursor: pointer;
@@ -107,7 +75,7 @@ kbd {
   display: inline-block;
   font-family: var(--font-brand);
   font-size: var(--font-size-xs);
-  line-height: 1.4;
+  line-height: var(--line-height);
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
   text-shadow: 0 1px 0 var(--color-linen);
@@ -121,7 +89,7 @@ kbd {
   font-size: var(--font-size-xl);
   text-transform: uppercase;
   color: var(--color-linen);
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
   font-family: var(--font-brand);
 }
 
@@ -161,7 +129,7 @@ kbd {
   z-index: 2;
   position: absolute;
   border-radius: 50%;
-  height: 50px;
+  height: 48px;
   width: 50px;
   background-image: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029");
   background-position: 50%, 50%;
@@ -174,7 +142,7 @@ kbd {
   right: 200px;
   z-index: 2;
   position: absolute;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #invite2 {
@@ -183,7 +151,7 @@ kbd {
   margin: auto;
   width: 83%;
   margin-top: 25px;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #song {
@@ -192,7 +160,7 @@ kbd {
   right: 40px;
   z-index: 2;
   position: absolute;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #scene-logo {
@@ -202,12 +170,12 @@ kbd {
   position: absolute;
   font-family: var(--font-brand);
   font-size: 1.6em;
-  font-weight: bold;
-  line-height: 1.4em;
+  font-weight: var(--weight-heavy);
+  line-height: var(--line-height);
   text-decoration: none !important;
   justify-content: space-between;
   margin: auto;
-  font-weight: 700;
+  font-weight: var(--weight-heavy);
 }
 
 #scene-logo a {
@@ -262,7 +230,7 @@ kbd {
 
 #myInput {
   padding: 0px 24px;
-  height: 50px;
+  height: 48px;
   border: 0px;
   border-radius: 8px 0px 0px 8px;
   font-size: var(--font-size-md);
@@ -434,7 +402,7 @@ kbd {
 }
 
 .title {
-  font-weight: bold;
+  font-weight: var(--weight-heavy);
   margin: 0.5rem 0 0.25rem;
 }
 
@@ -497,5 +465,5 @@ kbd {
 #roomName {
   font-family: var(--font-brand);
   color: var(--color-midnight);
-  font-weight: bold;
+  font-weight: var(--weight-heavy);
 }
