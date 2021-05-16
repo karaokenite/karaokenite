@@ -43,7 +43,7 @@
     rgba(5, 4, 34, 1) 0%,
     rgba(28, 14, 140, 1) 85%
   );
-  z-index: -1;
+  z-index: 0;
 }
 
 .hero-images {
@@ -510,7 +510,8 @@ section#steps {
 }
 
 #copy {
-  padding: 0px 30px;
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
   font-size: var(--font-size-sm);
   margin-right: 0px;
   display: inline-block;
