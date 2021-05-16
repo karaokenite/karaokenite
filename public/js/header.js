@@ -1,5 +1,3 @@
-/** @format */
-
 const body = document.body;
 let isHeaderSticky = false;
 
