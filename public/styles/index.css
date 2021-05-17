@@ -373,7 +373,9 @@
   position: relative;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr max-content 1fr;
+  padding: 1rem 0;
+  justify-content: center;
+  grid-template-rows: minmax(0, 4rem) auto minmax(0, 4rem);
 }
 
 .options--description {
@@ -385,7 +387,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
 
 .options--visual img {
@@ -406,6 +407,12 @@
   padding: 1rem;
   text-align: center;
   font-size: var(--font-size-md);
+}
+
+@media screen and (min-width: 768px) {
+  .options-grid {
+    grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
+  }
 }
 
 /* Section: How it works */

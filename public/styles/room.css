@@ -11,7 +11,7 @@
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows:
     minmax(0, min-content) minmax(0, 1fr) minmax(min-content, 10vh)
-    108px;
+    5rem;
 }
 
 .video-area {
@@ -57,37 +57,32 @@
   text-align: center;
   justify-content: center;
   border-radius: 24px;
-  background-color: black;
+  background-color: var(--color-jet);
   width: 200px;
   height: 120px;
-  box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px var(--color-jet);
 }
 
 .video-username {
   position: relative;
   bottom: 37px;
   left: 28px;
-  color: white;
+  color: var(--color-linen);
   z-index: 1;
-}
-
-#user-video {
-  /* border-radius: 24px;
-  background-color: black;
-  position: relative;
-  width: 200px;
-  height: 120px;
-  box-shadow: 0 8px 6px -6px black; */
 }
 
 .video-camera {
   border-radius: 24px;
-  background-color: black;
+  background-color: var(--color-jet);
   position: relative;
   max-width: 100%;
   width: 200px;
   height: 120px;
-  box-shadow: 0 8px 6px -6px black;
+  box-shadow: 0 8px 6px -6px var(--color-jet);
+}
+
+.control-bar {
+  align-items: center;
 }
 
 /* ================ Buttons ================== */
@@ -198,7 +193,7 @@
 /* ================ Footer ================== */
 
 footer {
-  background-color: black; /* #050422 */
+  background-color: var(--color-jet); /* var(--color-midnight) */
   width: 100%;
   padding: 0.55rem;
 }
@@ -254,7 +249,7 @@ footer {
 
 #footer-name {
   font-size: 1.35rem;
-  font-weight: bold;
+  font-weight: var(--weight-title);
 }
 
 #leaveRoomButton {
@@ -264,10 +259,9 @@ footer {
   height: 50px;
   line-height: 47px;
   font-weight: 600;
-  border: 3px solid white;
-  font-family: "Linotte";
-  background-color: black;
-  color: white;
+  border: 3px solid var(--color-linen);
+  background-color: var(--color-jet);
+  color: var(--color-linen);
   text-decoration: none;
   border-radius: 8px;
   transition: 0.2s background-color;
@@ -364,7 +358,7 @@ button[data-state="mute"] {
   width: 70%;
 }
 
-@media (min-width: 49rem) {
+@media (min-width: 768px) {
   #added-notice[populated] {
     left: calc(50% - 17rem);
     width: 34rem;
@@ -375,40 +369,39 @@ button[data-state="mute"] {
   background: rgba(0, 0, 0, 0.85);
   border: 2px solid transparent;
   border-radius: 8px;
-  color: white;
+  color: var(--color-linen);
   cursor: pointer;
-  font-family: "Linotte";
   padding: 2rem 3rem;
   text-align: center;
 }
 
 .added-notice-contents:active,
 .added-notice-contents:focus {
-  border: 2px solid white;
+  border: 2px solid var(--color-linen);
 }
 
 #added-notice-song {
-  color: #c8ef00;
+  color: var(--color-old-yellow);
 }
 
-@media (min-width: 28rem) {
+@media (min-width: 440px) {
   .jukeboxes {
-    grid-column-gap: 2%;
-    grid-template-columns: repeat(2, 49%);
+    grid-column-gap: 2vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (min-width: 35rem) {
   .jukeboxes {
-    grid-column-gap: 1%;
-    grid-template-columns: repeat(4, 24%);
+    grid-column-gap: 1vw;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
-@media (min-width: 49rem) {
+@media (min-width: 768px) {
   .jukeboxes {
-    grid-column-gap: 1%;
-    grid-template-columns: repeat(5, 19%);
+    grid-column-gap: 1vw;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
 
@@ -438,7 +431,7 @@ button[data-state="mute"] {
 }
 
 .jukebox-selected img {
-  border: 4px solid #c8ef00;
+  border: 4px solid var(--color-old-yellow);
 }
 
 .jukebox-selected:before {
@@ -449,13 +442,13 @@ button[data-state="mute"] {
   width: 44px;
   height: 44px;
   border-radius: 100%;
-  background: #c8ef00
+  background: var(--color-old-yellow)
     url(https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcheck.svg?v=1595801420385)
     center no-repeat;
 }
 
 .title {
-  font-weight: bold;
+  font-weight: var(--weight-title);
   margin: 0.5rem 0 0.25rem;
 }
 
@@ -474,7 +467,7 @@ button[data-state="mute"] {
 }
 
 .control {
-  border: 1px solid #ccc;
+  border: 1px solid var(--color-old-laundry);
   border-radius: 2px;
   display: block;
   padding: 1rem 0.5rem;
@@ -495,7 +488,7 @@ button[data-state="mute"] {
 
 .copyWrapper {
   display: flex;
-  border: 3px solid #050422;
+  border: 3px solid var(--color-midnight);
   border-radius: 8px;
 }
 
@@ -516,7 +509,6 @@ button[data-state="mute"] {
 }
 
 #roomName {
-  font-family: "Linotte";
-  color: #050422;
-  font-weight: bold;
+  color: var(--color-midnight);
+  font-weight: var(--weight-title);
 }
