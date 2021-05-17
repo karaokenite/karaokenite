@@ -23,7 +23,7 @@
     <div class="room-container">
       <div class="info">
         <button class="button" onclick="inviteModal()">Invite Friends</button>
-        <button class="button">Feedback</button>
+        <button class="button" onclick="feedbackModal()">Feedback</button>
       </div>
       <div class="video-area karaoke-video-mask">
         <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
@@ -811,11 +811,51 @@
           </button>
         </div>
       </div>
-    
+    </div>
+
+    <!-- Feedback Modal -->
+
+    <div id="feedbackModal" class="modal">
+      <h2>Give us feedback!</h2>
+      <p>
+        Karaoke Nite is an ongoing project. We're looking to hear your thoughts
+        on how to make it even better!
+      </p>
+
+      <a
+        id="giveFeedbackButton"
+        class="button button-bold"
+        href="https://karaokenite.typeform.com/to/SaHxnvyT"
+        target="_blank"
+        title="Give Feedback"
+        >Give Feedback</a
+      >
+
+      <br />
+
+      <a
+        id="reportBugButton"
+        class="button"
+        href="https://karaokenite.typeform.com/to/qqQslFgC"
+        target="_blank"
+        title="Invite friends to the room"
+        >Report a Bug</a
+      >
+    </div>
+
+    <!-- Feedback -->
+    <a
+      id="feedback"
+      class="button button-bold"
+      href="#feedbackModal"
+      rel="modal:open"
+      title="Give some feedback or report a bug 🔎"
+    >
+      <!--     <img id="asdf" src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029"> -->
+    </a>
+
     <script>
-
-
-    // =========================================== Karaoke Playlist (mp4's) =====================================
+      // =========================================== Karaoke Playlist (mp4's) =====================================
 
       var playlist = [
         'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045', <!-- Let's Get it On -->
@@ -985,6 +1025,10 @@
         $('#inviteModal').modal('open');
       }
 
+      function feedbackModal() {
+        $('#feedbackModal').modal('open');
+      }
+
       function copyFunction() {
         var copyText = document.getElementById('myInput');
         copyText.select();
@@ -1013,7 +1057,6 @@
       //   // curRoom = joinRoom(data);
       //   ctr2.innerHTML = data.name;
       // });
-
     </script>
   </body>
   <script src="/js/playback.js"></script>
