@@ -25,10 +25,9 @@
 */
 
 :root {
-  --breakpoint-xs: 28rem;
-  --breakpoint-sm: 35rem;
-  --breakpoint-md: 42rem;
-  --breakpoint-lg: 49rem;
+  --breakpoint-sm: 768px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1200px;
   --breakpoint-xl: 68rem;
 
   --font-brand: Linotte, Arial, Helvetica, sans-serif;
@@ -89,14 +88,15 @@
   --page-title-size: var(--font-size-xl);
   --page-subtitle-size: var(--font-size-lg);
   --section-title-size: var(--font-size-md);
-  --header-height: 4.75rem;
+  --header-height: 3rem;
 }
 
-@media screen and (min-width: 68rem) {
+@media screen and (min-width: 48rem) {
   :root {
     --vertical-space: 4rem;
     --vertical-space-small: 2.5rem;
     --page-padding: 2rem;
+    --header-height: 4.75rem;
 
     --page-title-size: var(--font-size-xxl);
     --page-subtitle-size: var(--font-size-xl);
@@ -284,13 +284,11 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 }
 
 .layout__fluid {
-  padding-top: var(--header-height);
   max-width: 100%;
 }
 
 .layout__small {
-  padding: calc(var(--header-height) + var(--vertical-space))
-    var(--page-padding) var(--vertical-space);
+  padding: var(--vertical-space) var(--page-padding);
   max-width: calc(760px - 4rem);
   margin: 0 auto;
 }
@@ -326,6 +324,7 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 .brand-logo {
   font-size: inherit;
   margin: 0;
+  display: inline-block;
   position: relative;
   font-weight: var(--weight-heavy);
   top: 4px;
@@ -394,18 +393,14 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 */
 
 .header {
-  transform: translate(0, -100%);
   font-size: var(--font-size-lg);
-  padding: calc(var(--page-padding) / 2) var(--page-padding);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
+  min-height: var(--header-height);
+  position: relative;
   font-family: var(--font-brand);
-  font-size: 1.5em;
   font-weight: var(--weight-heavy);
   line-height: var(--line-height-text);
-  z-index: 999;
+  color: var(--color-text);
+  z-index: 15;
 }
 
 .header__revealed {
@@ -414,58 +409,112 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   background-color: var(--color-linen);
   visibility: visible;
   position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
   box-shadow: 0px -3px 20px 1px rgba(0, 0, 0, 0.3);
   background: var(--color-linen);
 }
 
-.header-nav {
-  display: flex;
-  flex-direction: row;
+.header.header__switch .navbar .navbar-section,
+.header.header__switch .navbar .navbar-link__home {
+  transition: none;
+}
+
+.navbar {
+  display: grid;
+  grid-auto-flow: row;
   justify-content: space-between;
-  max-width: 60rem;
-  max-width: calc(100% - 60px);
+  grid-template-columns: minmax(0, 1fr);
   width: 100%;
-  padding: 0 1rem;
+  overflow-y: hidden;
 }
 
-.header-navlogo {
-  display: inline-flex;
+.navbar-section {
+  display: grid;
   align-items: center;
+  padding: calc(var(--page-padding) / 2) var(--page-padding);
+  background-color: var(--color-background);
 }
 
-.header-navlist {
+.navbar-section__left {
+  grid-template-columns: 1fr max-content;
+}
+
+.navbar-section__right {
+  justify-content: unset;
+  padding-top: 0;
+  padding-bottom: 0;
+  max-height: 0;
+  transition: max-height 100ms linear;
+}
+
+.navbar-toggle {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  box-shadow: none;
+  border: none;
+  background: none;
+}
+
+.navbar-toggle:hover {
+  cursor: pointer;
+}
+
+.navbar-toggleIcon {
+  height: 3px;
+  width: 100%;
+  background-color: var(--color-text);
+}
+
+.navbar-list {
+  display: grid;
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: calc(var(--page-padding) / 2) 0;
 }
 
-.header-navitem {
+.header__expanded .navbar-section__right {
+  max-height: calc(3rem * 4);
+}
+
+.navbar-item {
   display: inline-block;
+  padding: 0.5rem 0;
+  background-image: url("/images/arrow.svg");
 }
 
-.header-navitem + .header-navitem {
-  margin-left: 2rem;
+.navbar-item {
+  border-bottom: 2px solid var(--color-text);
 }
 
-.header-navlink {
-  text-transform: uppercase;
+.navbar-item:last-child {
+  border: none;
+}
+
+.navbar-link {
   text-decoration: none;
-  font-weight: 600;
-  font-size: var(--font-size-md);
-  display: inline-block;
+  font-weight: var(--weight-body);
+  font-size: var(--font-size-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   color: var(--color-link-text);
   position: relative;
+  z-index: 1;
   line-height: var(--line-height-text);
   transition: all 0.2s ease-in-out;
 }
 
-.header-navlink__home {
+.navbar-link__home {
   color: var(--color-link-text);
   text-decoration: none;
 }
 
-.header-navlink__active:before {
+.navbar-link__active:before {
   content: " ";
+  display: none;
   background-color: var(--color-link-underline);
   height: 0.75em;
   left: -0.75rem;
@@ -476,15 +525,64 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   border-radius: calc(0.75em / 2);
 }
 
-.header-navlink:hover:not(.header-navlink__active) {
-  transform: scale(1.07);
+.navbar-link:hover {
+  transform: translate(0.5rem, 0);
 }
 
-@media screen and (min-width: 768px) {
-  .header {
+.navbar-linkIcon {
+  display: inline-flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 48rem) {
+  .navbar-toggle {
+    display: none;
+  }
+  .navbar-link:hover {
     transform: none;
   }
+
+  .navbar-link:hover:not(.navbar-link__active) {
+    transform: scale(1.07);
+  }
+
+  .navbar {
+    grid-auto-flow: column;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .navbar-list {
+    position: static;
+    grid-auto-flow: column;
+    column-gap: var(--page-padding);
+  }
+
+  .navbar-section__left {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-section__right {
+    justify-content: end;
+  }
+
+  .navbar-item {
+    border: none;
+  }
+
+  .navbar-link {
+    text-transform: uppercase;
+    font-size: var(--font-size-md);
+    font-weight: var(--weight-title);
+  }
+  .navbar-link__active:before {
+    display: block;
+  }
+
+  .navbar-linkIcon {
+    display: none;
+  }
 }
+
 /**
 
  .o88b.  .d88b.  d8b   db d888888b d88888b d8b   db d888888b
@@ -635,7 +733,7 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
   font-weight: var(--weight-heavy);
 }
 
-@media screen and (min-width: 60rem) {
+@media screen and (min-width: 48rem) {
   .footer-container {
     flex-direction: row;
     margin: auto;
