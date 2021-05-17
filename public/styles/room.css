@@ -512,3 +512,141 @@ button[data-state="mute"] {
   color: var(--color-midnight);
   font-weight: var(--weight-title);
 }
+
+/* Invite Model */
+
+#invite {
+  top: 20px;
+  right: 200px;
+  position: absolute;
+  font-weight: var(--weight-heavy);
+}
+
+#song {
+  cursor: pointer;
+  top: 20px;
+  right: 40px;
+  z-index: 2;
+  position: absolute;
+  font-weight: var(--weight-heavy);
+}
+
+#scene-logo {
+  top: 32px;
+  left: 50px;
+  z-index: 2;
+  position: absolute;
+  font-family: var(--font-brand);
+  font-size: 1.6em;
+  font-weight: var(--weight-heavy);
+  line-height: var(--line-height-text);
+  text-decoration: none !important;
+  justify-content: space-between;
+  margin: auto;
+  font-weight: var(--weight-heavy);
+}
+
+/* #scene-logo a {
+  text-decoration: none;
+  color: var(--color-linen);
+} */
+
+#inviteModal {
+  font-family: var(--font-brand);
+  color: var(--color-slate);
+  text-align: center;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 140px;
+  background-color: var(--color-smoke);
+  color: var(--color-linen);
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: 50%;
+  margin-left: -75px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: var(--font-size-xs);
+}
+
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: var(--color-smoke) transparent transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#myInput {
+  padding: 0px 24px;
+  height: 48px;
+  border: 0px;
+  border-radius: 8px 0px 0px 8px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-brand);
+  text-align: left;
+  margin: 0px;
+  margin-right: -3px;
+  display: inline-block;
+  width: 100%;
+  outline: 0;
+}
+
+#copy {
+  padding-left: var(--page-padding);
+  padding-right: var(--page-padding);
+  font-size: var(--font-size-sm);
+  margin-right: 0px;
+  display: inline-block;
+  border: 0px;
+  border-radius: 0px 5px 5px 0px;
+  border-left: 3px solid var(--color-midnight);
+  outline: 0;
+}
+
+.shareButton {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  max-width: 400px;
+}
+
+.fb-share-button {
+  margin-left: 11px;
+}
+
+#feedback {
+  cursor: pointer;
+  border-radius: 50%;
+  height: 48px;
+  width: 50px;
+  background-image: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029");
+  background-position: 50%, 50%;
+  background-repeat: no-repeat;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#scene-logo a {
+  color: white;
+}

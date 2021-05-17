@@ -22,8 +22,8 @@
     <!-- Karaoke Video -->
     <div class="room-container">
       <div class="info">
-        <button class="button">Room info</button>
-        <button class="button">VR</button>
+        <button class="button" onclick="inviteModal()">Invite Friends</button>
+        <button class="button" id="feedback" onclick="feedbackModal()"></button>
       </div>
       <div class="video-area karaoke-video-mask">
         <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
@@ -162,6 +162,7 @@
         </div>
       </footer>
     </div>
+
     <div id="songModal" class="modal">
       <div class="jukeboxes" onscroll="dismissAddedNotice()">
         <button onclick="grabURL(event, 0)" class="jukebox" type="button">
@@ -789,8 +790,69 @@
       </div>
     </div>
 
+    <!-- =========== Karaoke Nite Logo Top Left ============-->
+
+    <h1 id="scene-logo">
+      <a href="https://karaokenite.co" target="_blank"> KARAOKE NITE </a>
+      <span class="brand-betatag">beta</span>
+    </h1>
+
+    <!-- ================== Invite Modal ==================== -->
+
+    <div id="inviteModal" class="modal">
+      <h1>Invite your friends!</h1>
+      <p>
+        Send the link to a friend to invite them to this karaoke room.<br />
+        <br />🔑 The room name is <span alt="Room name" id="roomName"></span>
+      </p>
+      <div class="copyWrapper">
+        <input type="text" value="https://www.karaokenite.co" id="myInput" />
+        <div class="tooltip">
+          <button
+            class="button button-bold"
+            id="copy"
+            onclick="copyFunction()"
+            onmouseout="outFunc()"
+          >
+            <span class="tooltiptext" id="myTooltip">Copy to clipboard</span>
+            Copy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feedback Modal -->
+
+    <div id="feedbackModal" class="modal">
+      <h2>Give us feedback!</h2>
+      <p>
+        Karaoke Nite is an ongoing project. We're looking to hear your thoughts
+        on how to make it even better!
+      </p>
+
+      <a
+        id="giveFeedbackButton"
+        class="button button-bold"
+        href="https://karaokenite.typeform.com/to/SaHxnvyT"
+        target="_blank"
+        title="Give Feedback"
+        >Give Feedback</a
+      >
+
+      <br />
+
+      <a
+        id="reportBugButton"
+        class="button"
+        href="https://karaokenite.typeform.com/to/qqQslFgC"
+        target="_blank"
+        title="Invite friends to the room"
+        >Report a Bug</a
+      >
+    </div>
+
     <script>
-      <!-- =========================================== Karaoke Playlist (mp4's) ===================================== -->
+      // =========================================== Karaoke Playlist (mp4's) =====================================
 
       var playlist = [
         'https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045', <!-- Let's Get it On -->
@@ -955,6 +1017,43 @@
       function openModal() {
         $('#songModal').modal('open');
       }
+
+      function inviteModal() {
+        $('#inviteModal').modal('open');
+      }
+
+      function feedbackModal() {
+        $('#feedbackModal').modal('open');
+      }
+
+      function copyFunction() {
+        var copyText = document.getElementById('myInput');
+        copyText.select();
+        copyText.setSelectionRange(0, 99999);
+        document.execCommand('copy');
+
+        var tooltip = document.getElementById('myTooltip');
+        tooltip.innerHTML = 'Copied!';
+        // tooltip.innerHTML = "Copied " + copyText.value;
+      }
+
+      function outFunc() {
+        var tooltip = document.getElementById('myTooltip');
+        tooltip.innerHTML = 'Copy to clipboard';
+      }
+
+      // Room name script
+
+      let ctr2 = document.getElementById('roomName');
+      ctr2.innerHTML = 'asdf';
+
+      // Add one
+      // socket.on('sendRoomName', (data) => {
+      //   console.log('data is', data.name);
+
+      //   // curRoom = joinRoom(data);
+      //   ctr2.innerHTML = data.name;
+      // });
     </script>
   </body>
   <script src="/js/playback.js"></script>
