@@ -18,7 +18,7 @@
 
 .header:not(.header__revealed) .navbar-section {
   background-color: transparent;
-  transition: background-color 600ms ease 200ms, max-height 100ms linear;
+  transition: background-color 600ms ease 200ms, max-height 250ms linear;
 }
 
 .header.header__revealed .navbar-section {
