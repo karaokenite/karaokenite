@@ -1,35 +1,40 @@
-body {
-  /*  background-color: #f6f5fa; */
-  /*  background-color: #050422; */
-  background: url('https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Fshark.jpeg?v=1621051349334') no-repeat center fixed;     
+.room-container {
+  background: url("https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Fshark.jpeg?v=1621051349334")
+    no-repeat center fixed;
   background-size: cover;
+  display: grid;
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows:
+    minmax(0, min-content) minmax(0, 1fr) minmax(min-content, 10vh)
+    108px;
 }
 
-@font-face {
-  font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Regular.otf?v=1591822742735");
-  font-weight:400;
+.video-area {
+  padding: 1rem;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+  border-radius: 10px;
 }
 
-@font-face {
-  font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Bold.otf?v=1591822725254");
-  font-weight:600;
+.guests {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  column-gap: 0.5rem;
 }
-@font-face {
-  font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Heavy.otf?v=1591822730897");
-  font-weight:700;
-}
-@font-face {
-  font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Light.otf?v=1591822739554");
-  font-weight:300;
-}
-@font-face {
-  font-family: "Linotte";
-  src: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLinotte%20Semi%20Bold.otf?v=1591822746292");
-  font-weight:500;
+
+.info {
+  display: grid;
+  justify-content: end;
+  grid-auto-flow: column;
+  padding: 0.5rem;
 }
 
 /* ================ Face cams ================== */
@@ -40,13 +45,8 @@ body {
 }
 
 .video {
-  width: 220px;
-  border-radius: 20px; 
+  border-radius: 20px;
   overflow: hidden;
-  margin-top: 24px;
-  margin-bottom: 22px;
-  margin-left: 2px;
-  margin-right: 2px;
 }
 
 .video-camera {
@@ -80,10 +80,11 @@ body {
   box-shadow: 0 8px 6px -6px black; */
 }
 
-#peer-video {
+.video-camera {
   border-radius: 24px;
   background-color: black;
   position: relative;
+  max-width: 100%;
   width: 200px;
   height: 120px;
   box-shadow: 0 8px 6px -6px black;
@@ -101,9 +102,9 @@ body {
 }
 
 .btn-group button {
-  background-color: #050422;
+  background-color: transparent;
   border: 0;
-  margin: 5px 5px;
+  margin: 0 0.25rem;
   cursor: pointer;
 }
 
@@ -125,7 +126,7 @@ body {
 
 #backButton {
   opacity: 0.6;
-} 
+}
 
 #nextButton {
   opacity: 0.6;
@@ -139,11 +140,11 @@ body {
   opacity: 0.6;
 }
 
-.grow { 
-  transition: all .2s ease-in-out; 
+.grow {
+  transition: all 0.2s ease-in-out;
 }
-.grow:hover { 
-  transform: scale(1.08); 
+.grow:hover {
+  transform: scale(1.08);
 }
 
 #hideCameraButton:hover {
@@ -200,24 +201,18 @@ footer {
   background-color: black; /* #050422 */
   width: 100%;
   padding: 0.55rem;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index:2;
 }
 
 #footer--content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: stretch;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
   align-items: center;
 }
 
 .footer-bg {
-  width: calc(100% - 60px);
-  max-width: 100rem;
-  margin: auto; 
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .footer-left {
@@ -227,9 +222,7 @@ footer {
 }
 
 .footer-middle {
-  padding: 0;
-  display: inline-block;
-  flex: 1;
+  align-self: center;
 }
 
 .footer-right {
@@ -277,7 +270,7 @@ footer {
   color: white;
   text-decoration: none;
   border-radius: 8px;
-  transition: .2s background-color;
+  transition: 0.2s background-color;
   text-align: center;
   z-index: 99;
   cursor: pointer;
@@ -287,67 +280,45 @@ footer {
 
 #karaoke-video {
   display: block;
-  /* width: 690px; */
-  margin: auto;
-  padding: 20px;
+  max-width: 100%;
+  width: auto;
+  height: 100%;
+  max-height: 100%;
 }
 
 .karaoke-video-mask {
-  /* height: 100%; */
-  position: relative;
-  width: 100%;
-	/* max-width:720px;
-	max-width:64rem;
-	max-height:494px;
-	max-height:30.875rem; */
-  max-width: 90vh;
-  min-width: 30vh;
-
-	margin:20px auto;
-	margin:1.25rem auto;
-	padding:1.051%;
   border-radius: 10px;
-  margin: auto;
-  top: 55px;
 }
 
 video {
-  margin: 30px 0px 10px 10px;
-/*   margin: 10px; */
-	width:100%;
+  width: 100%;
   border-radius: 10px;
 }
 
-.controls, .controls > * {
-	padding:0;
-	margin:0;
+.controls,
+.controls > * {
+  padding: 0;
+  margin: 0;
 }
 .controls {
-	overflow:hidden;
-	background:transparent;
-	width:100%;
-	height:8.0971659919028340080971659919028%; /* of figure's height */
+  overflow: hidden;
+  background: transparent;
+  width: 100%;
+  height: 8.0971659919028340080971659919028%; /* of figure's height */
   /* 	position:relative; */
 }
 
-.controls[data-state=hidden] {
-	display:none;
+.controls[data-state="hidden"] {
+  display: none;
 }
 
-.controls[data-state=visible] {
-	display:block;
+.controls[data-state="visible"] {
+  display: block;
 }
 
 button[data-state="mute"] {
   /* font-size: 1.3rem; */
 }
-
-
-
-
-
-
-
 
 /* ================================ Songs modal ======================== */
 
@@ -360,9 +331,9 @@ button[data-state="mute"] {
 }
 
 #songModal.modal a.close-modal {
-    filter: invert(1);
-    top: 5px;
-    right: 5px;
+  filter: invert(1);
+  top: 5px;
+  right: 5px;
 }
 
 .jukeboxes {
@@ -377,38 +348,38 @@ button[data-state="mute"] {
 }
 
 #added-notice {
-    display: none;
+  display: none;
 }
 
 #added-notice[populated] {
-    align-items: center;
-    display: flex;
-    font-size: 1.125rem;
-    height: 100%;
-    justify-content: center;
-    left: 15%;
-    padding: 1rem;
-    position: absolute;
-    top: 0;
-    width: 70%;
+  align-items: center;
+  display: flex;
+  font-size: 1.125rem;
+  height: 100%;
+  justify-content: center;
+  left: 15%;
+  padding: 1rem;
+  position: absolute;
+  top: 0;
+  width: 70%;
 }
 
 @media (min-width: 49rem) {
   #added-notice[populated] {
     left: calc(50% - 17rem);
     width: 34rem;
-  }  
+  }
 }
 
 .added-notice-contents {
-    background: rgba(0, 0, 0, 0.85);
-    border: 2px solid transparent;
-    border-radius: 8px;
-    color: white;
-    cursor: pointer;
-    font-family: "Linotte";
-    padding: 2rem 3rem;
-    text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-family: "Linotte";
+  padding: 2rem 3rem;
+  text-align: center;
 }
 
 .added-notice-contents:active,
@@ -417,7 +388,7 @@ button[data-state="mute"] {
 }
 
 #added-notice-song {
-    color: #C8EF00;
+  color: #c8ef00;
 }
 
 @media (min-width: 28rem) {
@@ -467,7 +438,7 @@ button[data-state="mute"] {
 }
 
 .jukebox-selected img {
-  border: 4px solid #C8EF00;
+  border: 4px solid #c8ef00;
 }
 
 .jukebox-selected:before {
@@ -478,7 +449,9 @@ button[data-state="mute"] {
   width: 44px;
   height: 44px;
   border-radius: 100%;
-  background: #C8EF00 url(https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcheck.svg?v=1595801420385) center no-repeat;
+  background: #c8ef00
+    url(https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcheck.svg?v=1595801420385)
+    center no-repeat;
 }
 
 .title {
@@ -543,9 +516,7 @@ button[data-state="mute"] {
 }
 
 #roomName {
-
   font-family: "Linotte";
   color: #050422;
   font-weight: bold;
-
 }

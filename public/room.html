@@ -20,135 +20,148 @@
 
   <body>
     <!-- Karaoke Video -->
+    <div class="room-container">
+      <div class="info">
+        <button class="button">Room info</button>
+        <button class="button">VR</button>
+      </div>
+      <div class="video-area karaoke-video-mask">
+        <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
+        <video id="karaoke-video" controls preload="metadata">
+          <source
+            src="https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045"
+            type="video/mp4"
+          />
 
-    <div class="karaoke-video-mask">
-      <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
-      <video id="karaoke-video" controls preload="metadata">
-        <source
-          src="https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045"
-          type="video/mp4"
-        />
-
-        <!-- Offer download -->
-        <a
-          href="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
-          >Download MP4</a
-        >
-      </video>
-    </div>
-
-    <script src="/video-player.js"></script>
-
-    <!-- User Video Cameras -->
-
-    <div class="section-content" id="video-chat-room">
-      <!-- <div class="video-mask"> -->
-      <div class="video">
-        <video class="video-camera" id="user-video" muted="muted"></video>
-        <div class="video-username">Username1</div>
+          <!-- Offer download -->
+          <a
+            href="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
+            >Download MP4</a
+          >
+        </video>
       </div>
 
-      <div class="video">
-        <video class="video-camera" id="peer-video"></video>
-        <div class="video-username">Username2</div>
+      <script src="/video-player.js"></script>
+
+      <!-- User Video Cameras -->
+
+      <div class="guests section-content" id="video-chat-room">
+        <!-- <div class="video-mask"> -->
+        <div class="video">
+          <video class="video-camera" id="user-video" muted="muted"></video>
+          <div class="video-username">Username1</div>
+        </div>
+
+        <div class="video">
+          <video class="video-camera" id="peer-video"></video>
+          <div class="video-username">Username2</div>
+        </div>
       </div>
-    </div>
 
-    <!-- ======================================= Footer ======================================== -->
+      <!-- ======================================= Footer ======================================== -->
 
-    <footer>
-      <div class="footer-bg">
-        <div id="footer--content">
-          <div class="footer-left">
-            <a href="javascript:history.back()"
-              ><button id="leaveRoomButton">Exit</button></a
-            >
-          </div>
-
-          <div class="footer-middle">
-            <div class="btn-group" id="btn-group">
-              <button id="hideCameraButton">
-                <img
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_camera_white.svg?v=1614747337937"
-                />
-              </button>
-
-              <button id="muteButton" type="button" data-state="mute">
-                <img
-                  id="muteButtonIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_mic_white.svg?v=1614747341515"
-                />
-              </button>
-
-              <button id="backButton" type="button" data-state="play">
-                <img
-                  id="backButtonIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_previous_white.svg?v=1614749830096"
-                />
-              </button>
-
-              <button
-                id="playpauseButton"
-                class="grow"
-                type="button"
-                data-state="play"
+      <footer class="control-bar">
+        <div class="footer-bg">
+          <div id="footer--content">
+            <div class="footer-left">
+              <a href="javascript:history.back()"
+                ><button id="leaveRoomButton">Exit</button></a
               >
-                <img
-                  id="playpauseButtonIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FGroup%2021.svg?v=1618632508004"
-                />
-              </button>
-
-              <button id="nextButton" type="button" data-state="play">
-                <img
-                  id="nextButtonIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_next_white.svg?v=1614749830096"
-                />
-              </button>
-
-              <button id="volumeDownButton" type="button" data-state="voldown">
-                <img
-                  id="volumeDownIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FVolume%20-%20Low.svg?v=1621062867508"
-                />
-              </button>
-
-              <button id="volumeUpButton" type="button" data-state="volup">
-                <img
-                  id="volumeUpIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_volume_white.svg?v=1614749830096"
-                />
-              </button>
-              <!--               
-			        <button id="voldec" type="button" data-state="voldown">
-                <img id="volumeDownIcon" src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_volume_white.svg?v=1614749830096" />
-              </button> -->
             </div>
 
-            <div id="video-controls" class="controls" data-state="hidden"></div>
-          </div>
+            <div class="footer-middle">
+              <div class="btn-group" id="btn-group">
+                <button id="hideCameraButton">
+                  <img
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_camera_white.svg?v=1614747337937"
+                  />
+                </button>
 
-          <div class="footer-right">
-            <div class="btn-group" id="btn-group2">
-              <button id="playlistButton" type="button" onclick="openModal()">
-                <img
-                  id="playlistIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FPlaylist.svg?v=1621070364610"
-                />
-              </button>
+                <button id="muteButton" type="button" data-state="mute">
+                  <img
+                    id="muteButtonIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_mic_white.svg?v=1614747341515"
+                  />
+                </button>
 
-              <button id="heartButton" type="button" data-state="heart">
-                <img
-                  id="heartIcon"
-                  src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FHeart.svg?v=1621070361140"
-                />
-              </button>
+                <button id="backButton" type="button" data-state="play">
+                  <img
+                    id="backButtonIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_previous_white.svg?v=1614749830096"
+                  />
+                </button>
+
+                <button
+                  id="playpauseButton"
+                  class="grow"
+                  type="button"
+                  data-state="play"
+                >
+                  <img
+                    id="playpauseButtonIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FGroup%2021.svg?v=1618632508004"
+                  />
+                </button>
+
+                <button id="nextButton" type="button" data-state="play">
+                  <img
+                    id="nextButtonIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_next_white.svg?v=1614749830096"
+                  />
+                </button>
+
+                <button
+                  id="volumeDownButton"
+                  type="button"
+                  data-state="voldown"
+                >
+                  <img
+                    id="volumeDownIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FVolume%20-%20Low.svg?v=1621062867508"
+                  />
+                </button>
+
+                <button id="volumeUpButton" type="button" data-state="volup">
+                  <img
+                    id="volumeUpIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_volume_white.svg?v=1614749830096"
+                  />
+                </button>
+                <!--
+                <button id="voldec" type="button" data-state="voldown">
+                  <img id="volumeDownIcon" src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_volume_white.svg?v=1614749830096" />
+                </button> -->
+              </div>
+
+              <div
+                style="display: none"
+                id="video-controls"
+                class="controls"
+                data-state="hidden"
+              ></div>
+            </div>
+
+            <div class="footer-right">
+              <div class="btn-group" id="btn-group2">
+                <button id="playlistButton" type="button" onclick="openModal()">
+                  <img
+                    id="playlistIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FPlaylist.svg?v=1621070364610"
+                  />
+                </button>
+
+                <button id="heartButton" type="button" data-state="heart">
+                  <img
+                    id="heartIcon"
+                    src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FHeart.svg?v=1621070361140"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </footer>
-
+      </footer>
+    </div>
     <div id="songModal" class="modal">
       <div class="jukeboxes" onscroll="dismissAddedNotice()">
         <button onclick="grabURL(event, 0)" class="jukebox" type="button">
@@ -944,9 +957,6 @@
       }
     </script>
   </body>
-
-  <!---->
-  (To Aaron) Sonny's new JS files from Glitch, Sunday 10:59pm -->
   <script src="/js/playback.js"></script>
   <script src="/js/video-player.js"></script>
 
