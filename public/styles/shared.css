@@ -446,7 +446,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   padding-top: 0;
   padding-bottom: 0;
   max-height: 0;
-  transition: max-height 100ms linear;
+  transition: max-height 350ms ease-in-out;
 }
 
 .navbar-toggle {
@@ -462,10 +462,20 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   cursor: pointer;
 }
 
-.navbar-toggleIcon {
-  height: 3px;
-  width: 100%;
-  background-color: var(--color-text);
+.navbar-toggleIcon__close {
+  display: none;
+}
+
+.header__expanded .navbar-section__right {
+  max-height: calc(3rem * 4);
+}
+
+.header__expanded .navbar-toggleIcon__open {
+  display: none;
+}
+
+.header__expanded .navbar-toggleIcon__close {
+  display: block;
 }
 
 .navbar-list {
@@ -473,10 +483,6 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   list-style: none;
   margin: 0;
   padding: calc(var(--page-padding) / 2) 0;
-}
-
-.header__expanded .navbar-section__right {
-  max-height: calc(3rem * 4);
 }
 
 .navbar-item {
