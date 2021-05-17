@@ -1,9 +1,61 @@
-.header-navlink__home {
-  visibility: hidden;
+:root {
+  --hero-height: calc(540px - var(--header-height));
+  --hero-view: calc(800px - var(--header-height));
+  --hero-max: 100vh;
+  --color-background: var(--color-midnight);
 }
 
-.header__revealed .header-navlink__home {
-  visibility: visible;
+.header:not(.header__revealed) .navbar-toggle {
+  color: var(--color-text);
+}
+
+.header:not(.header__revealed) .navbar-section {
+  background-color: transparent;
+  transition: background-color 600ms ease 200ms, max-height 100ms linear;
+}
+
+.header.header__revealed .navbar-section {
+  background-color: transparent;
+  transition: max-height 100ms linear;
+}
+
+.header:not(.header__revealed) .navbar-link__home {
+  transition: opacity 200ms ease 200ms;
+}
+
+.header.header__expanded:not(.header__revealed) .navbar-section {
+  background: var(--color-deep-blue-something);
+}
+
+.header.header__expanded {
+  border-bottom: 2px solid var(--color-text);
+}
+
+@media screen and (min-width: 768px) {
+  .header:not(.header__revealed) .navbar-section {
+    transition: max-height 100ms linear;
+  }
+
+  .header.header__expanded:not(.header__revealed) .navbar-section {
+    background: transparent;
+  }
+  .header.header__expanded {
+    border: none;
+  }
+}
+
+.header__revealed {
+  --color-background: var(--color-linen);
+  --color-text: var(--color-midnight);
+}
+
+.navbar-link__home {
+  opacity: 0;
+}
+
+.header__revealed .navbar-link__home,
+.header__expanded .navbar-link__home {
+  opacity: 1;
 }
 
 /**
@@ -18,14 +70,20 @@
 .hero {
   padding: 0;
   position: relative;
-  min-height: 540px;
+  min-height: var(--hero-height);
   align-items: flex-start;
 }
 
 .hero-bg {
+  overflow: hidden;
+  top: 0;
+  padding-top: calc(12rem + var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
-  margin-top: -5rem;
-  height: calc(800px + 5rem);
+  min-height: var(--hero-height);
+  height: var(--hero-max);
   width: 100%;
   background: rgb(5, 4, 34);
   background: -moz-linear-gradient(
@@ -46,14 +104,17 @@
   z-index: 0;
 }
 
+.hero-view {
+  height: var(--hero-view);
+  max-width: 49rem;
+  width: 100%;
+}
+
 .hero-images {
   width: 100%;
-  max-width: 49rem;
-  height: 100%;
-  margin: 5rem auto 0;
-  right: 0px;
-  left: 0px;
   position: absolute;
+  min-height: var(--hero-height);
+  margin: auto 0;
 }
 
 .hero-container {

@@ -116,30 +116,52 @@
         </svg>
       </a>
     </div>
-
     <header role="banner" class="header">
-      <nav class="header-nav">
-        <div class="header-navlogo">
-          <a class="header-navlink__home" href="/">
+      <nav class="navbar">
+        <div class="navbar-section navbar-section__left">
+          <a class="navbar-link__home" href="/">
             <h1 class="brand-logo">
               KARAOKE NITE
               <span class="brand-betatag">beta</span>
             </h1>
           </a>
+          <button class="navbar-toggle">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+              <use href="#menu" />
+            </svg>
+          </button>
         </div>
-        <ul class="header-navlist">
-          <li class="header-navitem">
-            <a class="header-navlink" href="about.html">About</a>
-          </li>
-          <li class="header-navitem">
-            <a href="blog.html" class="header-navlink">Blog</a>
-          </li>
-          <li class="header-navitem">
-            <a class="header-navlink header-navlink__active" href="faq.html"
-              >FAQ</a
-            >
-          </li>
-        </ul>
+        <div class="navbar-section navbar-section__right">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a class="navbar-link" href="about.html"
+                >About
+                <span class="navbar-linkIcon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden>
+                    <use href="#arrow" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="blog.html" class="navbar-link">
+                Blog
+                <span class="navbar-linkIcon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden>
+                    <use href="#arrow" /></svg></span
+              ></a>
+            </li>
+            <li class="navbar-item">
+              <a class="navbar-link navbar-link__active" href="faq.html"
+                >FAQ
+                <span class="navbar-linkIcon" aria-hidden>
+                  <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden>
+                    <use href="#arrow" />
+                  </svg> </span
+              ></a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
 
@@ -369,5 +391,25 @@
         </div>
       </div>
     </footer>
+    <svg height="0" width="0" style="display: none">
+      <defs>
+        <symbol id="arrow">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H16.5858L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="menu">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.00012 7C3.00012 6.44772 3.44784 6 4.00012 6H20.0001C20.5524 6 21.0001 6.44772 21.0001 7C21.0001 7.55228 20.5524 8 20.0001 8H4.00012C3.44784 8 3.00012 7.55228 3.00012 7ZM3.00012 12C3.00012 11.4477 3.44784 11 4.00012 11L20.0001 11C20.5524 11 21.0001 11.4477 21.0001 12C21.0001 12.5523 20.5524 13 20.0001 13L4.00012 13C3.44784 13 3.00012 12.5523 3.00012 12ZM4.00012 16C3.44784 16 3.00012 16.4477 3.00012 17C3.00012 17.5523 3.44784 18 4.00012 18H20.0001C20.5524 18 21.0001 17.5523 21.0001 17C21.0001 16.4477 20.5524 16 20.0001 16H4.00012Z"
+            fill="currentColor"
+          />
+        </symbol>
+      </defs>
+    </svg>
   </body>
 </html>
