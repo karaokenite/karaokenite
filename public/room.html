@@ -23,7 +23,7 @@
     <div class="room-container">
       <div class="info">
         <button class="button" onclick="inviteModal()">Invite Friends</button>
-        <button class="button" onclick="feedbackModal()">Feedback</button>
+        <button class="button" id="feedback" onclick="feedbackModal()"></button>
       </div>
       <div class="video-area karaoke-video-mask">
         <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
@@ -842,17 +842,6 @@
         >Report a Bug</a
       >
     </div>
-
-    <!-- Feedback -->
-    <a
-      id="feedback"
-      class="button button-bold"
-      href="#feedbackModal"
-      rel="modal:open"
-      title="Give some feedback or report a bug 🔎"
-    >
-      <!--     <img id="asdf" src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029"> -->
-    </a>
 
     <script>
       // =========================================== Karaoke Playlist (mp4's) =====================================

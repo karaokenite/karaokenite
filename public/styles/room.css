@@ -526,7 +526,6 @@ button[data-state="mute"] {
 #invite {
   top: 20px;
   right: 200px;
-  z-index: 2;
   position: absolute;
   font-weight: var(--weight-heavy);
 }
@@ -642,4 +641,16 @@ button[data-state="mute"] {
 
 .fb-share-button {
   margin-left: 11px;
+}
+
+#feedback {
+  cursor: pointer;
+  border-radius: 50%;
+  height: 48px;
+  width: 50px;
+  background-image: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029");
+  background-position: 50%, 50%;
+  background-repeat: no-repeat;
+  margin-left: 6px;
+  margin-right: 6px;
 }
