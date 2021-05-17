@@ -55,6 +55,7 @@
   --color-jet: #000000;
   --color-frozen-blueberry: #8193b2;
   --color-slate: #5e6c76;
+  --color-seafloor: #070548;
   --color-deep-blue-something: #0c0a57;
   --color-midnight: #050422;
   --color-peach: #ffb48e;
@@ -71,6 +72,8 @@
   --color-neon-demon: #efff9e;
   --color-bananarama: #f4ca2c;
   --color-old-yellow: #c8ef00;
+  --color-opaque-white: rgba(255, 255, 255, 0.3);
+  --color-opaque-black: rgba(0, 0, 0, 0.1);
 }
 
 :root {
@@ -78,6 +81,7 @@
   --color-link-text: var(--color-midnight);
   --color-link-underline: var(--color-peach);
   --color-background: var(--color-linen);
+  --color-divider: var(--color-opaque-black);
 
   --content-width-md: 40rem;
 
@@ -416,6 +420,10 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   background: var(--color-linen);
 }
 
+.header.header__expanded {
+  border-bottom: 2px solid var(--color-divider);
+}
+
 .header.header__switch .navbar .navbar-section,
 .header.header__switch .navbar .navbar-link__home {
   transition: none;
@@ -492,7 +500,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
 }
 
 .navbar-item {
-  border-bottom: 2px solid var(--color-text);
+  border-bottom: 2px solid var(--color-divider);
 }
 
 .navbar-item:last-child {
@@ -570,9 +578,12 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   .navbar-section__right {
     justify-content: end;
   }
-
   .navbar-item {
-    border: none;
+    border-bottom: none;
+  }
+
+  .navbar-item:after {
+    display: none;
   }
 
   .navbar-link {

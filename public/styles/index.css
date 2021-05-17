@@ -4,6 +4,7 @@
   --hero-max: 100vh;
   --banner-height: 320px;
   --color-background: var(--color-midnight);
+  --color-divider: var(--color-opaque-white);
 }
 
 @media screen and (min-width: 768px) {
@@ -31,11 +32,11 @@
 }
 
 .header.header__expanded:not(.header__revealed) .navbar-section {
-  background: var(--color-deep-blue-something);
+  background: var(--color-seafloor);
 }
 
 .header.header__expanded {
-  border-bottom: 2px solid var(--color-text);
+  border-bottom: 1px solid var(--color-opaque-white);
 }
 
 @media screen and (min-width: 768px) {
