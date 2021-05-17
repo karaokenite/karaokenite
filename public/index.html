@@ -195,47 +195,47 @@ if (location.protocol != 'https:') {
 
     <main class="layout layout__fluid">
       <section class="hero" id="hero">
-        <div class="hero-bg">
-          <div class="hero-view">
-            <div class="hero-images">
+        <div class="hero-bg"></div>
+        <div class="section--content join-container hero--content">
+          <div class="join-callout">
+            <div class="hero-imageFrame">
               <img
+                alt=""
                 class="hero-bg-img star1 floating floating--short"
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar1.png?v=1591917657267"
               />
               <img
+                alt=""
                 class="hero-bg-img star2 floating floating--long"
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar2.png?v=1591917657953"
               />
               <img
+                alt=""
                 class="hero-bg-img star4 floating floating--short"
                 src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar4.png?v=1596993367347"
               />
-
-              <div class="hero-container--overflow">
-                <img
-                  class="hero-bg-img star3 floating floating--long"
-                  src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar3.png?v=1591917657757"
-                />
-                <img
-                  class="hero-bg-img star5 floating floating--long"
-                  src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar5.png?v=1591917657427"
-                />
-                <img
-                  class="hero-bg-img mic"
-                  src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmicrophone.png?v=1591917657878"
-                />
-              </div>
+              <img
+                alt=""
+                class="hero-bg-img star3 floating floating--long"
+                src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar3.png?v=1591917657757"
+              />
+              <img
+                alt=""
+                class="hero-bg-img star5 floating floating--long"
+                src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fstar5.png?v=1591917657427"
+              />
+              <img
+                alt=""
+                class="hero-bg-img mic"
+                src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fmicrophone.png?v=1591917657878"
+              />
+              <img
+                class="join-image"
+                alt="Karaoke Nite"
+                src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Flogo.svg?v=1595981204360"
+                id="hero-logo"
+              />
             </div>
-          </div>
-        </div>
-        <div class="section--content join-container hero--content">
-          <div class="join-callout">
-            <img
-              class="join-image"
-              alt="Placeholder1"
-              src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Flogo.svg?v=1595981204360"
-              id="hero-logo"
-            />
             <p class="hero-tagline">
               Get your friends together during quarantine!
             </p>
@@ -245,6 +245,7 @@ if (location.protocol != 'https:') {
             <form action="/scene.html" method="GET">
               <div>
                 <input
+                  class="input"
                   id="room"
                   name="room"
                   placeholder="Choose a room name"
@@ -254,6 +255,7 @@ if (location.protocol != 'https:') {
               </div>
               <div>
                 <input
+                  class="input"
                   id="username"
                   name="username"
                   placeholder="Choose a username"
@@ -263,19 +265,22 @@ if (location.protocol != 'https:') {
               </div>
 
               <input
-                class="button button-bold"
+                class="input button button-bold"
                 type="submit"
                 value="Enter Room"
               />
 
               <div class="text__left" id="radio-buttons-testing">
-                <label for="hosting" class="custom-radios-hosting-joining">
+                <label
+                  for="hosting"
+                  class="label custom-radios-hosting-joining"
+                >
                   <input
                     type="radio"
                     name="host"
                     id="hosting"
                     value="true"
-                    class="input-radio"
+                    class="input input-radio"
                     checked
                   />
                   <span class="custom-checkmark"></span>
@@ -284,12 +289,15 @@ if (location.protocol != 'https:') {
 
                 <br />
 
-                <label for="joining" class="custom-radios-hosting-joining">
+                <label
+                  for="joining"
+                  class="label custom-radios-hosting-joining"
+                >
                   <input
                     type="radio"
                     name="host"
                     id="joining"
-                    class="input-radio"
+                    class="input input-radio"
                     value="false"
                   />
                   <span class="custom-checkmark"></span>
@@ -304,7 +312,7 @@ if (location.protocol != 'https:') {
       <section id="options" class="options-container">
         <div class="options-diagonal">
           <div class="section--content options-content section__wide">
-            <h2 class="page-subtitle text__center">
+            <h2 class="page-subtitle text__center options-title">
               Karaoke with your friends...
             </h2>
             <div class="options-grid">
@@ -314,7 +322,7 @@ if (location.protocol != 'https:') {
                   id="browser"
                   src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FLaptop.svg?v=1591917657224"
                 />
-                <label for="browser" class="options--description"
+                <label for="browser" class="text__center options--description"
                   >In the browser</label
                 >
               </div>
@@ -325,7 +333,7 @@ if (location.protocol != 'https:') {
                   id="headset"
                   src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FVR.svg?v=1591917657319"
                 />
-                <label for="headset" class="options--description"
+                <label for="headset" class="text__center options--description"
                   >With a VR headset</label
                 >
               </div>
@@ -495,30 +503,33 @@ if (location.protocol != 'https:') {
         </div>
       </div>
     </footer>
-      <svg height="0" width="0" style="display: none">
-
-        <defs>
-          <symbol id="arrow">
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H16.5858L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z"
-              fill="currentColor"
-            />
-          </symbol>
-          <symbol id="menu">
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M3.00012 7C3.00012 6.44772 3.44784 6 4.00012 6H20.0001C20.5524 6 21.0001 6.44772 21.0001 7C21.0001 7.55228 20.5524 8 20.0001 8H4.00012C3.44784 8 3.00012 7.55228 3.00012 7ZM3.00012 12C3.00012 11.4477 3.44784 11 4.00012 11L20.0001 11C20.5524 11 21.0001 11.4477 21.0001 12C21.0001 12.5523 20.5524 13 20.0001 13L4.00012 13C3.44784 13 3.00012 12.5523 3.00012 12ZM4.00012 16C3.44784 16 3.00012 16.4477 3.00012 17C3.00012 17.5523 3.44784 18 4.00012 18H20.0001C20.5524 18 21.0001 17.5523 21.0001 17C21.0001 16.4477 20.5524 16 20.0001 16H4.00012Z"
-              fill="currentColor"
-            />
-          </symbol>
-          <symbol id="close">
-        <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="currentColor"/>
-          </symbol>
-        </defs>
-      </svg>
+    <svg height="0" width="0" style="display: none">
+      <defs>
+        <symbol id="arrow">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M12.2929 5.29289C12.6834 4.90237 13.3166 4.90237 13.7071 5.29289L19.7071 11.2929C20.0976 11.6834 20.0976 12.3166 19.7071 12.7071L13.7071 18.7071C13.3166 19.0976 12.6834 19.0976 12.2929 18.7071C11.9024 18.3166 11.9024 17.6834 12.2929 17.2929L16.5858 13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H16.5858L12.2929 6.70711C11.9024 6.31658 11.9024 5.68342 12.2929 5.29289Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="menu">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3.00012 7C3.00012 6.44772 3.44784 6 4.00012 6H20.0001C20.5524 6 21.0001 6.44772 21.0001 7C21.0001 7.55228 20.5524 8 20.0001 8H4.00012C3.44784 8 3.00012 7.55228 3.00012 7ZM3.00012 12C3.00012 11.4477 3.44784 11 4.00012 11L20.0001 11C20.5524 11 21.0001 11.4477 21.0001 12C21.0001 12.5523 20.5524 13 20.0001 13L4.00012 13C3.44784 13 3.00012 12.5523 3.00012 12ZM4.00012 16C3.44784 16 3.00012 16.4477 3.00012 17C3.00012 17.5523 3.44784 18 4.00012 18H20.0001C20.5524 18 21.0001 17.5523 21.0001 17C21.0001 16.4477 20.5524 16 20.0001 16H4.00012Z"
+            fill="currentColor"
+          />
+        </symbol>
+        <symbol id="close">
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+            fill="currentColor"
+          />
+        </symbol>
+      </defs>
     </svg>
   </body>
 </html>
