@@ -654,3 +654,7 @@ button[data-state="mute"] {
   margin-left: 6px;
   margin-right: 6px;
 }
+
+#scene-logo a {
+  color: white;
+}
