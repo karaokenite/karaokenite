@@ -2,11 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Karaoke Nite | Room</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="/styles/shared.css" rel="stylesheet" />
     <link href="/styles/room.css" rel="stylesheet" />
+
+    <!-- jQuery for the Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+      type="text/css"
+    />
   </head>
 
   <body>
@@ -121,13 +130,7 @@
 
           <div class="footer-right">
             <div class="btn-group" id="btn-group2">
-              <button
-                id="playlistButton"
-                type="button"
-                href="#songModal"
-                rel="modal:open"
-                data-state="playlist"
-              >
+              <button id="playlistButton" type="button" onclick="openModal()">
                 <img
                   id="playlistIcon"
                   src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FPlaylist.svg?v=1621070364610"
@@ -935,11 +938,18 @@
       function dismissAddedNotice() {
         document.getElementById('added-notice').removeAttribute('populated');
       }
+
+      function openModal() {
+        $('#songModal').modal('open');
+      }
     </script>
   </body>
 
-  <script src="/playback.js"></script>
+  <!---->
+  (To Aaron) Sonny's new JS files from Glitch, Sunday 10:59pm -->
+  <script src="/js/playback.js"></script>
+  <script src="/js/video-player.js"></script>
+
   <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
   <script src="/chat.js"></script>
-  <script src="/video-player.js"></script>
 </html>

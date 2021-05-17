@@ -287,17 +287,22 @@ footer {
 
 #karaoke-video {
   display: block;
-  width: 690px;
+  /* width: 690px; */
   margin: auto;
+  padding: 20px;
 }
 
 .karaoke-video-mask {
-  height: 100%;
+  /* height: 100%; */
   position: relative;
-	max-width:720px;
+  width: 100%;
+	/* max-width:720px;
 	max-width:64rem;
 	max-height:494px;
-	max-height:30.875rem;
+	max-height:30.875rem; */
+  max-width: 90vh;
+  min-width: 30vh;
+
 	margin:20px auto;
 	margin:1.25rem auto;
 	padding:1.051%;
