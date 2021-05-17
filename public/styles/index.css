@@ -1,7 +1,7 @@
 :root {
   --hero-height: calc(540px - var(--header-height));
   --hero-view: calc(800px - var(--header-height));
-  --hero-max: 100vh;
+
   --banner-height: 320px;
   --color-background: var(--color-midnight);
   --color-divider: var(--color-opaque-white);
@@ -90,24 +90,23 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-  min-height: var(--hero-height);
-  max-height: var(--hero-max);
+  top: calc(-1 * var(--header-height));
+  min-height: calc((var(--banner-height) / 2) + 100%);
   width: 100%;
-  background: rgb(5, 4, 34);
   background: -moz-linear-gradient(
     176deg,
-    rgba(5, 4, 34, 1) 0%,
-    rgba(8, 5, 113, 1) 100%
+    rgba(5, 4, 34, 1) 0px,
+    rgba(28, 14, 140, 1) 600px
   );
   background: -webkit-linear-gradient(
     176deg,
-    rgba(5, 4, 34, 1) 0%,
-    rgba(8, 5, 113, 1) 100%
+    rgba(5, 4, 34, 1) 0px,
+    rgba(28, 14, 140, 1) 600px
   );
   background: linear-gradient(
     175deg,
-    rgba(5, 4, 34, 1) 0%,
-    rgba(28, 14, 140, 1) 85%
+    rgba(5, 4, 34, 1) 0px,
+    rgba(28, 14, 140, 1) 600px
   );
   z-index: 0;
 }
@@ -136,7 +135,7 @@
   position: absolute;
 }
 
-@media (max-width: 42rem) {
+@media screen and (max-width: 768px) {
   .hero-container--overflow {
     height: 100%;
     position: relative;
@@ -170,14 +169,14 @@
   max-width: 100%;
 }
 
-@media (max-width: 42rem) {
+@media screen and (max-width: 768px) {
   .hero-bg-img.star4 {
     top: -230px;
     width: 255px;
   }
 }
 
-@media (min-width: 42rem) {
+@media screen and (min-width: 768px) {
   .hero-bg-img.star4 {
     top: -350px;
   }
@@ -188,7 +187,7 @@
   left: 820px;
 }
 
-@media (max-width: 42rem) {
+@media screen and (max-width: 768px) {
   .hero-bg-img.star5 {
     display: none;
   }
@@ -199,7 +198,7 @@
   left: 195px;
 }
 
-@media (max-width: 42rem) {
+@media screen and (max-width: 768px) {
   .hero-bg-img.mic {
     top: 30px;
     left: 195px;
@@ -219,7 +218,7 @@
   margin-bottom: 1rem;
 }
 
-@media (max-width: 42rem) {
+@media screen and (max-width: 768px) {
   .hero-tagline {
     display: none;
   }
@@ -502,7 +501,7 @@ section#steps {
   margin-top: 1rem;
 }
 
-@media (min-width: 42rem) {
+@media screen and (min-width: 768px) {
   .recap-description {
     font-size: var(--font-size-xl);
   }
@@ -510,7 +509,7 @@ section#steps {
 
 /* Special Footer style */
 
-@media (max-width: 42rem) {
+@media screen and (max-width: 768px) {
   .hero {
     text-align: center;
   }

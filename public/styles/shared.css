@@ -95,7 +95,7 @@
   --header-height: 3rem;
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 768px) {
   :root {
     --vertical-space: 4rem;
     --vertical-space-small: 2.5rem;
@@ -284,7 +284,7 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 */
 
 .layout {
-  overflow: hidden;
+  width: 100%;
 }
 
 .layout__fluid {
@@ -548,7 +548,7 @@ YP   YP Y88888P YP   YP Y8888D' Y88888P 88   YD
   align-items: center;
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 768px) {
   .navbar-toggle {
     display: none;
   }
@@ -750,7 +750,7 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
   font-weight: var(--weight-heavy);
 }
 
-@media screen and (min-width: 48rem) {
+@media screen and (min-width: 768px) {
   .footer-container {
     flex-direction: row;
     margin: auto;
