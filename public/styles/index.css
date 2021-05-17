@@ -172,7 +172,8 @@
 
 @media (max-width: 42rem) {
   .hero-bg-img.star4 {
-    top: -175px;
+    top: -230px;
+    width: 255px;
   }
 }
 
@@ -198,6 +199,13 @@
   left: 195px;
 }
 
+@media (max-width: 42rem) {
+  .hero-bg-img.mic {
+    top: 30px;
+    left: 195px;
+  }
+}
+
 .hero-logo {
   width: 130%;
   left: -22px;
@@ -209,6 +217,12 @@
   color: var(--color-linen);
   text-align: center;
   margin-bottom: 1rem;
+}
+
+@media (max-width: 42rem) {
+  .hero-tagline {
+    display: none;
+  }
 }
 
 .hero--content {
@@ -617,5 +631,15 @@ section#steps {
   .join-image {
     position: relative;
     left: -1rem;
+  }
+}
+
+@media (max-width: 60rem) {
+  .hero {
+    padding-top: 1rem;
+  }
+
+  .join-form {
+    margin-top: 3rem;
   }
 }
