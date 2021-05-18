@@ -41,43 +41,46 @@
           ></button>
         </div>
       </div>
-      <div class="video-container karaoke-video-mask">
-        <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
-        <video id="karaoke-video" controls preload="metadata">
-          <source
-            src="https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045"
-            type="video/mp4"
-          />
+      <div class="video-container">
+        <div class="group">
+          <div class="karaoke-video-mask">
+            <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
+            <video id="karaoke-video" controls preload="metadata">
+              <source
+                src="https://cdn.glitch.com/bf4db82b-cdcf-4019-a281-153f8e3d1e9f%2Fletsgetitonencoded.mp4?v=1588473010045"
+                type="video/mp4"
+              />
 
-          <!-- Offer download -->
-          <a
-            href="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
-            >Download MP4</a
-          >
-        </video>
+              <!-- Offer download -->
+              <a
+                href="http://iandevlin.github.io/mdn/video-player/video/tears-of-steel-battle-clip-medium.mp4"
+                >Download MP4</a
+              >
+            </video>
+          </div>
+          <div class="user-container" id="video-chat-room">
+            <!-- <div class="video-mask"> -->
+            <div class="user">
+              <video class="user-camera" id="user-video" muted="muted"></video>
+              <div class="user-name">Username1</div>
+            </div>
+
+            <div class="user">
+              <video class="user-camera" id="peer-video"></video>
+              <div class="user-name">Username2</div>
+            </div>
+
+            <div class="user">
+              <video class="user-camera" id="peer-video2"></video>
+              <div class="user-name">Username3</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <script src="/video-player.js"></script>
 
       <!-- User Video Cameras -->
-
-      <div class="user-container" id="video-chat-room">
-        <!-- <div class="video-mask"> -->
-        <div class="user">
-          <video class="user-camera" id="user-video" muted="muted"></video>
-          <div class="user-name">Username1</div>
-        </div>
-
-        <div class="user">
-          <video class="user-camera" id="peer-video"></video>
-          <div class="user-name">Username2</div>
-        </div>
-
-        <div class="user">
-          <video class="user-camera" id="peer-video2"></video>
-          <div class="user-name">Username3</div>
-        </div>
-      </div>
 
       <!-- ======================================= Footer ======================================== -->
 
@@ -86,7 +89,10 @@
           <div id="footer--content">
             <div class="footer-left">
               <a href="javascript:history.back()"
-                ><button class="button button__small" id="leaveRoomButton">
+                ><button
+                  class="button button__small hidden__xs"
+                  id="leaveRoomButton"
+                >
                   Exit
                 </button></a
               >
