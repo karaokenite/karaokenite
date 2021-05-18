@@ -24,7 +24,7 @@ let leaveRoomButton = document.getElementById('leaveRoomButton');
 let muteFlag = false;
 let hideCameraFlag = false;
 
-// let roomName;
+let roomSize;
 
 let creator = false;
 let rtcPeerConnection;
@@ -111,8 +111,11 @@ socket.on('created', function () {
 
 // Triggered when a room is successfully joined:
 
-socket.on('joined', function () {
+socket.on('joined', function (roomName, numClients) {
   creator = false;
+
+  console.log('====================== ' + numClients[roomName]);
+  // roomSize = numClients[roomName];
 
   navigator.mediaDevices
     .getUserMedia({
@@ -128,11 +131,48 @@ socket.on('joined', function () {
         userVideo.play();
       };
       socket.emit('ready', roomName);
+      roomSize = numClients[roomName];
     })
     .catch(function (err) {
       /* handle the error */
       alert("Couldn't Access User Media");
     });
+});
+
+// Cleaning the code to bring these two closer together:
+leaveRoomButton.addEventListener('click', function () {
+  socket.emit('leave', roomName);
+  if (userVideo.srcObject) {
+    userVideo.srcObject.getTracks()[0].stop();
+    userVideo.srcObject.getTracks()[1].stop();
+    // userVideo.srcObject.getTracks().forEach((track) => track.stop());
+  }
+  if (peerVideo.srcObject) {
+    peerVideo.srcObject.getTracks()[0].stop();
+    peerVideo.srcObject.getTracks()[1].stop();
+  }
+  if (rtcPeerConnection) {
+    rtcPeerConnection.ontrack = null;
+    rtcPeerConnection.onicecandidate = null;
+    rtcPeerConnection.close();
+    rtcPeerConnection = null;
+  }
+});
+socket.on('leave', function (roomName, numClients) {
+  // This person is now the creator because they are the only person in the room:
+  creator = true;
+
+  console.log('====================== ' + numClients[roomName]);
+  if (rtcPeerConnection) {
+    rtcPeerConnection.ontrack = null;
+    rtcPeerConnection.onicecandidate = null;
+    rtcPeerConnection.close();
+    rtcPeerConnection = null;
+  }
+  if (peerVideo.srcObject) {
+    peerVideo.srcObject.getTracks()[0].stop();
+    peerVideo.srcObject.getTracks()[1].stop();
+  }
 });
 
 // Triggered when a room is full (meaning has 2 people):
@@ -197,47 +237,6 @@ socket.on('offer', function (offer) {
 
 socket.on('answer', function (answer) {
   rtcPeerConnection.setRemoteDescription(answer);
-});
-
-// Cleaning the code to bring these two closer together:
-
-leaveRoomButton.addEventListener('click', function () {
-  socket.emit('leave', roomName);
-
-  if (userVideo.srcObject) {
-    userVideo.srcObject.getTracks()[0].stop();
-    userVideo.srcObject.getTracks()[1].stop();
-    // userVideo.srcObject.getTracks().forEach((track) => track.stop());
-  }
-
-  if (peerVideo.srcObject) {
-    peerVideo.srcObject.getTracks()[0].stop();
-    peerVideo.srcObject.getTracks()[1].stop();
-  }
-
-  if (rtcPeerConnection) {
-    rtcPeerConnection.ontrack = null;
-    rtcPeerConnection.onicecandidate = null;
-    rtcPeerConnection.close();
-    rtcPeerConnection = null;
-  }
-});
-
-socket.on('leave', function () {
-  // This person is now the creator because they are the only person in the room:
-  creator = true;
-
-  if (rtcPeerConnection) {
-    rtcPeerConnection.ontrack = null;
-    rtcPeerConnection.onicecandidate = null;
-    rtcPeerConnection.close();
-    rtcPeerConnection = null;
-  }
-
-  if (peerVideo.srcObject) {
-    peerVideo.srcObject.getTracks()[0].stop();
-    peerVideo.srcObject.getTracks()[1].stop();
-  }
 });
 
 // Implementing the OnIceCandidateFunction which is part of the RTCPeerConnection Interface:
