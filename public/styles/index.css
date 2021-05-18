@@ -375,7 +375,7 @@
   align-items: center;
   padding: 1rem 0;
   justify-content: center;
-  grid-template-rows: minmax(0, 4rem) auto minmax(0, 4rem);
+  grid-template-columns: minmax(0, 1fr) max-content minmax(0, 1fr);
 }
 
 .options--description {
@@ -387,11 +387,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .options--visual img {
-  padding: 1.5rem;
   width: 75%;
+  max-width: 80%;
   user-select: none;
 }
 
@@ -407,12 +408,6 @@
   padding: 1rem;
   text-align: center;
   font-size: var(--font-size-md);
-}
-
-@media screen and (min-width: 768px) {
-  .options-grid {
-    grid-template-rows: minmax(0, 1fr) max-content minmax(0, 1fr);
-  }
 }
 
 /* Section: How it works */
