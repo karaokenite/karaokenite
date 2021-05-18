@@ -82,11 +82,9 @@ io.on('connection', (socket) => {
 
     console.log('the number of people ' + room.clients);
     socket.to(curRoom.name).broadcast.emit('newClientConnect', room.clients);
-    socket
-      .to(curRoom.name)
-      .broadcast.emit('sendAllUsernames', {
-        usernames: Array.from(curRoom.usernames),
-      });
+    socket.to(curRoom.name).broadcast.emit('sendAllUsernames', {
+      usernames: Array.from(curRoom.usernames),
+    });
     console.log(room.usernames);
   }
 
@@ -174,11 +172,9 @@ io.on('connection', (socket) => {
       .to(curRoom.name)
       .broadcast.emit('newClientDisconnect', curRoom.clients);
 
-    socket
-      .to(curRoom.name)
-      .broadcast.emit('sendAllUsernamesDisconnect', {
-        usernames: Array.from(curRoom.usernames),
-      });
+    socket.to(curRoom.name).broadcast.emit('sendAllUsernamesDisconnect', {
+      usernames: Array.from(curRoom.usernames),
+    });
     broadCastRoomInfo(curRoom); /*TEST*/
   });
 });
