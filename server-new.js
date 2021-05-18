@@ -31,11 +31,12 @@ const listener = app.listen(process.env.PORT, () => {
 
 // let io = socket(listener);
 let size = 3;
+var numClients = {};
 
 // Triggered when a client is connected:
 
 io.on('connection', function (socket) {
-  console.log('User Connected :' + socket.id);
+  console.log('User Connected:' + socket.id);
 
   // Triggered when a peer hits the join room button:
 
@@ -44,14 +45,17 @@ io.on('connection', function (socket) {
     let room = rooms.get(roomName);
 
     // room == undefined when no such room exists
+
     if (room == undefined) {
       socket.join(roomName);
       console.log('Room Created');
-      socket.emit('created');
-    } else if (room.size <= size) {
+      numClients[roomName] = 1;
+      socket.emit('created', roomName, numClients);
+    } else if (room.size < size) {
       socket.join(roomName);
       console.log('Room Joined');
-      socket.emit('joined');
+      numClients[roomName]++;
+      socket.emit('joined', roomName, numClients);
     }
     // else if (room.size == 2) {
     //   socket.join(roomName);
@@ -96,6 +100,7 @@ io.on('connection', function (socket) {
   //Triggered when a user presses the volume + button
   socket.on('next', function (roomName) {
     socket.broadcast.emit('next', roomName);
+    // socket.to(roomName).broadcast.emit("play", roomName);
   });
 
   //Triggered when a user presses the volume - button
