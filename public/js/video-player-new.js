@@ -32,7 +32,6 @@
 
     // Obtain handles to buttons and other elements
     var playpause = document.getElementById('playpauseButton');
-    var stop = document.getElementById('stop');
     var mute = document.getElementById('mute');
     var volinc = document.getElementById('volinc');
     var voldec = document.getElementById('voldec');
@@ -208,18 +207,18 @@
     });
 
     // The Media API has no 'stop()' function, so pause the video and reset its time and the progress bar
-    stop.addEventListener('click', function (e) {
-      video.pause();
-      video.currentTime = 0;
-      progress.value = 0;
-      // Update the play/pause button's 'data-state' which allows the correct button image to be set via CSS
-      changeButtonState('playpause');
-    });
+    // stop.addEventListener('click', function (e) {
+    //   video.pause();
+    //   video.currentTime = 0;
+    //   progress.value = 0;
+    //   // Update the play/pause button's 'data-state' which allows the correct button image to be set via CSS
+    //   changeButtonState('playpause');
+    // });
 
-    mute.addEventListener('click', function (e) {
-      video.muted = !video.muted;
-      changeButtonState('mute');
-    });
+    // mute.addEventListener('click', function (e) {
+    //   video.muted = !video.muted;
+    //   changeButtonState('mute');
+    // });
 
     volinc.addEventListener('click', function (e) {
       alterVolume('+');

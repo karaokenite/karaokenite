@@ -4,18 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Karaoke Nite | Room</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link href="/styles/shared.css" rel="stylesheet" />
-    <link href="/styles/room.css" rel="stylesheet" />
 
-    <!-- jQuery for the Modal -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
       type="text/css"
     />
+    <link href="/styles/shared.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/room.css" rel="stylesheet" type="text/css" />
+
+    <script
+      src="https://cdn.socket.io/3.1.3/socket.io.min.js"
+      integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- jQuery for the Modal -->
   </head>
 
   <body>
@@ -32,7 +43,7 @@
         </div>
         <div class="info-section">
           <button class="button" onclick="inviteModal()">
-            Invite <span class="hidden__xs">Friends</span>
+            Invite <span class="hidden__xs">&nbsp;Friends</span>
           </button>
           <button
             class="button"
@@ -77,8 +88,6 @@
           </div>
         </div>
       </div>
-
-      <script src="/video-player.js"></script>
 
       <!-- User Video Cameras -->
 
@@ -1293,9 +1302,7 @@
     </script>
   </body>
 
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/playback-new.js"></script>
-  <script src="/js/video-player-new.js"></script>
-  <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
   <script src="/js/chat.js"></script>
+  <script src="/js/playback-new.js"></script>
+  <!-- <script src="/js/video-player-new.js"></script> -->
 </html>

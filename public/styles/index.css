@@ -284,27 +284,35 @@
 /* Custom radio buttons to create/join a room*/
 
 .custom-radios-hosting-joining {
+  width: 100%;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  margin: 0 0 0.5rem;
   height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  padding: 0;
   height: 100%;
   position: relative;
+  cursor: pointer;
 }
 
 .input-radio {
   height: 10px;
+  min-height: 0;
+  position: absolute;
   width: 10px;
   visibility: hidden;
 }
 
 .custom-checkmark {
-  position: absolute;
-  top: 0.3rem;
-  left: 0.8rem;
-  height: 0.8rem;
-  width: 0.8rem;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  display: inline-block;
   background-color: var(--color-dirty-linen);
   border: 2.4px var(--color-linen) solid;
   border-radius: 100%;
