@@ -72,6 +72,7 @@
   --color-neon-demon: #efff9e;
   --color-bananarama: #f4ca2c;
   --color-old-yellow: #c8ef00;
+  --color-even-older-yellow: #9cb931;
   --color-opaque-white: rgba(255, 255, 255, 0.3);
   --color-opaque-black: rgba(0, 0, 0, 0.1);
 }
@@ -278,6 +279,15 @@ db    db d888888b d888888b db      d888888b d888888b db    db
   justify-content: center;
 }
 
+.hidden__xs {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .hidden__xs {
+    display: unset;
+  }
+}
+
 /**
 db       .d8b.  db    db  .d88b.  db    db d888888b
 88      d8' `8b `8b  d8' .8P  Y8. 88    88 `~~88~~'
@@ -378,7 +388,7 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 
 .button:hover {
   cursor: pointer;
-  background-color: #dad8de;
+  background-color: var(--color-alabaster);
 }
 
 .button-bold {
@@ -386,7 +396,7 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
 }
 
 .button-bold:hover {
-  background-color: #9cb931;
+  background-color: var(--color-even-older-yellow);
 }
 
 .button-bold[disabled] {
@@ -399,8 +409,9 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
   padding: 0 1rem;
   width: 100%;
   border-radius: 8px;
-  height: 48px;
+  min-height: 2.25rem;
   font-size: var(--font-size-sm);
+
   font-family: var(--font-brand);
 }
 
@@ -413,10 +424,10 @@ Y88888P YP   YP    YP     `Y88P'  ~Y8888P'    YP
   .input,
   .button {
     font-size: var(--font-size-md);
+    min-height: 3rem;
   }
   .button {
     padding: 0.25rem 1.5rem 0.1rem;
-    min-height: 3rem;
   }
   .button__small {
     min-height: 2.25rem;
@@ -802,4 +813,20 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
   .footer-left {
     text-align: left;
   }
+}
+
+/** idk */
+
+#myInput {
+  padding: 0px 24px;
+  border: 0px;
+  border-radius: 8px 0px 0px 8px;
+  font-size: var(--font-size-md);
+  font-family: var(--font-brand);
+  text-align: left;
+  margin: 0px;
+  margin-right: -3px;
+  display: inline-block;
+  width: 100%;
+  outline: 0;
 }

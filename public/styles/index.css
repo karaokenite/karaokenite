@@ -589,21 +589,6 @@ section#steps {
   opacity: 1;
 }
 
-#myInput {
-  padding: 0px 24px;
-  height: 48px;
-  border: 0px;
-  border-radius: 8px 0px 0px 8px;
-  font-size: var(--font-size-md);
-  font-family: var(--font-brand);
-  text-align: left;
-  margin: 0px;
-  margin-right: -3px;
-  display: inline-block;
-  width: 100%;
-  outline: 0;
-}
-
 #copy {
   padding-left: var(--page-padding);
   padding-right: var(--page-padding);
