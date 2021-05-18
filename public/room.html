@@ -22,8 +22,22 @@
     <!-- Karaoke Video -->
     <div class="room-container">
       <div class="info">
-        <button class="button" onclick="inviteModal()">Invite Friends</button>
-        <button class="button" id="feedback" onclick="feedbackModal()"></button>
+        <div class="info-section">
+          <a class="navbar-link navbar-link__home" href="/" target="_blank">
+            <h1 class="brand-logo">
+              KARAOKE NITE
+              <span class="brand-betatag">beta</span>
+            </h1>
+          </a>
+        </div>
+        <div class="info-section">
+          <button class="button" onclick="inviteModal()">Invite Friends</button>
+          <button
+            class="button"
+            id="feedback"
+            onclick="feedbackModal()"
+          ></button>
+        </div>
       </div>
       <div class="video-area karaoke-video-mask">
         <!-- <video id="video" controls preload="metadata" poster="img/poster.jpg"> -->
@@ -65,7 +79,7 @@
           <div id="footer--content">
             <div class="footer-left">
               <a href="javascript:history.back()"
-                ><button id="leaveRoomButton">Exit</button></a
+                ><button class="button" id="leaveRoomButton">Exit</button></a
               >
             </div>
 
@@ -789,13 +803,6 @@
         </button>
       </div>
     </div>
-
-    <!-- =========== Karaoke Nite Logo Top Left ============-->
-
-    <h1 id="scene-logo">
-      <a href="https://karaokenite.co" target="_blank"> KARAOKE NITE </a>
-      <span class="brand-betatag">beta</span>
-    </h1>
 
     <!-- ================== Invite Modal ==================== -->
 

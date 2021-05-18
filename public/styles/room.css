@@ -1,3 +1,8 @@
+:root {
+  --color-text: var(--color-linen);
+  --color-link-text: var(--color-linen);
+}
+
 .room-container {
   background: url("https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Fshark.jpeg?v=1621051349334")
     no-repeat center fixed;
@@ -10,8 +15,8 @@
   overflow: hidden;
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows:
-    minmax(0, min-content) minmax(0, 1fr) minmax(min-content, 10vh)
-    5rem;
+    4rem minmax(0, 1fr) minmax(min-content, 10vh)
+    4rem;
 }
 
 .video-area {
@@ -32,9 +37,18 @@
 
 .info {
   display: grid;
-  justify-content: end;
-  grid-auto-flow: column;
+  grid-template-columns: max-content max-content;
+  grid-template-rows: minmax(0, 1fr);
+  justify-content: space-between;
   padding: 0.5rem;
+}
+
+.info-section {
+  display: grid;
+  column-gap: 0.25rem;
+  grid-auto-flow: column;
+  padding: 0.25rem 1rem;
+  align-items: center;
 }
 
 /* ================ Face cams ================== */
@@ -83,6 +97,8 @@
 
 .control-bar {
   align-items: center;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
 }
 
 /* ================ Buttons ================== */
@@ -113,6 +129,10 @@
 
 #hideCameraButton {
   opacity: 0.6;
+}
+
+#playpauseButtonIcon {
+  height: 90%;
 }
 
 #muteButton {
@@ -195,7 +215,7 @@
 footer {
   background-color: var(--color-jet); /* var(--color-midnight) */
   width: 100%;
-  padding: 0.55rem;
+  padding: 0.25rem 0.5rem;
 }
 
 #footer--content {
@@ -253,21 +273,10 @@ footer {
 }
 
 #leaveRoomButton {
-  font-size: 18px;
   text-transform: uppercase;
-  padding: 0px 24px;
-  height: 50px;
-  line-height: 47px;
-  font-weight: 600;
   border: 3px solid var(--color-linen);
-  background-color: var(--color-jet);
-  color: var(--color-linen);
-  text-decoration: none;
-  border-radius: 8px;
-  transition: 0.2s background-color;
-  text-align: center;
-  z-index: 99;
-  cursor: pointer;
+  color: var(--color-text);
+  background-color: transparent;
 }
 
 /* ================= Karaoke TV Video ================= */
@@ -636,17 +645,18 @@ button[data-state="mute"] {
 }
 
 #feedback {
-  cursor: pointer;
   border-radius: 50%;
-  height: 48px;
-  width: 50px;
-  background-image: url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029");
-  background-position: 50%, 50%;
-  background-repeat: no-repeat;
-  margin-left: 6px;
-  margin-right: 6px;
+  width: 2.25rem;
+  width: 2.25rem;
+  background: var(--color-linen)
+    url("https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Ffeedback.svg?v=1596918776029")
+    no-repeat center center;
+  background-size: 50%;
 }
 
-#scene-logo a {
-  color: white;
+@media screen and (min-width: 768px) {
+  #feedback {
+    height: 3rem;
+    width: 3rem;
+  }
 }
