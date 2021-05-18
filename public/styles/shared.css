@@ -279,15 +279,6 @@ db    db d888888b d888888b db      d888888b d888888b db    db
   justify-content: center;
 }
 
-.hidden__xs {
-  display: none;
-}
-@media screen and (min-width: 768px) {
-  .hidden__xs {
-    display: unset;
-  }
-}
-
 /**
 db       .d8b.  db    db  .d88b.  db    db d888888b
 88      d8' `8b `8b  d8' .8P  Y8. 88    88 `~~88~~'
@@ -829,4 +820,14 @@ Y8b  d8 `8b  d8' 88  V888    88    88.     88  V888    88
   display: inline-block;
   width: 100%;
   outline: 0;
+}
+
+.hidden__xs {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .hidden__xs {
+    display: unset;
+  }
 }
