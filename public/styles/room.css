@@ -121,7 +121,7 @@
   bottom: 0;
   padding: 0.5rem 1rem;
   color: var(--color-linen);
-  background: linear-gradient(0, rgba(0, 0, 0, 0.45), transparent),
+  background: linear-gradient(0, rgba(0, 0, 0, 0.75), transparent),
     linear-gradient(
       0,
       rgba(0, 0, 0, 0.75),
