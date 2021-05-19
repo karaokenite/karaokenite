@@ -625,6 +625,7 @@ section#steps {
 @media (min-width: 1024px) {
   .hero {
     padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .join-container {
