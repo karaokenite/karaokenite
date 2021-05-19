@@ -1,7 +1,7 @@
 const zak = io.connect(window.location.origin);
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const roomName = urlParams.get('room');
+// const queryString = window.location.search;
+//const urlParams = new URLSearchParams(queryString);
+//const roomName = urlParams.get('room');
 
 // Next Button
 
@@ -22,18 +22,18 @@ function nextFunction() {
   zak.emit('next', roomName);
   video_count++;
 
-  if (video_count == jukebox.length) video_count = 0;
+  if (video_count == playlist.length) video_count = 0;
 
   var video = document.querySelector('#karaoke-video');
   var videoSync = document.querySelector('#karaoke-video source');
 
   video.pause();
-  videoSync.setAttribute('src', jukebox[video_count]);
+  videoSync.setAttribute('src', playlist[video_count]);
   videoSync.setAttribute('currentTime', 0);
   video.load();
   video.play();
 
-  console.log('host setting video to ', jukebox[video_count]);
+  console.log('host setting video to ', playlist[video_count]);
 }
 
 // Back Button
@@ -60,12 +60,12 @@ function backFunction() {
   var videoSync = document.querySelector('#karaoke-video source');
 
   video.pause();
-  videoSync.setAttribute('src', jukebox[video_count]);
+  videoSync.setAttribute('src', playlist[video_count]);
   videoSync.setAttribute('currentTime', 0);
   video.load();
   video.play();
 
-  console.log('host setting video to ', jukebox[video_count]);
+  console.log('host setting video to ', playlist[video_count]);
 }
 
 // Down Button

@@ -1291,6 +1291,7 @@
 
       function addSong() {
         playlist.push(jukebox[selectedIndex]);
+        console.log('playlist pushed');
 
         document.getElementById('choose-song').setAttribute('disabled', true);
         document.getElementById('added-notice').setAttribute('populated', true);
@@ -1349,6 +1350,6 @@
     userNameElement.innerHTML = userName;
   </script>
 
-  <script src="/js/playback-new.js"></script>
   <script src="/js/video-player-new.js"></script>
+  <script src="/js/playback-new.js"></script>
 </html>
