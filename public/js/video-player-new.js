@@ -14,7 +14,7 @@
   console.log('supportsVideo', supportsVideo);
 
   if (supportsVideo) {
-    // 		// Obtain handles to main elements
+    // Obtain handles to main elements
     let videoContainer = document.getElementById('karaoke-video-mask');
     console.log('karaoke-video-mask', videoContainer);
 
@@ -147,7 +147,7 @@
     // if (document.addEventListener) {
     // Wait for the video's meta data to be loaded, then set the progress bar's max value to the duration of the video
     video.addEventListener('loadedmetadata', function () {
-      progress.setAttribute('max', video.duration);
+      progress?.setAttribute('max', video.duration);
     });
 
     // Changes the button state of certain button's so the correct visuals can be displayed with CSS
@@ -220,30 +220,30 @@
     //   changeButtonState('mute');
     // });
 
-    volinc.addEventListener('click', function (e) {
+    volinc?.addEventListener('click', function (e) {
       alterVolume('+');
     });
 
-    voldec.addEventListener('click', function (e) {
+    voldec?.addEventListener('click', function (e) {
       alterVolume('-');
     });
 
-    fullscreen.addEventListener('click', function (e) {
+    fullscreen?.addEventListener('click', function (e) {
       handleFullscreen();
     });
 
     // As the video is playing, update the progress bar
     video.addEventListener('timeupdate', function () {
       // For mobile browsers, ensure that the progress element's max attribute is set
-      if (!progress.getAttribute('max'))
-        progress.setAttribute('max', video.duration);
-      progress.value = video.currentTime;
-      progressBar.style.width =
-        Math.floor((video.currentTime / video.duration) * 100) + '%';
+      if (!progress?.getAttribute('max'))
+        progress?.setAttribute('max', video.duration);
+      // progress?.value = video.currentTime;
+      //progressBar?.style.width =
+      //Math.floor((video.currentTime / video.duration) * 100) + '%';
     });
 
     // React to the user clicking within the progress bar
-    progress.addEventListener('click', function (e) {
+    progress?.addEventListener('click', function (e) {
       //var pos = (e.pageX  - this.offsetLeft) / this.offsetWidth; // Also need to take the parent into account here as .controls now has position:relative
       var pos =
         (e.pageX - (this.offsetLeft + this.offsetParent.offsetLeft)) /

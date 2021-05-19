@@ -20,7 +20,7 @@
   grid-template-columns: minmax(0, 1fr);
   grid-template-rows:
     4rem minmax(0, 1fr)
-    4rem;
+    5rem;
 }
 
 .video-container {
@@ -57,17 +57,6 @@
   }
 }
 
-@media screen and (min-width: 768px) {
-  .user-container {
-    max-width: 50vw;
-    padding: 1rem;
-    grid-template-columns: repeat(3, minmax(200px, 1fr));
-  }
-  .video-container {
-    align-items: center;
-  }
-}
-
 .info-container {
   display: grid;
   grid-template-columns: max-content max-content;
@@ -97,11 +86,18 @@
   position: relative;
 }
 
+.user::before {
+  content: "";
+  padding-top: 60.25%;
+  width: 100%;
+  display: block;
+}
+
 .user-camera {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  position: relative;
+  top: 0;
   text-align: center;
   justify-content: center;
   border-radius: 24px;
@@ -110,7 +106,7 @@
   height: 120px;
   max-height: 100%;
   max-width: 100%;
-  position: relative;
+  position: absolute;
 
   box-shadow: 0 8px 6px -6px var(--color-jet);
 }
@@ -119,9 +115,10 @@
   width: 100%;
   position: absolute;
   bottom: 0;
-  padding: 0.5rem 1rem;
+  font-size: 10px;
+  padding: 0.25rem 1rem;
   color: var(--color-linen);
-  background: linear-gradient(0, rgba(0, 0, 0, 0.45), transparent),
+  background: linear-gradient(0, rgba(0, 0, 0, 0.75), transparent),
     linear-gradient(
       0,
       rgba(0, 0, 0, 0.75),
@@ -137,6 +134,20 @@
   align-items: center;
   display: grid;
   grid-template-rows: minmax(0, 1fr);
+}
+
+@media screen and (min-width: 768px) {
+  .user-container {
+    max-width: 50vw;
+    padding: 1rem;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
+  .video-container {
+    align-items: center;
+  }
+  .user-name {
+    font-size: var(--font-size-xs);
+  }
 }
 
 /* ================ Buttons ================== */
@@ -338,7 +349,7 @@ footer {
 
 video {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
 .controls[data-state="hidden"] {
@@ -358,10 +369,19 @@ button[data-state="mute"] {
 }
 
 /* ================================ Songs modal ======================== */
+
+.modal {
+  padding: 40px 25px 25px 25px;
+}
+
+.modal p {
+  text-align: center;
+}
+
 .modal.modal__large {
   background-color: rgba(255, 255, 255, 0.75);
   padding: 1rem;
-  max-width: 100%;
+  max-width: 1200px;
 }
 
 .modal-content {
@@ -507,7 +527,7 @@ button[data-state="mute"] {
 .catalog-item img {
   width: 100%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 16px;
   border: 4px solid transparent;
 }
 
@@ -681,4 +701,10 @@ button[data-state="mute"] {
   #feedback {
     width: 3rem;
   }
+}
+
+#feedbackModal {
+  font-family: var(--font-brand);
+  color: var(--color-slate);
+  text-align: center;
 }
