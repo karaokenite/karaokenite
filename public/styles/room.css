@@ -358,6 +358,15 @@ button[data-state="mute"] {
 }
 
 /* ================================ Songs modal ======================== */
+
+.modal {
+  padding: 40px 25px 25px 25px;
+}
+
+.modal p {
+  text-align: center;
+}
+
 .modal.modal__large {
   background-color: rgba(255, 255, 255, 0.75);
   padding: 1rem;
@@ -681,4 +690,10 @@ button[data-state="mute"] {
   #feedback {
     width: 3rem;
   }
+}
+
+#feedbackModal {
+  font-family: var(--font-brand);
+  color: var(--color-slate);
+  text-align: center;
 }
