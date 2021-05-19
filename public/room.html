@@ -42,13 +42,14 @@
           </a>
         </div>
         <div class="info-section">
-          <button class="button" onclick="inviteModal()">
+          <button class="button" onclick="inviteModal()" title="Room Name">
             Invite <span class="hidden__xs">&nbsp;Friends</span>
           </button>
           <button
             class="button"
             id="feedback"
             onclick="feedbackModal()"
+            title="Feedback"
           ></button>
         </div>
       </div>
@@ -101,6 +102,7 @@
                 ><button
                   class="button button__small hidden__xs"
                   id="leaveRoomButton"
+                  title="Leave Room"
                 >
                   Exit
                 </button></a
@@ -109,20 +111,30 @@
 
             <div class="footer-middle">
               <div class="btn-group" id="btn-group">
-                <button id="hideCameraButton">
+                <button id="hideCameraButton" title="Hide Camera">
                   <img
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_camera_white.svg?v=1614747337937"
                   />
                 </button>
 
-                <button id="muteButton" type="button" data-state="mute">
+                <button
+                  id="muteButton"
+                  type="button"
+                  data-state="mute"
+                  title="Mute Mic"
+                >
                   <img
                     id="muteButtonIcon"
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_mic_white.svg?v=1614747341515"
                   />
                 </button>
 
-                <button id="backButton" type="button" data-state="play">
+                <button
+                  id="backButton"
+                  type="button"
+                  data-state="play"
+                  title="Previous"
+                >
                   <img
                     id="backButtonIcon"
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_previous_white.svg?v=1614749830096"
@@ -141,7 +153,12 @@
                   />
                 </button>
 
-                <button id="nextButton" type="button" data-state="play">
+                <button
+                  id="nextButton"
+                  type="button"
+                  data-state="play"
+                  title="Next"
+                >
                   <img
                     id="nextButtonIcon"
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_next_white.svg?v=1614749830096"
@@ -152,6 +169,7 @@
                   id="volumeDownButton"
                   type="button"
                   data-state="voldown"
+                  title="Volumn Down"
                 >
                   <img
                     id="volumeDownIcon"
@@ -159,7 +177,12 @@
                   />
                 </button>
 
-                <button id="volumeUpButton" type="button" data-state="volup">
+                <button
+                  id="volumeUpButton"
+                  type="button"
+                  data-state="volup"
+                  title="Volumn Up"
+                >
                   <img
                     id="volumeUpIcon"
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2Ficon_volume_white.svg?v=1614749830096"
@@ -181,14 +204,36 @@
 
             <div class="footer-right">
               <div class="btn-group" id="btn-group2">
-                <button id="playlistButton" type="button" onclick="openModal()">
+                <button
+                  id="playlistButton"
+                  type="button"
+                  onclick="openModal()"
+                  title="Add Song"
+                >
                   <img
                     id="playlistIcon"
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FPlaylist.svg?v=1621070364610"
                   />
                 </button>
 
-                <button id="heartButton" type="button" data-state="heart">
+                <button
+                  id="chatButton"
+                  type="button"
+                  data-state="chat"
+                  title="Chat Button - Coming Soon!"
+                >
+                  <img
+                    id="chatIcon"
+                    src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcomment.svg?v=1621415647510"
+                  />
+                </button>
+
+                <button
+                  id="heartButton"
+                  type="button"
+                  data-state="heart"
+                  title="Emoji Button - Coming Soon!"
+                >
                   <img
                     id="heartIcon"
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FHeart.svg?v=1621070361140"
