@@ -73,7 +73,7 @@
             <!-- <div class="video-mask"> -->
             <div class="user">
               <video class="user-camera" id="user-video" muted="muted"></video>
-              <div class="user-name">Username1</div>
+              <div class="user-name" id="userName"></div>
             </div>
 
             <div class="user">
@@ -1292,9 +1292,13 @@
   <script src="/js/chat.js"></script>
 
   <script>
-    let name = document.getElementById('roomName');
-    name.innerHTML = roomName;
-    console.log(roomName + 'test');
+    // Room name
+    let roomElement = document.getElementById('roomName');
+    roomElement.innerHTML = roomName;
+
+    // User name
+    let userNameElement = document.getElementById('userName');
+    userNameElement.innerHTML = userName;
   </script>
 
   <script src="/js/playback-new.js"></script>

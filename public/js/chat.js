@@ -11,6 +11,7 @@ let peerVideo = document.getElementById('peer-video');
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const roomName = urlParams.get('room');
+const userName = urlParams.get('username');
 
 // let roomInput = document.getElementById("roomName");
 // console.log("roomInput is", roomInput);
