@@ -1286,23 +1286,17 @@
         var tooltip = document.getElementById('myTooltip');
         tooltip.innerHTML = 'Copy to clipboard';
       }
-
-      // Room name script
-
-      let ctr2 = document.getElementById('roomName');
-      ctr2.innerHTML = 'asdf';
-
-      // Add one
-      // socket.on('sendRoomName', (data) => {
-      //   console.log('data is', data.name);
-
-      //   // curRoom = joinRoom(data);
-      //   ctr2.innerHTML = data.name;
-      // });
     </script>
   </body>
 
   <script src="/js/chat.js"></script>
+
+  <script>
+    let name = document.getElementById('roomName');
+    name.innerHTML = roomName;
+    console.log(roomName + 'test');
+  </script>
+
   <script src="/js/playback-new.js"></script>
   <!-- <script src="/js/video-player-new.js"></script> -->
 </html>
