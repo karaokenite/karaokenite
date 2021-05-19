@@ -516,7 +516,7 @@ button[data-state="mute"] {
 .catalog-item img {
   width: 100%;
   height: auto;
-  border-radius: 24px;
+  border-radius: 16px;
   border: 4px solid transparent;
 }
 
