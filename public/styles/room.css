@@ -338,7 +338,7 @@ footer {
 
 video {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
 .controls[data-state="hidden"] {
