@@ -3,18 +3,17 @@
   "version": "0.0.1",
   "description": "Karaoke VR",
   "main": "server.js",
+  "private": true,
   "scripts": {
-    "start": "node server-new.js"
+    "build": "lerna run build",
+    "start": "yarn build && yarn workspace @karaokenite/server start"
   },
   "workspaces": {
     "packages": [
       "packages/*"
     ]
   },
-  "dependencies": {
-    "networked-aframe": "^0.7.1",
-    "socket.io": "^3.0.1"
-  },
+  "dependencies": {},
   "engines": {
     "node": "^12.0.0",
     "yarn": "^1.21.1"
@@ -29,6 +28,16 @@
     "express"
   ],
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "@babel/cli": "^7.14.3",
+    "@babel/core": "^7.14.3",
+    "@babel/node": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.0"
   }
 }

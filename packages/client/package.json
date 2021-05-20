@@ -5,9 +5,25 @@
   "author": "Aaron Robb <aaron@codecademy.com>",
   "homepage": "https://github.com/karaokenite/karaokenite#readme",
   "license": "ISC",
-  "main": "lib/client.js",
+  "main": "dist/index",
+  "scripts": {
+    "dev": "next dev",
+    "build": "yarn babel src/index.js --out-dir dist && next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.5.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "lodash": "^4.17.20",
+    "sass": "^1.26.10",
+    "socket.io-client": "^3.1.2"
+  },
+  "devDependencies": {
+    "url-loader": "^4.1.0"
+  },
   "directories": {
-    "lib": "lib",
+    "src": "src",
     "test": "__tests__"
   },
   "files": [
@@ -19,9 +35,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/karaokenite/karaokenite.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
   },
   "bugs": {
     "url": "https://github.com/karaokenite/karaokenite/issues"

@@ -1,10 +1,11 @@
 {
-  "name": "karaoke-nite",
+  "name": "@karaokenite/server",
   "version": "0.0.1",
   "description": "Karaoke VR",
   "main": "server.js",
   "scripts": {
-    "start": "node server-new.js"
+    "build": "babel src --out-dir dist",
+    "start": "node ./dist/server.js"
   },
   "workspaces": {
     "packages": [
@@ -12,8 +13,10 @@
     ]
   },
   "dependencies": {
+    "@karaokenite/client": "^0.0.0",
+    "express": "^4.17.1",
     "networked-aframe": "^0.7.1",
-    "socket.io": "^3.0.1"
+    "socket.io": "^3.1.2"
   },
   "engines": {
     "node": "^12.0.0",
@@ -30,5 +33,6 @@
   ],
   "devDependencies": {
     "lerna": "^4.0.0"
-  }
+  },
+  "private": true
 }
