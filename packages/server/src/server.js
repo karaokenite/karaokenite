@@ -1,4 +1,5 @@
 // Sonny: Moved from Glitch
+const { uuid } = require('lodash');
 const http = require('http'); // http server core module
 const clientRouter = require('./static');
 // Get port or default to 8080
@@ -19,6 +20,41 @@ let size = 3;
 var numClients = {};
 
 // Triggered when a client is connected:
+const roomReducer = (state, action) => {
+  switch (action.type) {
+    case 'CREATE_ROOM': {
+      const { id, hostId } = action.payload;
+      return {
+        ...state,
+        byId: {
+          [id]: {
+            messages: [],
+            host: hostId,
+            users: {
+              [hostId]: {},
+            },
+          },
+        },
+      };
+    }
+    case 'JOIN_ROOM': {
+      const { userId } = action.payload;
+      return {
+        ...state,
+        byId: {
+          ...state.byId,
+          [id]: {
+            ...state.byId[id],
+            users: {
+              ...state.byId[id].users,
+              [userId]: {},
+            },
+          },
+        },
+      };
+    }
+  }
+};
 
 io.on('connection', function (socket) {
   console.log('User Connected:' + socket.id);
