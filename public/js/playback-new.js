@@ -1,7 +1,12 @@
-const zak = io.connect(window.location.origin);
+const sonny = io.connect(window.location.origin);
 // const queryString = window.location.search;
-//const urlParams = new URLSearchParams(queryString);
-//const roomName = urlParams.get('room');
+// const urlParams = new URLSearchParams(queryString);
+// const roomName = urlParams.get('room');
+
+// console.log('sonny: ', sonny);
+// console.log('queryString: ', queryString);
+// console.log('urlParams: ', urlParams);
+// console.log('roomName: ', roomName);
 
 // Next Button
 
@@ -18,8 +23,8 @@ if (el.addEventListener) {
 var video_count = 0;
 
 function nextFunction() {
-  console.log('going next');
-  zak.emit('next', roomName);
+  console.log('nextFunction!');
+  sonny.emit('next', roomName);
   video_count++;
 
   if (video_count == playlist.length) video_count = 0;
@@ -51,7 +56,8 @@ if (el.addEventListener) {
 // var video_count = 0;
 
 function backFunction() {
-  zak.emit('prev', roomName);
+  sonny.emit('prev', roomName);
+
   if (video_count != 0) {
     video_count--;
   }
@@ -81,7 +87,7 @@ if (el.addEventListener) {
 }
 
 function volumnDownFunction() {
-  zak.emit('voldec', roomName);
+  sonny.emit('voldec', roomName);
 
   var video = document.querySelector('#karaoke-video');
   // video.volume = 0.5;
@@ -103,7 +109,7 @@ if (el.addEventListener) {
 }
 
 function volumnUpFunction() {
-  zak.emit('volinc', roomName);
+  sonny.emit('volinc', roomName);
 
   var video = document.querySelector('#karaoke-video');
   // video.volume = 1.0;
@@ -112,7 +118,7 @@ function volumnUpFunction() {
   console.log('Volume set to low');
 }
 
-zak.on('prev', function () {
+sonny.on('prev', function () {
   console.log('prev event gotten on the client');
 
   if (video_count != 0) {
@@ -123,44 +129,44 @@ zak.on('prev', function () {
   var videoSync = document.querySelector('#karaoke-video source');
 
   video.pause();
-  videoSync.setAttribute('src', jukebox[video_count]);
+  videoSync.setAttribute('src', playlist[video_count]);
   videoSync.setAttribute('currentTime', 0);
   video.load();
   video.play();
 
-  console.log('host setting video to ', jukebox[video_count]);
+  console.log('host setting video to ', playlist[video_count]);
 });
 
-zak.on('next', function () {
+sonny.on('next', function () {
   console.log('Next event gotten on the client');
 
   video_count++;
 
-  if (video_count == jukebox.length) video_count = 0;
+  if (video_count == playlist.length) video_count = 0;
 
   var video = document.querySelector('#karaoke-video');
   var videoSync = document.querySelector('#karaoke-video source');
 
   video.pause();
-  videoSync.setAttribute('src', jukebox[video_count]);
+  videoSync.setAttribute('src', playlist[video_count]);
   videoSync.setAttribute('currentTime', 0);
   video.load();
   video.play();
 
-  console.log('host setting video to ', jukebox[video_count]);
+  console.log('host setting video to ', playlist[video_count]);
 });
 
-zak.on('voldec', function () {
+sonny.on('voldec', function () {
   console.log('Volume - event gotten on the client');
 
   var video = document.querySelector('#karaoke-video');
-  // Sonny will attempt to build range slider down the road
+  // video.volume = 0.5;
   video.volume = video.volume - 0.2;
 
   console.log('Volume set to low');
 });
 
-zak.on('volinc', function () {
+sonny.on('volinc', function () {
   console.log('Volume + event gotten on the client');
 
   var video = document.querySelector('#karaoke-video');

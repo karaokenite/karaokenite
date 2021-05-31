@@ -1,10 +1,19 @@
 (function () {
   'use strict';
 
-  const zak = io.connect(window.location.origin);
+  const sonny = io.connect(window.location.origin);
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const roomName = urlParams.get('room');
+  const userName = urlParams.get('username');
+  // console.log("userName:", userName);
+
+  let roomElement = document.getElementById('roomName');
+  roomElement.innerHTML = roomName;
+
+  // User name
+  let userNameElement = document.getElementById('userName');
+  userNameElement.innerHTML = userName;
 
   let video = document.getElementById('karaoke-video');
   console.log('video', video);
@@ -81,12 +90,12 @@
       checkVolume(dir);
     };
 
-    zak.on('play', function () {
+    sonny.on('play', function () {
       console.log('play event gotten on the client');
       video.play();
     });
 
-    zak.on('pause', function () {
+    sonny.on('pause', function () {
       console.log('pause event gotten on the client');
       video.pause();
     });
@@ -199,10 +208,10 @@
     playpause.addEventListener('click', function (e) {
       if (video.paused || video.ended) {
         video.play();
-        zak.emit('play', roomName);
+        sonny.emit('play', roomName);
       } else {
         video.pause();
-        zak.emit('pause', roomName);
+        sonny.emit('pause', roomName);
       }
     });
 
