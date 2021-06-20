@@ -1,4 +1,5 @@
-const sonny = io.connect(window.location.origin);
+// const sonny = io.connect(window.location.origin);
+const sonny = socket;
 // const queryString = window.location.search;
 // const urlParams = new URLSearchParams(queryString);
 // const roomName = urlParams.get('room');

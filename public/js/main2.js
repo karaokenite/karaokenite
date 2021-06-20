@@ -1,8 +1,8 @@
 // main.js is for index.html
 // main2.js is is for room.html
 
-// socket.io socket
-let socket;
+// Socket.io socket
+var socket;
 
 // The stream object used to send media
 let localStream = null;
@@ -10,6 +10,7 @@ let localStream = null;
 // All peer connections
 let peers = {};
 
+// Redirect if not https
 if (
   location.protocol !== 'https:' &&
   location.hostname !== 'localhost' &&
@@ -25,7 +26,7 @@ if (
 
 const configuration = {
   iceServers: [
-    { urls: 'stun:stun.services.mozilla.com' },
+    // { urls: 'stun:stun.services.mozilla.com' },
     { urls: 'stun:stun.l.google.com:19302' },
     {
       url: 'turn:192.158.29.39:3478?transport=udp',
@@ -63,14 +64,29 @@ navigator.mediaDevices
     localVideo.srcObject = stream;
     localStream = stream;
 
-    init();
+    // init();
   })
   .catch((e) => alert(`getusermedia error ${e.name}`));
+
+init();
 
 // Initialize the socket connections
 
 function init() {
-  socket = io();
+  // Get room name
+  let params = new URLSearchParams(window.location.search),
+    roomName = (params.get('room') || '').trim().replace(' ', '-');
+
+  if (!roomName) {
+    alert('Please enter the room name.');
+    return;
+  }
+
+  socket = io('/', {
+    query: {
+      roomName: roomName,
+    },
+  });
 
   socket.on('initReceive', (socket_id) => {
     console.log('INIT RECEIVE ' + socket_id);
@@ -148,7 +164,7 @@ function addPeer(socket_id, am_initiator) {
     newVid.id = socket_id;
     newVid.playsinline = false;
     newVid.autoplay = true;
-    newVid.id = 'video';
+    // newVid.id = 'video';
     // newVid.className = "video-camera"
     // newVid.className = "peer-video"
     newVid.classList.add('user-camera', 'peer-video');
@@ -159,6 +175,16 @@ function addPeer(socket_id, am_initiator) {
     user.className = 'user';
     user.appendChild(newVid);
     videoChatRoom.appendChild(user);
+
+    // Original:
+
+    // let user = document.createElement('div');
+    // user.className = 'user';
+    // user.appendChild(newVid);
+    // videoChatRoom.appendChild(user);
+
+    // Recreate:
+    // videos.appendChild(newVid);
   });
 }
 

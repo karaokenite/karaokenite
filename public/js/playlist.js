@@ -158,82 +158,82 @@ function dismissAddedNotice() {
 
 // ⏯ Play & Pause buttons ⏯
 
-AFRAME.registerComponent('play-pause', {
-  init: function () {
-    var myVideo = document.querySelector('#html-video');
+// AFRAME.registerComponent('play-pause', {
+//   init: function () {
+//     var myVideo = document.querySelector('#html-video');
 
-    var videoControls = document.querySelector('#videoControls');
-    this.el.addEventListener('click', function () {
-      var videoSync = document.querySelector('[video-sync]');
-      if (myVideo.paused) {
-        // Play
-        // myVideo.play();
-        videoSync.setAttribute('video-sync', 'paused', false);
-        videoControls.setAttribute('src', '#pause');
-      } else {
-        // Pause
-        // myVideo.pause();
-        videoSync.setAttribute('video-sync', 'paused', true);
-        videoControls.setAttribute('src', '#play');
-      }
-    });
-  },
-});
+//     var videoControls = document.querySelector('#videoControls');
+//     this.el.addEventListener('click', function () {
+//       var videoSync = document.querySelector('[video-sync]');
+//       if (myVideo.paused) {
+//         // Play
+//         // myVideo.play();
+//         videoSync.setAttribute('video-sync', 'paused', false);
+//         videoControls.setAttribute('src', '#pause');
+//       } else {
+//         // Pause
+//         // myVideo.pause();
+//         videoSync.setAttribute('video-sync', 'paused', true);
+//         videoControls.setAttribute('src', '#play');
+//       }
+//     });
+//   },
+// });
 
-// ⏩ Next button ⏩
+// // ⏩ Next button ⏩
 
-var i = 0;
+// var i = 0;
 
-AFRAME.registerComponent('next', {
-  init: function () {
-    this.el.addEventListener('click', function () {
-      i++;
+// AFRAME.registerComponent('next', {
+//   init: function () {
+//     this.el.addEventListener('click', function () {
+//       i++;
 
-      // Start from beginning if needed
-      if (i == playlist.length) i = 0;
+//       // Start from beginning if needed
+//       if (i == playlist.length) i = 0;
 
-      var videoSync = document.querySelector('[video-sync]');
-      videoSync.setAttribute('video-sync', 'src', playlist[i]);
-      videoSync.setAttribute('video-sync', 'currentTime', 0);
-      console.log('host setting video to ', playlist[i]);
-    });
-  },
-});
+//       var videoSync = document.querySelector('[video-sync]');
+//       videoSync.setAttribute('video-sync', 'src', playlist[i]);
+//       videoSync.setAttribute('video-sync', 'currentTime', 0);
+//       console.log('host setting video to ', playlist[i]);
+//     });
+//   },
+// });
 
-AFRAME.registerComponent('previous', {
-  init: function () {
-    this.el.addEventListener('click', function () {
-      i--;
+// AFRAME.registerComponent('previous', {
+//   init: function () {
+//     this.el.addEventListener('click', function () {
+//       i--;
 
-      // Start from beginning if needed
-      if (i == -1) i = 0;
+//       // Start from beginning if needed
+//       if (i == -1) i = 0;
 
-      var videoSync = document.querySelector('[video-sync]');
-      videoSync.setAttribute('video-sync', 'src', playlist[i]);
-      videoSync.setAttribute('video-sync', 'currentTime', 0);
-      console.log('host setting video to ', playlist[i]);
-    });
-  },
-});
+//       var videoSync = document.querySelector('[video-sync]');
+//       videoSync.setAttribute('video-sync', 'src', playlist[i]);
+//       videoSync.setAttribute('video-sync', 'currentTime', 0);
+//       console.log('host setting video to ', playlist[i]);
+//     });
+//   },
+// });
 
-AFRAME.registerComponent('volume-low', {
-  init: function () {
-    this.el.addEventListener('click', function () {
-      var videoChange = document.querySelector('#html-video');
-      videoChange.volume = 0.5;
+// AFRAME.registerComponent('volume-low', {
+//   init: function () {
+//     this.el.addEventListener('click', function () {
+//       var videoChange = document.querySelector('#html-video');
+//       videoChange.volume = 0.5;
 
-      console.log('Volume set to low');
-    });
-  },
-});
+//       console.log('Volume set to low');
+//     });
+//   },
+// });
 
-AFRAME.registerComponent('volume-high', {
-  init: function () {
-    this.el.addEventListener('click', function () {
-      var videoChange = document.querySelector('#html-video');
-      videoChange.volume = 1.0;
+// AFRAME.registerComponent('volume-high', {
+//   init: function () {
+//     this.el.addEventListener('click', function () {
+//       var videoChange = document.querySelector('#html-video');
+//       videoChange.volume = 1.0;
 
-      console.log('Volume set to high');
-    });
-  },
-});
+//       console.log('Volume set to high');
+//     });
+//   },
+// });
