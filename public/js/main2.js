@@ -65,6 +65,10 @@ navigator.mediaDevices
     localStream = stream;
 
     // init();
+    for (let key in peers) {
+      if (!peers.hasOwnProperty(key)) continue;
+      if (peers[key].streams.length < 1) peers[key].addStream(stream);
+    }
   })
   .catch((e) => alert(`getusermedia error ${e.name}`));
 
@@ -75,7 +79,10 @@ init();
 function init() {
   // Get room name
   let params = new URLSearchParams(window.location.search),
-    roomName = (params.get('room') || '').trim().replace(' ', '-');
+    roomName = (params.get('room') || '').trim().replace(' ', '-'),
+    userName = (params.get('username') || '').trim().replace(' ', '-');
+
+  // console.log('userName is', userName);
 
   if (!roomName) {
     alert('Please enter the room name.');
@@ -115,6 +122,9 @@ function init() {
   socket.on('signal', (data) => {
     peers[data.socket_id].signal(data.signal);
   });
+
+  // Username:
+  // socket.emit('send-username', userName);
 }
 
 // Remove a peer with given socket_id.
@@ -185,6 +195,13 @@ function addPeer(socket_id, am_initiator) {
 
     // Recreate:
     // videos.appendChild(newVid);
+
+    // Username:
+    let username = document.createElement('div');
+    username.className = 'user-name';
+    username.innerHTML = 'blahblah';
+    // username.innerHTML = userName;
+    user.appendChild(username);
   });
 }
 

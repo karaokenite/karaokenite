@@ -66,6 +66,14 @@ module.exports = (io) => {
       });
     });
 
+    // Username
+    // socket.on('send-username', function (userName) {
+    //   // rooms[roomName][data.socket_id].username = username;
+    //   // users.push(socket.nickname);
+    //   // console.log('We are at the username' + username);
+    //   socket.to(roomName).emit('receive-username', userName);
+    // });
+
     // Remove the disconnected peer connection from all other connected clients
     socket.on('disconnect', () => {
       console.log('socket disconnected ' + socket.id);
