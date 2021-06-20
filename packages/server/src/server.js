@@ -1,7 +1,8 @@
 // Sonny: Moved from Glitch
-const { uuid } = require('lodash');
 const http = require('http'); // http server core module
 const clientRouter = require('./static');
+const { store } = require('./store');
+
 // Get port or default to 8080
 const port = process.env.PORT || 3000;
 
@@ -16,45 +17,7 @@ app.use('/', clientRouter);
 
 // Upgrades the server to accept websockets:
 
-let size = 3;
-var numClients = {};
-
-// Triggered when a client is connected:
-const roomReducer = (state, action) => {
-  switch (action.type) {
-    case 'CREATE_ROOM': {
-      const { id, hostId } = action.payload;
-      return {
-        ...state,
-        byId: {
-          [id]: {
-            messages: [],
-            host: hostId,
-            users: {
-              [hostId]: {},
-            },
-          },
-        },
-      };
-    }
-    case 'JOIN_ROOM': {
-      const { userId } = action.payload;
-      return {
-        ...state,
-        byId: {
-          ...state.byId,
-          [id]: {
-            ...state.byId[id],
-            users: {
-              ...state.byId[id].users,
-              [userId]: {},
-            },
-          },
-        },
-      };
-    }
-  }
-};
+const rooms = io.sockets.adapter.rooms;
 
 io.on('connection', function (socket) {
   console.log('User Connected:' + socket.id);
@@ -62,37 +25,16 @@ io.on('connection', function (socket) {
   // Triggered when a peer hits the join room button:
 
   socket.on('join', function (roomName) {
-    let rooms = io.sockets.adapter.rooms;
-    let room = rooms.get(roomName);
+    const room = rooms.get(roomName);
 
     // room == undefined when no such room exists
 
-    if (room == undefined) {
-      socket.join(roomName);
-      console.log('Room Created');
-      numClients[roomName] = 1;
-      socket.emit('created', roomName, numClients);
-    } else if (room.size < size) {
-      socket.join(roomName);
-      console.log('Room Joined');
-      numClients[roomName]++;
-      socket.emit('joined', roomName, numClients);
-    }
-    // else if (room.size == 2) {
-    //   socket.join(roomName);
-    //   console.log("Room Joined");
-    //   socket.emit("joined");
-    // }
-    else {
-      socket.emit('full');
-      console.log('Room Full for Now');
-    }
-
-    console.log(rooms);
+    socket.join(roomName);
+    console.log('Room Joined');
+    socket.emit('joined', roomName, store.getState().byId[roomName]);
   });
 
   // Triggered when the person who joined the room is ready to communicate:
-
   socket.on('ready', function (roomName) {
     console.log('Ready');
     socket.broadcast.to(roomName).emit('ready'); // Informs the other peer in the room

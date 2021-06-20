@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { GithubLogo } from '../components/GithubLogo';
+import { useRouter } from 'next/router';
 
 export function Home() {
+  const router = useRouter();
+  const [username, setUsername] = useState();
   return (
     <div className="dark">
       <style jsx global>{`
@@ -705,34 +708,27 @@ export function Home() {
               </p>
             </div>
             <div className="join-form" id="now">
-              <h2 className="page-subtitle text__center">JOIN A ROOM (FREE)</h2>
-              <form action="/scene.html" method="GET">
-                <div>
-                  <input
-                    className="input"
-                    id="room"
-                    name="room"
-                    placeholder="Choose a room name"
-                    type="text"
-                    required
-                  />
-                </div>
-                <div>
-                  <input
-                    className="input"
-                    id="username"
-                    name="username"
-                    placeholder="Choose a username"
-                    type="text"
-                    required
-                  />
-                </div>
+              <h2 className="page-subtitle text__center">MAKE A ROOM</h2>
+              <div>
                 <input
-                  className="input button button-bold"
-                  type="submit"
-                  value="Enter Room"
+                  className="input"
+                  id="username"
+                  name="username"
+                  placeholder="Choose a username"
+                  type="text"
+                  onChange={setUsername}
                 />
-                <div className="text__left" id="radio-buttons-testing">
+              </div>
+              <button
+                className="input button button-bold"
+                disabled={!username || username.length === 0}
+                onClick={() => {
+                  router.push(`room/test`);
+                }}
+              >
+                Create Room
+              </button>
+              {/* <div className="text__left" id="radio-buttons-testing">
                   <label
                     for="hosting"
                     className="label custom-radios-hosting-joining"
@@ -762,8 +758,7 @@ export function Home() {
                     <span className="custom-checkmark"></span>
                     I'm joining a friend's room
                   </label>
-                </div>
-              </form>
+                </div> */}
             </div>
           </div>
         </section>

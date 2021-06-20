@@ -5,12 +5,13 @@ import { useRouter } from 'next/router';
 
 const NavLink = ({ href, children }) => {
   const { asPath } = useRouter();
-
+  const isHome = href === '/';
   return (
     <Link href={href}>
       <a
-        className={cx('navbar-link', {
-          'navbar-link__home': href === '/',
+        className={cx({
+          'navbar-link': !isHome,
+          'navbar-link__home': isHome,
           'navbar-link__active': asPath === href,
         })}
       >
@@ -30,12 +31,12 @@ export const Header = () => {
     <header role="banner" className="header">
       <nav className="navbar">
         <div className="navbar-section navbar-section__left">
-          <a className="navbar-link__home" href="/">
+          <NavLink href="/">
             <h1 className="brand-logo">
               KARAOKE NITE
               <span className="brand-betatag">beta</span>
             </h1>
-          </a>
+          </NavLink>
           <button className="navbar-toggle">
             <svg
               className="navbar-toggleIcon navbar-toggleIcon__open"
