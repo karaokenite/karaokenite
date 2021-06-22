@@ -3,6 +3,16 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { GithubLogo } from '../components/GithubLogo';
 
+const Post = ({ title, date, children }) => {
+  return (
+    <article>
+      <div className="page-subtitle">{title}</div>
+      <h4>{date}</h4>
+      <p>{children}</p>
+    </article>
+  )
+}
+
 export function Blog() {
   return (
     <div>
@@ -29,10 +39,8 @@ export function Blog() {
 
       <main className="layout layout__small layout-grid">
         <section className="layout-grid">
-          <article>
-            <h4>April 7th, 2021</h4>
-            <h2 className="page-subtitle">💨 v0.2 Update Coming Soon</h2>
 
+          <Post title="💨 v0.2 Update Coming Soon" date="April 7th, 2021">
             <p>
               We just released the most recent build v0.1.3 which includes a FAQ
               page and a massive cleanup of the codebase in preparation of the
@@ -45,7 +53,7 @@ export function Blog() {
             </p>
 
             <p>
-              P.S. Take a look here for a
+              P.S. Take a look here for a 
               <a
                 className="link"
                 href="https://twitter.com/karaoke_nite/status/1369729297779486726?s=20"
@@ -55,11 +63,9 @@ export function Blog() {
               </a>
               !
             </p>
-          </article>
-          <article>
-            <h4>March 20th, 2021</h4>
-            <h2 className="page-subtitle">🚀 Product Hunt and 2,500 Users</h2>
+          </Post>
 
+          <Post title="🚀 Product Hunt and 2,500 Users" date="March 20th, 2021">
             <p>
               March has been an absolutely crazy month for us. We launched on
               Product Hunt and ended up being a runner-up for the Product of the
@@ -95,12 +101,9 @@ export function Blog() {
                 height="54"
               />
             </a>
-          </article>
+          </Post>
 
-          <article>
-            <h4>March 5th, 2021</h4>
-            <h2 className="page-subtitle">📝 User Research Wrap-Up</h2>
-
+          <Post title="📝 User Research Wrap-Up" date="March 5th, 2021">
             <p>
               After chatting with 40 users from around the world and testing it
               with friends and family over the holidays, we are super excited
@@ -191,12 +194,9 @@ export function Blog() {
               And countless others who gave us ample feedback via Typeform,
               DM's, emails over the past few months.
             </p>
-          </article>
+          </Post>
 
-          <article>
-            <h4>February 28th, 2021</h4>
-            <h2 className="page-subtitle">👯‍♂️ #DreamTeam</h2>
-
+          <Post title="👯‍♂️ #DreamTeam" date="February 28th, 2021">
             <p>
               The journey of finding product-market fit isn't easy. Just wanted
               to take a moment and give a big thank you to the old v0.1 team for
@@ -287,7 +287,7 @@ export function Blog() {
               </a>
               for all the debugging help! 🔎
             </p>
-          </article>
+          </Post>
         </section>
         <section className="layout-grid layout-grid__sm">
           <article>
