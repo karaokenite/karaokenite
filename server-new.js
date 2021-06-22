@@ -1,6 +1,19 @@
 // Sonny: Moved from Glitch
 const http = require('http'); // http server core module
 const path = require('path');
+const fs = require('fs');
+// const express = require('express');
+// const app = express();
+
+const httpolyglot = require('httpolyglot');
+const https = require('https');
+
+var base = process.env.PWD;
+
+const options = {
+  key: fs.readFileSync(base + '/public/ssl/key.pem', 'utf-8'),
+  cert: fs.readFileSync(base + '/public/ssl/cert.pem', 'utf-8'),
+};
 
 // Get port or default to 8080
 const port = process.env.PORT || 8080;
@@ -8,14 +21,20 @@ const port = process.env.PORT || 8080;
 const express = require('express');
 const app = express();
 
-app.use(express.static('public'));
-
-const webServer = http.createServer(app);
-const io = require('socket.io')(webServer);
-
 // make all the files in 'public' available
-// https://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
+
+// const webServer = http.createServer(app);
+// const io = require('socket.io')(webServer);
+
+const httpsServer = httpolyglot.createServer(options, app);
+const io = require('socket.io')(httpsServer);
+
+require('./socketController')(io);
+
+httpsServer.listen(port, () => {
+  console.log(`listening on port ${port}`);
+});
 
 // https://expressjs.com/en/starter/basic-routing.html
 app.get('/', (request, response) => {
@@ -23,120 +42,124 @@ app.get('/', (request, response) => {
 });
 
 // listen for requests :)
-const listener = app.listen(process.env.PORT, () => {
-  console.log('Your app is listening on port ' + listener.address().port);
-});
+// const listener = app.listen(process.env.PORT, () => {
+//   console.log('Your app is listening on port ' + listener.address().port);
+// });
 
-// Upgrades the server to accept websockets:
+// webServer.listen(port, () => {
+//   console.log('listening on http://localhost:' + port);
+// });
 
-// let io = socket(listener);
-let size = 3;
-var numClients = {};
+// // Upgrades the server to accept websockets:
 
-// Triggered when a client is connected:
+// // let io = socket(listener);
+// let size = 3;
+// var numClients = {};
 
-io.on('connection', function (socket) {
-  console.log('User Connected:' + socket.id);
+// // Triggered when a client is connected:
 
-  // Triggered when a peer hits the join room button:
+// io.on('connection', function (socket) {
+//   console.log('User Connected:' + socket.id);
 
-  socket.on('join', function (roomName) {
-    let rooms = io.sockets.adapter.rooms;
-    let room = rooms.get(roomName);
+//   // Triggered when a peer hits the join room button:
 
-    // room == undefined when no such room exists
+//   socket.on('join', function (roomName) {
+//     let rooms = io.sockets.adapter.rooms;
+//     let room = rooms.get(roomName);
 
-    if (room == undefined) {
-      socket.join(roomName);
-      console.log('Room Created');
-      numClients[roomName] = 1;
-      socket.emit('created', roomName, numClients);
-    } else if (room.size < size) {
-      socket.join(roomName);
-      console.log('Room Joined');
-      numClients[roomName]++;
-      socket.emit('joined', roomName, numClients);
-    }
-    // else if (room.size == 2) {
-    //   socket.join(roomName);
-    //   console.log("Room Joined");
-    //   socket.emit("joined");
-    // }
-    else {
-      socket.emit('full');
-      console.log('Room Full for Now');
-    }
+//     // room == undefined when no such room exists
 
-    console.log(rooms);
-  });
+//     if (room == undefined) {
+//       socket.join(roomName);
+//       console.log('Room Created');
+//       numClients[roomName] = 1;
+//       socket.emit('created', roomName, numClients);
+//     } else if (room.size < size) {
+//       socket.join(roomName);
+//       console.log('Room Joined');
+//       numClients[roomName]++;
+//       socket.emit('joined', roomName, numClients);
+//     }
+//     // else if (room.size == 2) {
+//     //   socket.join(roomName);
+//     //   console.log("Room Joined");
+//     //   socket.emit("joined");
+//     // }
+//     else {
+//       socket.emit('full');
+//       console.log('Room Full for Now');
+//     }
 
-  // Triggered when the person who joined the room is ready to communicate:
+//     console.log(rooms);
+//   });
 
-  socket.on('ready', function (roomName) {
-    console.log('Ready');
-    socket.broadcast.to(roomName).emit('ready'); // Informs the other peer in the room
-  });
+//   // Triggered when the person who joined the room is ready to communicate:
 
-  //Triggered when a user presses the play button
-  socket.on('play', function (roomName) {
-    socket.broadcast.emit('play', roomName);
-  });
+//   socket.on('ready', function (roomName) {
+//     console.log('Ready');
+//     socket.broadcast.to(roomName).emit('ready'); // Informs the other peer in the room
+//   });
 
-  //Triggered when a user presses the pause button
-  socket.on('pause', function (roomName) {
-    socket.broadcast.emit('pause', roomName);
-  });
+//   //Triggered when a user presses the play button
+//   socket.on('play', function (roomName) {
+//     socket.broadcast.emit('play', roomName);
+//   });
 
-  //Triggered when a user presses the volume + button
-  socket.on('volinc', function (roomName) {
-    socket.broadcast.emit('volinc', roomName);
-  });
+//   //Triggered when a user presses the pause button
+//   socket.on('pause', function (roomName) {
+//     socket.broadcast.emit('pause', roomName);
+//   });
 
-  //Triggered when a user presses the volume - button
-  socket.on('voldec', function (roomName) {
-    socket.broadcast.emit('voldec', roomName);
-  });
+//   //Triggered when a user presses the volume + button
+//   socket.on('volinc', function (roomName) {
+//     socket.broadcast.emit('volinc', roomName);
+//   });
 
-  //Triggered when a user presses the volume + button
-  socket.on('next', function (roomName) {
-    socket.broadcast.emit('next', roomName);
-    // socket.to(roomName).broadcast.emit("play", roomName);
-  });
+//   //Triggered when a user presses the volume - button
+//   socket.on('voldec', function (roomName) {
+//     socket.broadcast.emit('voldec', roomName);
+//   });
 
-  //Triggered when a user presses the volume - button
-  socket.on('prev', function (roomName) {
-    socket.broadcast.emit('prev', roomName);
-  });
+//   //Triggered when a user presses the volume + button
+//   socket.on('next', function (roomName) {
+//     socket.broadcast.emit('next', roomName);
+//     // socket.to(roomName).broadcast.emit("play", roomName);
+//   });
 
-  // Triggered when servers gets an icecandidate from a peer in the room:
+//   //Triggered when a user presses the volume - button
+//   socket.on('prev', function (roomName) {
+//     socket.broadcast.emit('prev', roomName);
+//   });
 
-  socket.on('candidate', function (candidate, roomName) {
-    console.log('Candidate');
-    console.log(candidate);
-    socket.broadcast.to(roomName).emit('candidate', candidate); // Sends Candidate to the other peer in the room
-  });
+//   // Triggered when servers gets an icecandidate from a peer in the room:
 
-  // Triggered when server gets an offer from a peer in the room:
+//   socket.on('candidate', function (candidate, roomName) {
+//     console.log('Candidate');
+//     console.log(candidate);
+//     socket.broadcast.to(roomName).emit('candidate', candidate); // Sends Candidate to the other peer in the room
+//   });
 
-  socket.on('offer', function (offer, roomName) {
-    console.log('Offer');
-    console.log(offer);
-    socket.broadcast.to(roomName).emit('offer', offer); // Send Offer to the other peer in the room
-  });
+//   // Triggered when server gets an offer from a peer in the room:
 
-  // Triggered when server gets an answer from a peer in the room:
+//   socket.on('offer', function (offer, roomName) {
+//     console.log('Offer');
+//     console.log(offer);
+//     socket.broadcast.to(roomName).emit('offer', offer); // Send Offer to the other peer in the room
+//   });
 
-  socket.on('answer', function (answer, roomName) {
-    console.log('Answer');
-    socket.broadcast.to(roomName).emit('answer', answer); // Sends Answer to the other peer in the room
-  });
+//   // Triggered when server gets an answer from a peer in the room:
 
-  socket.on('leave', function (roomName) {
-    socket.leave(roomName);
-    socket.broadcast.to(roomName).emit('leave');
-  });
-});
+//   socket.on('answer', function (answer, roomName) {
+//     console.log('Answer');
+//     socket.broadcast.to(roomName).emit('answer', answer); // Sends Answer to the other peer in the room
+//   });
 
-webServer.listen(port, () => {
-  console.log('listening on http://localhost:' + port);
-});
+//   socket.on('leave', function (roomName) {
+//     socket.leave(roomName);
+//     socket.broadcast.to(roomName).emit('leave');
+//   });
+// });
+
+// webServer.listen(port, () => {
+//   console.log('listening on http://localhost:' + port);
+// });

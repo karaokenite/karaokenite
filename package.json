@@ -1,14 +1,16 @@
 {
   "name": "karaoke-nite",
   "version": "0.0.1",
-  "description": "Karaoke VR",
+  "description": "Karaoke Nite",
   "main": "server.js",
   "scripts": {
     "start": "node server-new.js"
   },
   "dependencies": {
-    "networked-aframe": "^0.7.1",
-    "socket.io": "^3.0.1"
+    "express": "^4.17.0",
+    "httpolyglot": "^0.1.2",
+    "simple-peer": "^9.7.0",
+    "socket.io": "^4.1.2"
   },
   "engines": {
     "node": "8.10.0"

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Karaoke Nite | Room</title>
 
+    <script src="https://cdn.jsdelivr.net/npm/simple-peer@9.11.0/simplepeer.min.js"></script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -14,6 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
       type="text/css"
     />
+
     <link href="/styles/shared.css" rel="stylesheet" type="text/css" />
     <link href="/styles/room.css" rel="stylesheet" type="text/css" />
 
@@ -41,6 +44,7 @@
             </h1>
           </a>
         </div>
+
         <div class="info-section">
           <button class="button" onclick="inviteModal()" title="Room Name">
             Invite <span class="hidden__xs">&nbsp;Friends</span>
@@ -53,6 +57,7 @@
           ></button>
         </div>
       </div>
+
       <div class="video-container">
         <div class="group">
           <div class="karaoke-video-mask">
@@ -70,21 +75,34 @@
               >
             </video>
           </div>
-          <div class="user-container" id="video-chat-room">
-            <!-- <div class="video-mask"> -->
+
+          <div class="video-mask">
+            <div class="user-container" id="videoChatRoom">
+              <div class="user">
+                <video
+                  id="localVideo"
+                  class="user-camera user-video"
+                  autoplay
+                  muted
+                ></video>
+                <!--  <video id="user-video" class="user-camera" muted="muted"></video> -->
+                <div class="user-name" id="userName"></div>
+              </div>
+
+              <!--             
+
             <div class="user">
-              <video class="user-camera" id="user-video" muted="muted"></video>
               <div class="user-name" id="userName"></div>
             </div>
 
             <div class="user">
-              <video class="user-camera" id="peer-video"></video>
+              <video id="peer-video" class="user-camera"></video>
               <div class="user-name">Username2</div>
             </div>
 
             <div class="user">
               <video class="user-camera" id="peer-video2"></video>
-              <div class="user-name">Username3</div>
+              <div class="user-name">Username3</div> -->
             </div>
           </div>
         </div>
@@ -216,7 +234,7 @@
                   />
                 </button>
 
-                <button
+                <!-- <button
                   id="chatButton"
                   type="button"
                   data-state="chat"
@@ -226,9 +244,9 @@
                     id="chatIcon"
                     src="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2Fcomment.svg?v=1621415647510"
                   />
-                </button>
+                </button> -->
 
-                <button
+                <!-- <button
                   id="heartButton"
                   type="button"
                   data-state="heart"
@@ -238,7 +256,7 @@
                     id="heartIcon"
                     src="https://cdn.glitch.com/f69fa717-be61-48e8-9ad2-e8edd524fe90%2FHeart.svg?v=1621070361140"
                   />
-                </button>
+                </button> -->
               </div>
             </div>
           </div>
@@ -1338,18 +1356,23 @@
     </script>
   </body>
 
-  <script src="/js/chat.js"></script>
+  <!--   <script src="/js/chat.js"></script>
+ -->
 
-  <script>
+  <!--   <script src="/socket.io/socket.io.js"></script>
+ -->
+
+  <script src="/js/main2.js"></script>
+  <script src="/js/playback-new.js"></script>
+  <script src="/js/video-player-new.js"></script>
+
+  <!--     <script>
     // Room name
     let roomElement = document.getElementById('roomName');
-    roomElement.innerHTML = roomName;
+    roomElement.innerHTML = roomName.toString();
 
     // User name
     let userNameElement = document.getElementById('userName');
-    userNameElement.innerHTML = userName;
-  </script>
-
-  <script src="/js/video-player-new.js"></script>
-  <script src="/js/playback-new.js"></script>
+    userNameElement.innerHTML = userName.toString();
+  </script> -->
 </html>
