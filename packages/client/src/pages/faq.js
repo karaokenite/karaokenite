@@ -87,7 +87,7 @@ export function FAQ() {
 
             <ul className="list">
               <li>
-                $49.99
+                $49.99{' '}
                 <a
                   className="link"
                   href="https://www.amazon.com/Singing-Machine-Bluetooth-Microphone-CPK545/dp/B07SLFVGSC/"
@@ -97,7 +97,7 @@ export function FAQ() {
                 </a>
               </li>
               <li>
-                $16.99
+                $16.99{' '}
                 <a
                   className="link"
                   href="https://www.amazon.com/Handheld-Microphone-Nintendo-Singing-Compatible/dp/B08K6WXR29"
@@ -190,7 +190,7 @@ export function FAQ() {
         </section>
         <section>
           <p>
-            Let us know if you have other questions
+            Let us know if you have other questions{' '}
             <a className="link" href="mailto: sonnynomnom@gmail.com">
               here
             </a>

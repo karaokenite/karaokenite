@@ -49,13 +49,11 @@ export function About() {
           <article>
             <h1 className="page-title">
               Karaoke Nite is a social app. Our north star is to create the
-              next-gen
-              <span className="orange">h</span>
+              next-gen <span className="orange">h</span>
               <span className="pink__light">o</span>
               <span className="pink">u</span>
               <span className="pink__dark">s</span>
-              <span className="green">e</span>
-              <span className="orange">p</span>
+              <span className="green">e</span> <span className="orange">p</span>
               <span className="yellow__light">a</span>
               <span className="green__light">r</span>
               <span className="teal">t</span>
@@ -81,7 +79,7 @@ export function About() {
             <p>
               This is currently a Beta version of the app. We have a ton of
               features and goodies coming soon so stay tuned. In the meantime,
-              please help us make the experience better by answering a quick
+              please help us make the experience better by answering a quick{' '}
               <a
                 className="link"
                 href="https://karaokenite.typeform.com/to/SaHxnvyT"
@@ -94,7 +92,7 @@ export function About() {
             <p>
               Karaoke Nite is also open-sourced. If you are a programmer,
               designer, 3d modeler, or game artist, you can find the project on
-              our
+              our{' '}
               <a
                 className="link"
                 href="https://github.com/karaokenite"
@@ -110,7 +108,7 @@ export function About() {
             <p>
               If you are a indie record label or band/artist that's interested
               in having your music videos or lyric videos be featured in the
-              app, please let us know via
+              app, please let us know via{' '}
               <a className="link" href="mailto: sonnynomnom@gmail.com">
                 email
               </a>
@@ -129,7 +127,7 @@ export function About() {
             </p>
 
             <p>
-              Privacy Policy can be found
+              Privacy Policy can be found{' '}
               <a
                 className="link"
                 href="https://cdn.glitch.com/b316bbdc-0b0c-4c6d-94fb-fffb37f510a9%2FPrivacy%20Policy%20v1.pdf?v=1616300368184"

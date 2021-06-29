@@ -52,7 +52,7 @@ export function Blog() {
             </p>
 
             <p>
-              P.S. Take a look here for a
+              P.S. Take a look here for a{' '}
               <a
                 className="link"
                 href="https://twitter.com/karaoke_nite/status/1369729297779486726?s=20"
@@ -86,7 +86,7 @@ export function Blog() {
                 <b>Sessions:</b> 3,800
               </li>
             </ul>
-
+            <br></br>
             <a
               href="https://www.producthunt.com/posts/karaoke-nite?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-karaoke-nite"
               target="_blank"
@@ -188,6 +188,7 @@ export function Blog() {
                 </a>
               </li>
             </ul>
+            <br></br>
 
             <p>
               And countless others who gave us ample feedback via Typeform,
@@ -276,7 +277,7 @@ export function Blog() {
             </div>
 
             <p>
-              And our friend
+              And our friend{' '}
               <a
                 className="link"
                 href="https://twitter.com/HaydenLee37"
