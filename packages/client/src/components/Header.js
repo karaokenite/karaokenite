@@ -26,6 +26,12 @@ const NavLink = ({ href, children }) => {
   );
 };
 
+const navlinks = [
+  { href: '/about', children: 'About' },
+  { href: '/blog', children: 'Blog' },
+  { href: '/faq', children: 'FAQ' },
+];
+
 export const Header = () => {
   return (
     <header role="banner" className="header">
@@ -58,15 +64,11 @@ export const Header = () => {
         </div>
         <div className="navbar-section navbar-section__right">
           <ul className="navbar-list">
-            <li className="navbar-item">
-              <NavLink href="/about">About</NavLink>
-            </li>
-            <li className="navbar-item">
-              <NavLink href="/blog">Blog</NavLink>
-            </li>
-            <li className="navbar-item">
-              <NavLink href="/faq">FAQ</NavLink>
-            </li>
+            {navlinks.map((navlink) => (
+              <li className="navbar-item">
+                <NavLink href={navlink.href}>{navlink.children}</NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       </nav>
