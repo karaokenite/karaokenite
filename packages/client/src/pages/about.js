@@ -6,11 +6,11 @@ import { GithubLogo } from '../components/GithubLogo';
 const Info = ({ title, children }) => {
   return (
     <article>
-      <div className="page-subtitle">{title}</div>
+      <h2 className="page-subtitle">{title}</h2>
       <p>{children}</p>
     </article>
-  )
-}
+  );
+};
 
 export function About() {
   return (
@@ -79,25 +79,26 @@ export function About() {
           <Info title="Beta v0.1.3">
             <p>We are a small team of friends based in Brooklyn, NY.</p>
             <p>
-              This is currently a Beta version of the app. We have a ton of 
-              features and goodies coming soon so stay tuned. In the meantime, 
+              This is currently a Beta version of the app. We have a ton of
+              features and goodies coming soon so stay tuned. In the meantime,
               please help us make the experience better by answering a quick
               <a
-              className="link"
-              href="https://karaokenite.typeform.com/to/SaHxnvyT"
-              target="_blank"
+                className="link"
+                href="https://karaokenite.typeform.com/to/SaHxnvyT"
+                target="_blank"
               >
                 feedback survey
               </a>
-                .
+              .
             </p>
             <p>
               Karaoke Nite is also open-sourced. If you are a programmer,
               designer, 3d modeler, or game artist, you can find the project on
               our
-              <a className="link"
-              href="https://github.com/karaokenite"
-              target="_blank"
+              <a
+                className="link"
+                href="https://github.com/karaokenite"
+                target="_blank"
               >
                 GitHub
               </a>

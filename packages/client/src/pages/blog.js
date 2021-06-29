@@ -10,8 +10,8 @@ const Post = ({ title, date, children }) => {
       <h4>{date}</h4>
       <p>{children}</p>
     </article>
-  )
-}
+  );
+};
 
 export function Blog() {
   return (
@@ -39,7 +39,6 @@ export function Blog() {
 
       <main className="layout layout__small layout-grid">
         <section className="layout-grid">
-
           <Post title="💨 v0.2 Update Coming Soon" date="April 7th, 2021">
             <p>
               We just released the most recent build v0.1.3 which includes a FAQ
@@ -53,7 +52,7 @@ export function Blog() {
             </p>
 
             <p>
-              P.S. Take a look here for a 
+              P.S. Take a look here for a
               <a
                 className="link"
                 href="https://twitter.com/karaoke_nite/status/1369729297779486726?s=20"
