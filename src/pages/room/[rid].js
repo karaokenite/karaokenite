@@ -716,7 +716,7 @@ export function Room() {
         <div className="info-container">
           <div className="info-section">
             <a
-              className="navbar-link navbar-link__home"
+              className="navbar-link navbar-link__logo"
               href="/"
               target="_blank"
             >

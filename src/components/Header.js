@@ -3,16 +3,14 @@ import Link from 'next/link';
 import cx from 'classnames';
 import { useRouter } from 'next/router';
 
-const NavLink = ({ href, children }) => {
-  const { asPath } = useRouter();
-  const isHome = href === '/';
+const NavLink = ({ href, children, active, logo }) => {
   return (
     <Link href={href}>
       <a
         className={cx({
-          'navbar-link': !isHome,
-          'navbar-link__home': isHome,
-          'navbar-link__active': asPath === href,
+          'navbar-link': !logo,
+          'navbar-link__logo': logo,
+          'navbar-link__active': active,
         })}
       >
         {children}
@@ -26,18 +24,20 @@ const NavLink = ({ href, children }) => {
   );
 };
 
-const navlinks = [
-  { href: '/about', children: 'About' },
-  { href: '/blog', children: 'Blog' },
-  { href: '/faq', children: 'FAQ' },
+const links = [
+  { path: '/about', text: 'About' },
+  { path: '/blog', text: 'Blog' },
+  { path: '/faq', text: 'FAQ' },
 ];
 
 export const Header = () => {
+  const { asPath } = useRouter();
+
   return (
     <header role="banner" className="header">
       <nav className="navbar">
         <div className="navbar-section navbar-section__left">
-          <NavLink href="/">
+          <NavLink href="/" logo>
             <h1 className="brand-logo">
               KARAOKE NITE
               <span className="brand-betatag">beta</span>
@@ -64,9 +64,11 @@ export const Header = () => {
         </div>
         <div className="navbar-section navbar-section__right">
           <ul className="navbar-list">
-            {navlinks.map((navlink) => (
-              <li className="navbar-item">
-                <NavLink href={navlink.href}>{navlink.children}</NavLink>
+            {links.map(({ path, text }) => (
+              <li key={path} className="navbar-item">
+                <NavLink href={path} active={asPath === path}>
+                  {text}
+                </NavLink>
               </li>
             ))}
           </ul>

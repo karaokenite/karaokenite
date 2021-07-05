@@ -45,7 +45,7 @@ export function Home() {
           transition: max-height 100ms linear;
         }
 
-        .header:not(.header__revealed) .navbar-link__home {
+        .header:not(.header__revealed) .navbar-link__logo {
           transition: opacity 200ms ease 200ms;
         }
 
@@ -75,12 +75,12 @@ export function Home() {
           --color-text: var(--color-midnight);
         }
 
-        .navbar-link__home {
+        .navbar-link__logo {
           opacity: 0;
         }
 
-        .header__revealed .navbar-link__home,
-        .header__expanded .navbar-link__home {
+        .header__revealed .navbar-link__logo,
+        .header__expanded .navbar-link__logo {
           opacity: 1;
         }
 
