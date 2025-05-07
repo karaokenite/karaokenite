@@ -18,9 +18,16 @@ Previous contributors:
 
 ## Running Locally
 
+### Using Node.js
 1. Run `npm install` to download all of the app's dependencies.
 2. Run `node server.js` in the root folder.
 3. Navigate to [localhost:8080](http://localhost:8080) to see the local version of Karaoke Nite.
+
+### Using Docker
+1. Build the Docker image:
+   ```bash
+   docker build -t karaokenite .
+   ```
 
 ## Beta v0.1.3
 

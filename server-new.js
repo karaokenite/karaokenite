@@ -3,6 +3,7 @@ const http = require('http'); // http server core module
 const path = require('path');
 
 // Get port or default to 8080
+//deploying with Docker will use 8080
 const port = process.env.PORT || 8080;
 
 const express = require('express');
